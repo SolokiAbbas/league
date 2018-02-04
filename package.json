@@ -1,14 +1,20 @@
 {
   "name": "league-site",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.jsx",
+  "description": "--- #### APP This is an application to access League of Legends API using React.",
+  "main": "webpack.config.js",
+  "engines": {
+    "node": "4.1.1",
+    "npm": "2.1.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --hot"
+    "start": "webpack-dev-server --hot",
+    "webpack": "webpack --watch",
+    "postinstall": "webpack"
   },
   "keywords": [],
-  "author": "",
+  "author": "Abbas",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.25.0",
@@ -30,5 +36,13 @@
     "react-dom": "^16.2.0",
     "typeahead.js": "^0.11.1",
     "whatwg-fetch": "^2.0.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SolokiAbbas/league.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SolokiAbbas/league/issues"
+  },
+  "homepage": "https://github.com/SolokiAbbas/league#readme"
 }

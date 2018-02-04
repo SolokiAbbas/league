@@ -2,10 +2,10 @@ import React from 'react';
 
 const NavBar = () => (
       <div>
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd; height: 40px;" >
-          <a class="navbar-brand" href="#">Home</a>
-          <a class="navbar-brand" href="#">About</a>
-          <a class="navbar-brand" href="#">Link</a>
+        <nav className="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd; height: 40px;" >
+          <a className="navbar-brand" href="#">Home</a>
+          <a className="navbar-brand" href="#">About</a>
+          <a className="navbar-brand" href="#">Link</a>
         </nav>
       </div>
     );

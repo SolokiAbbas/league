@@ -5,7 +5,6 @@ class App extends React.Component {
   render(){
     return(
       <div>
-        <h1>Hello Nav</h1>
         <NavBar />
       </div>
     );
