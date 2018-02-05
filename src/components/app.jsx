@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBar from './navbar/navbar';
 import About from './navbar/about';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 class App extends React.Component {
   render(){
