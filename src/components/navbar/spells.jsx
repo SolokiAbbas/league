@@ -1,6 +1,13 @@
 import React from 'react';
 
 class Spells extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      spellList: [],
+    };
+  }
+
   render(){
     return(
           <div className="jumbotron mx-auto jumbo-about">
