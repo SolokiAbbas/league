@@ -7,7 +7,7 @@ const NavBar = () => (
           <Link className="navbar-brand" to="/">Home</Link>
           <Link className="navbar-brand" to="/about">About</Link>
           <Link className="navbar-brand" to="/about">Champions</Link>
-          <Link className="navbar-brand" to="/about">Search Summoner Name</Link>
+          <Link className="navbar-brand" to="/about">Summoners</Link>
           <Link className="navbar-brand" to="/about">Summoner Spells</Link>
           <Link className="navbar-brand" to="/about">Summoner Items</Link>
         </nav>
