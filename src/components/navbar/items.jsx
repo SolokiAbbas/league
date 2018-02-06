@@ -1,6 +1,12 @@
 import React from 'react';
 
 class Items extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      itemList: [],
+    };
+  }
   render(){
     return(
           <div className="jumbotron mx-auto jumbo-about">
