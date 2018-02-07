@@ -1,4 +1,5 @@
 import React from 'react';
+import utilAPI from '../util/util_items';
 
 class Items extends React.Component{
   constructor(props){

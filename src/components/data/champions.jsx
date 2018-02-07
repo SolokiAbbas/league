@@ -1,4 +1,5 @@
 import React from 'react';
+import utilAPI from '../util/util_champ';
 
 class Champions extends React.Component{
   constructor(props){
