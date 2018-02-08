@@ -11,13 +11,13 @@ class Items extends React.Component{
   }
   fetchItems(){
     const url ="https://na1.api.riotgames.com/lol/static-data/v3/items?locale=en_US&api_key=RGAPI-149ba0a2-62de-46e0-8c23-9ae7f2930aa1";
-    utilAPI(url, this);
+    this.setState({data: utilAPI(url)});
   }
 
   render(){
     return(
           <div className="jumbotron mx-auto jumbo-about">
-            {this.state.champion}
+            {this.fetchItems()}
             {console.log(this.state)}
             <p>{this.state.itemList}</p>
           </div>
