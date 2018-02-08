@@ -7,15 +7,19 @@ class Items extends React.Component{
     this.state = {
       itemList: [],
     };
+    this.fetchItems = this.fetchItems.bind(this);
   }
+  fetchItems(){
+    const url ="https://na1.api.riotgames.com/lol/static-data/v3/items?locale=en_US&api_key=RGAPI-149ba0a2-62de-46e0-8c23-9ae7f2930aa1";
+    utilAPI(url, this);
+  }
+
   render(){
     return(
           <div className="jumbotron mx-auto jumbo-about">
-            <p>I am experienced in Ruby on Rails and JavaScript.
-              Currently, I am working on a solo Project using Python and Django.
-              Solving difficult algorithms is my hobby.
-              I look forward to experience new technologies and challenges.
-            </p>
+            {this.state.champion}
+            {console.log(this.state)}
+            <p>{this.state.itemList}</p>
           </div>
         );
   }
