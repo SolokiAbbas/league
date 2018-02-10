@@ -1,5 +1,5 @@
 import React from 'react';
-import utilAPI from '../util/util_items';
+import fetchItems from '../util/util_items';
 
 class Items extends React.Component{
   constructor(props){
@@ -11,7 +11,7 @@ class Items extends React.Component{
   }
   fetchItems(){
     const url ="https://na1.api.riotgames.com/lol/static-data/v3/items?locale=en_US&api_key=RGAPI-149ba0a2-62de-46e0-8c23-9ae7f2930aa1";
-    utilAPI(url).then(data=>{
+    fetchItems().then(data=>{
       this.setState({data});
     });
   }
