@@ -19,7 +19,6 @@ class Items extends React.Component{
     // fetchItems().then(data=>{
     //   this.setState({data});
     // });
-    // data=> this.setState({datas: data})
     let items = {};
       $.getJSON("../../data/items.json", function (data) {
         $.each(data, function (index, value) {
@@ -29,7 +28,7 @@ class Items extends React.Component{
   }
 
   render(){
-    
+
     if(typeof this.state.itemsList[1001] !== 'undefined'){
       return(
         <div className="jumbotron mx-auto jumbo-about">
