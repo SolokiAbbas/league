@@ -17,7 +17,7 @@ class Champions extends React.Component{
 
   fetchChampList(){
     let champs = {};
-      $.getJSON("../../data/champs.json", function (data) {
+      $.getJSON("../../data/champions.json", function (data) {
         $.each(data, function (index, value) {
             champs[index]=value;
           });

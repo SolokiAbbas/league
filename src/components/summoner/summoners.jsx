@@ -1,5 +1,5 @@
 import React from 'react';
-import utilAPI from '../util/util_sum';
+// import utilAPI from '../util/util_sum';
 
 class Summoners extends React.Component{
   constructor(props){
