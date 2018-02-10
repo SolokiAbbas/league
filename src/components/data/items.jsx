@@ -10,7 +10,7 @@ class Items extends React.Component{
     this.data = {};
     this.fetchItemsList = this.fetchItemsList.bind(this);
   }
-  componentDidMount(){
+  componentWillMount(){
     this.fetchItemsList();
   }
 
@@ -21,27 +21,25 @@ class Items extends React.Component{
     // });
     // data=> this.setState({datas: data})
     let items = {};
-    $.getJSON("../../data/items.json", function (data) {
-      $.each(data, function (index, value) {
-          items[index]=value;
-        });
-        // console.log(items.data);
-    });
-    this.setState({itemsList : items.data});
-    console.log(items.data);
+      $.getJSON("../../data/items.json", function (data) {
+        $.each(data, function (index, value) {
+            items[index]=value;
+          });
+      }).then(item => this.setState({itemsList : item.data}));
   }
 
   render(){
-    if(typeof this.state !== 'undefined'){
+    
+    if(typeof this.state.itemsList[1001] !== 'undefined'){
       return(
         <div className="jumbotron mx-auto jumbo-about">
 
-          // {console.log(this.state.itemsList)}
+          {console.log(this.state.itemsList[1001].plaintext)}
           <p></p>
         </div>
       );
      }else{
-     return(<div></div>);
+     return(<div>Undefined</div>);
     }
    }
 }
