@@ -1,4 +1,5 @@
 import React from 'react';
+import SpellDetail from './spell_detail';
 // import utilAPI from '../util/util_spells';
 
 class Spells extends React.Component{

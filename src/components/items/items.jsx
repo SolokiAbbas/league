@@ -1,4 +1,5 @@
 import React from 'react';
+import ItemDetail from './item_detail';
 // import fetchItems from '../util/util_items';
 
 class Items extends React.Component{
