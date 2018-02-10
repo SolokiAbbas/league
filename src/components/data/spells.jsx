@@ -5,8 +5,23 @@ class Spells extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      spellList: [],
+      spellsList: {},
     };
+    this.data = {};
+    this.fetchSpellsList = this.fetchSpellsList.bind(this);
+  }
+
+  componentWillMount(){
+    this.fetchSpellsList();
+  }
+
+  fetchSpellsList(){
+    let spells = {};
+      $.getJSON("../../data/spells.json", function (data) {
+        $.each(data, function (index, value) {
+            spells[index]=value;
+          });
+      }).then(spell => this.setState({spellsList : spell.data}));
   }
 
   render(){

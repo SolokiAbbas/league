@@ -14,10 +14,10 @@ class Champions extends React.Component{
   componentWillMount(){
     this.fetchChampList();
   }
-  
+
   fetchChampList(){
     let champs = {};
-      $.getJSON("../../data/items.json", function (data) {
+      $.getJSON("../../data/champs.json", function (data) {
         $.each(data, function (index, value) {
             champs[index]=value;
           });
