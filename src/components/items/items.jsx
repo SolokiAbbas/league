@@ -32,9 +32,11 @@ class Items extends React.Component{
 
     if(typeof this.state.itemsList[1001] !== 'undefined'){
       const allItems = Object.keys(this.state.itemsList).map(el=> this.state.itemsList[el]);
+      console.log(allItems);
+      console.log(this.props);
       return(
         <div className="jumbotron mx-auto jumbo-about">
-          {allItems.map(item=> <ItemDetail detail={allItems[item].plaintext} name={allItems[item].name}/>)}
+          {allItems.map((idx,item)=> <ItemDetail detail={allItems[idx.toString()].plaintext} name={allItems[idx.toString()].name}/>)}
         </div>
       );
      }else{

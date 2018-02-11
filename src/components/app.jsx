@@ -1,10 +1,10 @@
 import React from 'react';
 import NavBar from './navbar/navbar';
 import About from './navbar/about';
-import Champions from './data/champions';
-import Items from './data/items';
-import Spells from './data/spells';
-import Summoners from './data/summoners';
+import Champions from './champs/champions';
+import Items from './items/items';
+import Spells from './spells/spells';
+import Summoners from './summoner/summoners';
 import { Route } from 'react-router-dom';
 
 class App extends React.Component {
