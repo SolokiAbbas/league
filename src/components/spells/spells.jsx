@@ -26,12 +26,13 @@ class Spells extends React.Component{
   }
 
   render(){
-      if(typeof this.state.spellsList[1001] !== 'undefined'){
+      if(typeof this.state.spellsList.SummonerBarrier !== 'undefined'){
         const allSpells = Object.keys(this.state.spellsList).map(el=> this.state.spellsList[el]);
+        console.log(allSpells);
         return(
           <div className="jumbotron mx-auto jumbo-about">
             <div className="items">
-              {allSpells.map(spell => <SpellDetail key={spell.id} detail={spell.plaintext} name={spell.name} />)}
+              {allSpells.map(spell => <SpellDetail key={spell.id} detail={spell.description} name={spell.name} />)}
             </div>
           </div>
         );
