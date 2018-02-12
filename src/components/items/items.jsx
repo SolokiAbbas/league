@@ -40,7 +40,7 @@ class Items extends React.Component{
         </div>
       );
      }else{
-     return(<div>Undefined</div>);
+     return(<div>Item Not Found</div>);
     }
    }
 }
