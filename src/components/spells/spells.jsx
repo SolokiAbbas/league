@@ -26,15 +26,18 @@ class Spells extends React.Component{
   }
 
   render(){
-    return(
+      if(typeof this.state.spellsList[1001] !== 'undefined'){
+        const allSpells = Object.keys(this.state.spellsList).map(el=> this.state.spellsList[el]);
+        return(
           <div className="jumbotron mx-auto jumbo-about">
-            <p>I am experienced in Ruby on Rails and JavaScript.
-              Currently, I am working on a solo Project using Python and Django.
-              Solving difficult algorithms is my hobby.
-              I look forward to experience new technologies and challenges.
-            </p>
+            <div className="items">
+              {allSpells.map(spell => <SpellDetail key={spell.id} detail={spell.plaintext} name={spell.name} />)}
+            </div>
           </div>
         );
+       }else{
+       return(<div>Undefined</div>);
+      }
   }
 }
 
