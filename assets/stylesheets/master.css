@@ -19,3 +19,16 @@
 .jumbo-about {
   color: black;
 }
+
+.items {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-self: center;
+  flex-wrap: wrap;
+}
+
+.item-details {
+  margin-right: 5px;
+  margin-bottom: 5px;
+}

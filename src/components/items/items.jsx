@@ -34,7 +34,9 @@ class Items extends React.Component{
       const allItems = Object.keys(this.state.itemsList).map(el=> this.state.itemsList[el]);
       return(
         <div className="jumbotron mx-auto jumbo-about">
-          {allItems.map(item => <ItemDetail key={item.id} detail={item.plaintext} name={item.name} />)}
+          <div className="items">
+            {allItems.map(item => <ItemDetail key={item.id} detail={item.plaintext} name={item.name} />)}
+          </div>
         </div>
       );
      }else{
