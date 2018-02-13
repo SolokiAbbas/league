@@ -11,7 +11,6 @@ class ItemDetail extends React.Component{
             <p className="card-text">Cost: {this.props.gold.base}</p>
             <p className="card-text">Sells for: {this.props.gold.sell}</p>
             <p className="card-text">{this.props.detail}</p>
-            <a href="#" className="btn btn-primary">Go somewhere</a>
           </div>
         </div>
     );
