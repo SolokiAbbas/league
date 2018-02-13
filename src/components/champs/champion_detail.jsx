@@ -4,20 +4,23 @@ import ChampModal from './champion_modal';
 class ChampDetail extends React.Component{
   constructor(props){
     super(props);
-    this.modal = false;
+    this.state = {
+      modal: false
+    };
+
   }
 
   showModal(){
-    this.modal = true;
+    this.setState({modal:true});
   }
 
   hideModal(){
-    this.modal = false;
+    this.setState({modal:false});
   }
 
   render(){
     let title = this.props.title.charAt(0).toUpperCase() + this.props.title.slice(1);
-    if(this.modal){
+    if(this.state.modal){
       return(
           <div className="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div className="modal-dialog" role="document">
@@ -35,44 +38,77 @@ class ChampDetail extends React.Component{
                     <a className="btn btn-primary" data-toggle="collapse" href="#stats" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Stats</a>
                     <a className="btn btn-primary" data-toggle="collapse" href="#spells" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Skills</a>
                   </div>
-                    <div class="col">
-                      <div class="collapse multi-collapse" id="lore">
-                        <div class="card card-body">
+                    <div className="col">
+                      <div className="collapse multi-collapse" id="lore">
+                        <div className="card card-body">
                           {this.props.lore}
                         </div>
                       </div>
                     </div>
-                    <div class="col">
-                      <div class="collapse multi-collapse" id="stats">
-                        <div class="card card-body">
-                          <div class="card" style="width: 18rem;">
-                              <div class="card-header">
+                    <div className="col">
+                      <div className="collapse multi-collapse" id="stats">
+                        <div className="card card-body">
+                          <div className="card" style={{width: "18rem"}}>
+                              <div className="card-header">
                                 Stats
                               </div>
-                              <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Attack: {this.props.info.attack}</li>
-                                <li class="list-group-item">Magic: {this.props.info.magic}</li>
-                                <li class="list-group-item">Defense: {this.props.info.defense}</li>
-                                <li class="list-group-item">Difficulty: {this.props.info.difficulty}</li>
+                              <ul className="list-group list-group-flush">
+                                <li className="list-group-item">Attack: {this.props.info.attack}</li>
+                                <li className="list-group-item">Magic: {this.props.info.magic}</li>
+                                <li className="list-group-item">Defense: {this.props.info.defense}</li>
+                                <li className="list-group-item">Difficulty: {this.props.info.difficulty}</li>
                               </ul>
-                              <div class="card-header">
+                              <div className="card-header">
                                 Base Stats
                               </div>
-                              <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Armor: {this.props.stats.armor}</li>
-                                <li class="list-group-item">Attack Damage: {this.props.stats.attackdamage}</li>
-                                <li class="list-group-item">Health: {this.props.stats.hp}</li>
-                                <li class="list-group-item">Mana: {this.props.stats.mp}</li>
-                                <li class="list-group-item">Move Speed: {this.props.stats.movespeed}</li>
+                              <ul className="list-group list-group-flush">
+                                <li className="list-group-item">Armor: {this.props.stats.armor}</li>
+                                <li className="list-group-item">Attack Damage: {this.props.stats.attackdamage}</li>
+                                <li className="list-group-item">Health: {this.props.stats.hp}</li>
+                                <li className="list-group-item">Mana: {this.props.stats.mp}</li>
+                                <li className="list-group-item">Move Speed: {this.props.stats.movespeed}</li>
                               </ul>
                             </div>
                         </div>
                       </div>
                     </div>
-                    <div class="col">
-                      <div class="collapse multi-collapse" id="spells">
-                        <div class="card card-body">
-
+                    <div className="col">
+                      <div className="collapse multi-collapse" id="spells">
+                        <div className="card card-body">
+                            <div className="card" style={{width: "18rem"}}>
+                              <img className="card-img-top" src={`http://ddragon.leagueoflegends.com/cdn/8.3.1/img/passive/${this.props.passive.image.full}`} alt="Passive"/>
+                              <div className="card-body">
+                                <p className="card-title">{this.props.passive.name}</p>
+                                <p className="card-text">{this.props.passive.description}</p>
+                              </div>
+                              <div className="card" style={{width: "18rem"}}>
+                                <img className="card-img-top" src={`http://ddragon.leagueoflegends.com/cdn/8.3.1/img/spell/${this.props.spells["0"].image.full}`} alt="Skill 1"/>
+                                <div className="card-body">
+                                  <p className="card-title">{this.props.spells["0"].name}</p>
+                                  <p className="card-text">{this.props.spells["0"].description}</p>
+                                </div>
+                              </div>
+                              <div className="card" style={{width: "18rem"}}>
+                            <img className="card-img-top" src={`http://ddragon.leagueoflegends.com/cdn/8.3.1/img/spell/${this.props.spells["1"].image.full}`} alt="Skill 2"/>
+                            <div className="card-body">
+                              <p className="card-tile">{this.props.spells["1"].name}</p>
+                              <p className="card-text">{this.props.spells["1"].description}</p>
+                            </div>
+                          </div>
+                          <div className="card" style={{width: "18rem"}}>
+                            <img className="card-img-top" src={`http://ddragon.leagueoflegends.com/cdn/8.3.1/img/spell/${this.props.spells["2"].image.full}`} alt="Skill 3"/>
+                            <div className="card-body">
+                              <p className="card-title">{this.props.spells["2"].name}</p>
+                              <p className="card-text">{this.props.spells["2"].description}</p>
+                            </div>
+                          </div>
+                          <div className="card" style={{width: "18rem"}}>
+                            <img className="card-img-top" src={`http://ddragon.leagueoflegends.com/cdn/8.3.1/img/spell/${this.props.spells["3"].image.full}`} alt="Ultimate"/>
+                            <div className="card-body">
+                              <p className="card-title">{this.props.spells["3"].name}</p>
+                              <p className="card-text">{this.props.spells["3"].description}</p>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -80,6 +116,7 @@ class ChampDetail extends React.Component{
               </div>
             </div>
           </div>
+        </div>
       );
     }else{
     return(
@@ -90,7 +127,6 @@ class ChampDetail extends React.Component{
             <p className="card-text">"{title}"</p>
             <p className="card-text">{this.props.blurb}</p>
             <button onClick={()=>this.showModal()} className="btn btn-primary">Details!</button>
-
           </div>
         </div>
       );
