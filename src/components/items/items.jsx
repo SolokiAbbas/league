@@ -32,7 +32,6 @@ class Items extends React.Component{
 
     if(typeof this.state.itemsList[1001] !== 'undefined'){
       const allItems = Object.keys(this.state.itemsList).map(el=> this.state.itemsList[el]);
-      console.log(allItems);
       return(
         <div className="jumbotron mx-auto jumbo-about">
           <div className="items">

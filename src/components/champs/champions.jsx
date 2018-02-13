@@ -26,12 +26,21 @@ class Champions extends React.Component{
   }
 
   render(){
-    return(
-          <div className="jumbotron mx-auto jumbo-about">
-            <h3>Champions</h3>
+    if(typeof this.state.champList !== 'undefined'){
+      const allChamps = Object.keys(this.state.champList).map(el=> this.state.champList[el]);
+      console.log(allChamps);
+      return(
+        <div className="jumbotron mx-auto jumbo-about">
+          <div className="items">
+            {allChamps.map(champ => <ChampDetail key={champ.id} detail={champ.plaintext} name={champ.name}
+               image={champ.image}/>)}
           </div>
-        );
-  }
+        </div>
+      );
+     }else{
+     return(<div>Champion Not Found</div>);
+    }
+    }
 }
 
 export default Champions;
