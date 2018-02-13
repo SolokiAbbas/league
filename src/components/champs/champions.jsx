@@ -33,7 +33,8 @@ class Champions extends React.Component{
         <div className="jumbotron mx-auto jumbo-about">
           <div className="items">
             {allChamps.map(champ => <ChampDetail key={champ.id} info={champ.info} name={champ.name}
-               image={champ.image} spells={champ.spells} stats={champ.stats} title={champ.title}/>)}
+               image={champ.image} spells={champ.spells} stats={champ.stats} title={champ.title}
+               lore={champ.lore} passive={champ.passive} blurb={champ.blurb}/>)}
           </div>
         </div>
       );
