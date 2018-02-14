@@ -21,11 +21,11 @@ class ChampDetail extends React.Component{
       loading = loading.toLowerCase();
       loading = loading.charAt(0).toUpperCase() + loading.slice(1);
     }
-    
+
     return(
        <div>
               <div className="modal fade" id={`champmodal${this.props.name}`} tabIndex="-1" role="dialog" aria-labelledby="champmodal" aria-hidden="true">
-                <div className="modal-dialog" role="document">
+                <div className="modal-dialog modal-lg" role="document">
                   <div className="modal-content">
                     <div className="modal-header">
                       <h5 className="modal-title" id="exampleModalLabel">{this.props.name}</h5>
@@ -35,7 +35,7 @@ class ChampDetail extends React.Component{
                     </div>
                     <div className="modal-body">
                       <div className="row">
-                          <img src={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${loading}_0.jpg`} />
+                          <img className="loading-image" src={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${loading}_0.jpg`} />
                           <div>
                             <a className="btn btn-primary" data-toggle="collapse" href="#lore" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Lore</a>
                             <a className="btn btn-primary" data-toggle="collapse" href="#stats" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Stats</a>
