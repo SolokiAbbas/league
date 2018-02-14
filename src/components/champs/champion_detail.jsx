@@ -28,7 +28,7 @@ class ChampDetail extends React.Component{
                 <div className="modal-dialog modal-lg" role="document">
                   <div className="modal-content">
                     <div className="modal-header">
-                      <h5 className="modal-title" id="exampleModalLabel">{this.props.name}</h5>
+                      <h3 className="modal-title" id="exampleModalLabel">{this.props.name}</h3>
                       <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
@@ -40,7 +40,7 @@ class ChampDetail extends React.Component{
                               <div className="card">
                                 <div className="card-header" id="headingOne">
                                   <h5 className="mb-0">
-                                    <button className="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <button className="btn btn-link" style={{width: "47rem"}} data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                       Lore
                                     </button>
                                   </h5>
@@ -55,7 +55,7 @@ class ChampDetail extends React.Component{
                               <div className="card">
                                 <div className="card-header" id="headingTwo">
                                   <h5 className="mb-0">
-                                    <button className="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <button className="btn btn-link collapsed" style={{width: "47rem"}} data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                       Stats
                                     </button>
                                   </h5>
@@ -63,7 +63,9 @@ class ChampDetail extends React.Component{
                                 <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                                   <div className="card-body">
                                     <div className="card-header">
+                                      <h5>
                                       Stats
+                                      </h5>
                                     </div>
                                     <ul className="list-group list-group-flush">
                                       <li className="list-group-item">Attack: {this.props.info.attack}</li>
@@ -72,7 +74,9 @@ class ChampDetail extends React.Component{
                                       <li className="list-group-item">Difficulty: {this.props.info.difficulty}</li>
                                     </ul>
                                     <div className="card-header">
-                                      Base Stats
+                                      <h5>
+                                        Base Stats:
+                                      </h5>
                                     </div>
                                     <ul className="list-group list-group-flush">
                                       <li className="list-group-item">Armor: {this.props.stats.armor}</li>
@@ -87,50 +91,53 @@ class ChampDetail extends React.Component{
                               <div className="card">
                                 <div className="card-header" id="headingThree">
                                   <h5 className="mb-0">
-                                    <button className="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <button className="btn btn-link collapsed" style={{width: "47rem"}} data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                       Skills
                                     </button>
                                   </h5>
                                 </div>
                                 <div id="collapseThree" className="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                                  <div className="card-body">
-                                    <div className="card card-body">
+                                  <div className="card-body card-skills">
+                                    <div className="card card-body" style={{width: "45rem"}}>
+                                      <div className="row">
                                         <div className="card" style={{width: "12rem"}}>
-                                          <img className="card-img-top footer-image" src={`http://ddragon.leagueoflegends.com/cdn/8.3.1/img/passive/${this.props.passive.image.full}`} alt="Passive"/>
+                                          <img className="card-img-top abilities" src={`http://ddragon.leagueoflegends.com/cdn/8.3.1/img/passive/${this.props.passive.image.full}`} alt="Passive"/>
                                           <div className="card-body">
-                                            <p className="card-title">{this.props.passive.name}</p>
+                                            <h5 className="card-title">Passive: {this.props.passive.name}</h5>
                                             <p className="card-text">{this.props.passive.description}</p>
                                           </div>
+                                        </div>
                                           <div className="card" style={{width: "12rem"}}>
-                                            <img className="card-img-top footer-image" src={`http://ddragon.leagueoflegends.com/cdn/8.3.1/img/spell/${this.props.spells["0"].image.full}`} alt="Skill 1"/>
+                                            <img className="card-img-top abilities" src={`http://ddragon.leagueoflegends.com/cdn/8.3.1/img/spell/${this.props.spells["0"].image.full}`} alt="Skill 1"/>
                                             <div className="card-body">
-                                              <p className="card-title">{this.props.spells["0"].name}</p>
+                                              <h5 className="card-title">{this.props.spells["0"].name}</h5>
                                               <p className="card-text">{this.props.spells["0"].description}</p>
                                             </div>
                                           </div>
                                           <div className="card" style={{width: "12rem"}}>
-                                        <img className="card-img-top footer-image" src={`http://ddragon.leagueoflegends.com/cdn/8.3.1/img/spell/${this.props.spells["1"].image.full}`} alt="Skill 2"/>
+                                        <img className="card-img-top abilities" src={`http://ddragon.leagueoflegends.com/cdn/8.3.1/img/spell/${this.props.spells["1"].image.full}`} alt="Skill 2"/>
                                         <div className="card-body">
-                                          <p className="card-tile">{this.props.spells["1"].name}</p>
+                                          <h5 className="card-tile">{this.props.spells["1"].name}</h5>
                                           <p className="card-text">{this.props.spells["1"].description}</p>
                                         </div>
                                       </div>
                                       <div className="card" style={{width: "12rem"}}>
-                                        <img className="card-img-top footer-image" src={`http://ddragon.leagueoflegends.com/cdn/8.3.1/img/spell/${this.props.spells["2"].image.full}`} alt="Skill 3"/>
+                                        <img className="card-img-top abilities" src={`http://ddragon.leagueoflegends.com/cdn/8.3.1/img/spell/${this.props.spells["2"].image.full}`} alt="Skill 3"/>
                                         <div className="card-body">
-                                          <p className="card-title">{this.props.spells["2"].name}</p>
+                                          <h5 className="card-title">{this.props.spells["2"].name}</h5>
                                           <p className="card-text">{this.props.spells["2"].description}</p>
                                         </div>
                                       </div>
                                       <div className="card" style={{width: "12rem"}}>
-                                        <img className="card-img-top footer-image" src={`http://ddragon.leagueoflegends.com/cdn/8.3.1/img/spell/${this.props.spells["3"].image.full}`} alt="Ultimate"/>
+                                        <img className="card-img-top abilities" src={`http://ddragon.leagueoflegends.com/cdn/8.3.1/img/spell/${this.props.spells["3"].image.full}`} alt="Ultimate"/>
                                         <div className="card-body">
-                                          <p className="card-title">{this.props.spells["3"].name}</p>
+                                          <h5 className="card-title">{this.props.spells["3"].name}</h5>
                                           <p className="card-text">{this.props.spells["3"].description}</p>
                                         </div>
                                       </div>
+                                      </div>
                                     </div>
-                                  </div>
+
                                   </div>
                                 </div>
                               </div>

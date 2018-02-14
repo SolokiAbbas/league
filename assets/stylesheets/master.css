@@ -40,6 +40,12 @@
   overflow: hidden;
 }
 
+.card-skills {
+  display:flex;
+  flex-wrap: nowrap;
+}
 .abilities {
-
+  width:125px;
+  height:125px;
+  padding: 20px;
 }
