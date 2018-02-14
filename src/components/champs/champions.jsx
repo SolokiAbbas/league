@@ -28,7 +28,7 @@ class Champions extends React.Component{
   render(){
     if(typeof this.state.champList !== 'undefined'){
       const allChamps = Object.keys(this.state.champList).map(el=> this.state.champList[el]);
-      console.log(allChamps);
+
       return(
         <div className="jumbotron mx-auto jumbo-about">
           <div className="items">
