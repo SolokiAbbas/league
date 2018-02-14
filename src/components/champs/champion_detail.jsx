@@ -11,9 +11,20 @@ class ChampDetail extends React.Component{
 
   render(){
     let title = this.props.title.charAt(0).toUpperCase() + this.props.title.slice(1);
+    let loading = this.props.name.replace(/\s/g, '');
+    loading = loading.replace(/\'/g, '');
+    loading = loading.replace(/\./g, '');
+    if(loading === 'Wukong'){
+      loading = "MonkeyKing";
+    }
+    if(loading === "LeBlanc" || loading === "ChoGath" || loading === "KhaZix" || loading === "VelKoz"){
+      loading = loading.toLowerCase();
+      loading = loading.charAt(0).toUpperCase() + loading.slice(1);
+    }
+    
     return(
        <div>
-              <div className="modal fade" id="champmodal" tabIndex="-1" role="dialog" aria-labelledby="champmodal" aria-hidden="true">
+              <div className="modal fade" id={`champmodal${this.props.name}`} tabIndex="-1" role="dialog" aria-labelledby="champmodal" aria-hidden="true">
                 <div className="modal-dialog" role="document">
                   <div className="modal-content">
                     <div className="modal-header">
@@ -24,7 +35,7 @@ class ChampDetail extends React.Component{
                     </div>
                     <div className="modal-body">
                       <div className="row">
-                          <img src={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${this.props.name}_0.jpg`} />
+                          <img src={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${loading}_0.jpg`} />
                           <div>
                             <a className="btn btn-primary" data-toggle="collapse" href="#lore" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Lore</a>
                             <a className="btn btn-primary" data-toggle="collapse" href="#stats" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Stats</a>
@@ -40,7 +51,7 @@ class ChampDetail extends React.Component{
                             <div className="col">
                               <div className="collapse multi-collapse" id="stats">
                                 <div className="card card-body">
-                                  <div className="card" style={{width: "18rem"}}>
+                                  <div className="card" style={{width: "25rem"}}>
                                       <div className="card-header">
                                         Stats
                                       </div>
@@ -116,7 +127,7 @@ class ChampDetail extends React.Component{
             <h5 className="card-title">{this.props.name}</h5>
             <p className="card-text">"{title}"</p>
             <p className="card-text">{this.props.blurb}</p>
-            <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#champmodal">Details</button>
+            <button type="button" className="btn btn-primary" data-toggle="modal" data-target={`#champmodal${this.props.name}`}>Details</button>
           </div>
         </div>
       </div>
