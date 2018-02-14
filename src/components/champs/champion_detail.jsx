@@ -7,29 +7,19 @@ class ChampDetail extends React.Component{
     this.state = {
       modal: false
     };
-
-  }
-
-  showModal(){
-    this.setState({modal:true});
-  }
-
-  hideModal(){
-    this.setState({modal:false});
   }
 
   render(){
     let title = this.props.title.charAt(0).toUpperCase() + this.props.title.slice(1);
     return(
-      <div>
-        {this.state.modal === true &&
-              <div className="modal fade" id="champmodal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <div>
+              <div className="modal fade" id="champmodal" tabIndex="-1" role="dialog" aria-labelledby="champmodal" aria-hidden="true">
                 <div className="modal-dialog" role="document">
                   <div className="modal-content">
                     <div className="modal-header">
                       <h5 className="modal-title" id="exampleModalLabel">{this.props.name}</h5>
                       <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                        <span onClick={()=>this.hideModal()} aria-hidden="true">&times;</span>
+                        <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
                     <div className="modal-body">
@@ -120,14 +110,13 @@ class ChampDetail extends React.Component{
                   </div>
               </div>
             </div>
-        }
         <div className="card item-details" style={{width: '16rem'}}>
           <img className="card-img-top" style={{padding: '50px'}} src={`http://ddragon.leagueoflegends.com/cdn/8.3.1/img/champion/${this.props.image.full}`} alt="Card image cap" />
           <div className="card-body">
             <h5 className="card-title">{this.props.name}</h5>
             <p className="card-text">"{title}"</p>
             <p className="card-text">{this.props.blurb}</p>
-            <button type="button" onClick={()=>this.showModal()} className="btn btn-primary" data-toggle="modal" data-target="#champmodal">Details</button>
+            <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#champmodal">Details</button>
           </div>
         </div>
       </div>
