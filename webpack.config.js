@@ -32,5 +32,10 @@ module.exports = {
       loader: "node-loader"
     }
     ]
-  }
+  },
+    devServer: {
+      inline: true,
+      contentBase: './dist',
+      port: 5000
+    }
 };

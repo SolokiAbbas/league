@@ -6,7 +6,8 @@
 
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --hot",
+    "start":"./node_modules/webpack/bin/webpack.js -p --progress && node server.js",
+    "start:test": "webpack-dev-server --hot",
     "webpack": "webpack --watch",
     "postinstall": "webpack"
   },
@@ -24,6 +25,7 @@
     "babel-preset-react": "^6.24.1",
     "bloodhound-js": "^1.2.2",
     "es6-promise": "^4.1.1",
+    "express": "^4.14.0",
     "fetch-ie8": "^1.5.0",
     "jquery": "^3.2.1",
     "lodash": "^4.17.4",
@@ -34,7 +36,9 @@
     "react-router": "^4.1.2",
     "react-router-dom": "^4.1.2",
     "typeahead.js": "^0.11.1",
-    "whatwg-fetch": "^2.0.3"
+    "whatwg-fetch": "^2.0.3",
+    "webpack": "^3.5.4",
+    "webpack-dev-server": "2.7.1",
   },
   "repository": {
     "type": "git",
