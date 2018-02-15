@@ -37,9 +37,6 @@ module.exports = {
       { from: './src/index.html' }
     ]),
     new CopyWebpackPlugin([
-      { from: './src/vendors/phaser.min.js' }
-    ]),
-    new CopyWebpackPlugin([
       { from: './src/assets', to: 'assets' }
     ])
   ],

@@ -6,7 +6,7 @@
     "npm": "3.10.8"
   },
   "description": "--- #### APP This is an application to access League of Legends API using React.",
-  "main": "src/js/index.jsx",
+  "main": "webpack.config.js",
   "scripts": {
     "start": "./node_modules/webpack/bin/webpack.js -p --progress && node server.js",
     "dev": "webpack-dev-server",
