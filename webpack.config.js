@@ -37,6 +37,9 @@ module.exports = {
       { from: './src/index.html' }
     ]),
     new CopyWebpackPlugin([
+      { from: './src/js/index.jsx' }
+    ]),
+    new CopyWebpackPlugin([
       { from: './src/assets', to: 'assets' }
     ])
   ],
