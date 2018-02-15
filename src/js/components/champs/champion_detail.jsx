@@ -1,5 +1,4 @@
 import React from 'react';
-import ChampModal from './champion_modal';
 
 class ChampDetail extends React.Component{
   constructor(props){
@@ -36,7 +35,7 @@ class ChampDetail extends React.Component{
                     <div className="modal-body">
                       <div className="row">
                           <img className="loading-image" src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${loading}_0.jpg`} />
-                            <div id="accordion">
+                            <div id={`accordion${this.props.name}`}>
                               <div className="card">
                                 <div className="card-header" id="headingOne">
                                   <h5 className="mb-0">
@@ -46,7 +45,7 @@ class ChampDetail extends React.Component{
                                   </h5>
                                 </div>
 
-                                <div id={`collapseOne${this.props.name}`} className="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                <div id={`collapseOne${this.props.name}`} className="collapse show" aria-labelledby="headingOne" data-parent={`#accordion${this.props.name}`}>
                                   <div className="card-body">
                                     {this.props.lore}
                                   </div>
@@ -60,7 +59,7 @@ class ChampDetail extends React.Component{
                                     </button>
                                   </h5>
                                 </div>
-                                <div id={`collapseTwo${this.props.name}`} className="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                <div id={`collapseTwo${this.props.name}`} className="collapse" aria-labelledby="headingTwo" data-parent={`#accordion${this.props.name}`}>
                                   <div className="card-body">
                                     <div className="card-header">
                                       <h5>
@@ -96,7 +95,7 @@ class ChampDetail extends React.Component{
                                     </button>
                                   </h5>
                                 </div>
-                                <div id={`collapseThree${this.props.name}`} className="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                <div id={`collapseThree${this.props.name}`} className="collapse" aria-labelledby="headingThree" data-parent={`#accordion${this.props.name}`}>
                                   <div className="card-body card-skills">
                                     <div className="card card-body" style={{width: "45rem"}}>
                                       <div className="row">
