@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "--- #### APP This is an application to access League of Legends API using React.",
   "main": "webpack.config.js",
-
+  "engines": {
+    "node": "7.0.0",
+    "npm": "3.10.8"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"./node_modules/webpack/bin/webpack.js -p --progress && node server.js",
+    "start": "./node_modules/webpack/bin/webpack.js -p --progress && node server.js",
     "start:test": "webpack-dev-server --hot",
     "webpack": "webpack --watch",
     "postinstall": "webpack"
@@ -38,7 +41,7 @@
     "typeahead.js": "^0.11.1",
     "whatwg-fetch": "^2.0.3",
     "webpack": "^3.5.4",
-    "webpack-dev-server": "2.7.1",
+    "webpack-dev-server": "2.7.1"
   },
   "repository": {
     "type": "git",
