@@ -3,6 +3,12 @@
   color: white;
 }
 
+.homepage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .nav-custom {
   background-color: #e3f2fd;
   height: 40px;
