@@ -3,10 +3,7 @@
   "version": "1.0.0",
   "description": "--- #### APP This is an application to access League of Legends API using React.",
   "main": "webpack.config.js",
-  "engines": {
-    "node": "4.1.1",
-    "npm": "2.1.x"
-  },
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --hot",
