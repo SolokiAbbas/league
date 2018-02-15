@@ -5,7 +5,8 @@ module.exports = {
   entry: './src/js/index.jsx',
 
   output: {
-    path: './dist',
+    path: path.join(__dirname, 'dist'),
+    sourceMapFilename: "./bundle.js.map",
     filename: 'bundle.js'
   },
 
@@ -16,7 +17,7 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel',
         query: {
-            presets: ['es2015']
+            presets: ['es2015', 'react']
         }
       },
       {
@@ -44,8 +45,9 @@ module.exports = {
   ],
 
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['*', '.js', '.jsx']
   },
+  devtool: 'source-map',
 
   devServer: {
     inline: true,
