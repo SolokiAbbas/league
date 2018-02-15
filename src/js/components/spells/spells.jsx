@@ -36,7 +36,7 @@ class Spells extends React.Component{
           </div>
         );
        }else{
-       return(<div>Spell Not Found</div>);
+       return(<div></div>);
       }
   }
 }

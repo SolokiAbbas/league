@@ -41,7 +41,7 @@ class Items extends React.Component{
         </div>
       );
      }else{
-     return(<div>Item Not Found</div>);
+     return(<div></div>);
     }
    }
 }

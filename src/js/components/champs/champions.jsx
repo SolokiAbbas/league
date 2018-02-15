@@ -39,7 +39,7 @@ class Champions extends React.Component{
         </div>
       );
      }else{
-     return(<div>Champion Not Found</div>);
+     return(<div></div>);
     }
     }
 }
