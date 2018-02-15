@@ -33,3 +33,4 @@ the user can learn more about the champion by collapsing data in the body.
 
 1. D3 Library
 2. Search Implementation
+3. Loading Icons
