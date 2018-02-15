@@ -21,7 +21,7 @@ class Items extends React.Component{
     //   this.setState({data});
     // });
     let items = {};
-      $.getJSON("../../data/items.json", function (data) {
+      $.getJSON("../../../data/items.json", function (data) {
         $.each(data, function (index, value) {
             items[index]=value;
           });

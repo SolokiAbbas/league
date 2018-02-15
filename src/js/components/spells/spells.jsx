@@ -18,7 +18,7 @@ class Spells extends React.Component{
 
   fetchSpellsList(){
     let spells = {};
-      $.getJSON("../../data/spells.json", function (data) {
+      $.getJSON("../../../data/spells.json", function (data) {
         $.each(data, function (index, value) {
             spells[index]=value;
           });

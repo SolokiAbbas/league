@@ -3,7 +3,6 @@ var path = require("path");
 
 module.exports = {
   entry: './src/js/index.jsx',
-
   output: {
     path: path.join(__dirname, 'dist'),
     sourceMapFilename: "./bundle.js.map",
@@ -17,6 +16,14 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel',
         query: {
+            presets: ['es2015']
+        }
+      },
+      {
+        test: /\.jsx$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'babel-loader',
+        query: {
             presets: ['es2015', 'react']
         }
       },
@@ -29,12 +36,19 @@ module.exports = {
         include: /img/,
         loader: 'url'
       },
+      {
+        test: /\.node$/,
+        loader: "node-loader"
+      }
     ]
   },
 
   plugins: [
     new CopyWebpackPlugin([
-      { from: './src/index.html' }
+      { from: './index.html' }
+    ]),
+    new CopyWebpackPlugin([
+      { from: './src/data', to: 'data' }
     ]),
     new CopyWebpackPlugin([
       { from: './src/js/index.jsx' }
