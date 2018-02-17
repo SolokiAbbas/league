@@ -7,13 +7,16 @@ class Champions extends React.Component{
     super(props);
     this.state = {
       champList: {},
+      isLoading: true
     };
     this.data = {};
     this.fetchChampList = this.fetchChampList.bind(this);
   }
 
   componentWillMount(){
+    setTimeout(()=>this.setState({isLoading: false}), 1200);
     this.fetchChampList();
+
   }
 
   fetchChampList(){
@@ -32,9 +35,11 @@ class Champions extends React.Component{
       return(
         <div className="jumbotron mx-auto jumbo-about">
           <div className="items">
-            {allChamps.map(champ => <ChampDetail key={champ.id} info={champ.info} name={champ.name}
+            {this.state.isLoading ? <div className="loading-icon"></div> :
+            allChamps.map(champ => <ChampDetail key={champ.id} info={champ.info} name={champ.name}
                image={champ.image} spells={champ.spells} stats={champ.stats} title={champ.title}
-               lore={champ.lore} passive={champ.passive} blurb={champ.blurb}/>)}
+               lore={champ.lore} passive={champ.passive} blurb={champ.blurb}/>)
+             }
           </div>
         </div>
       );

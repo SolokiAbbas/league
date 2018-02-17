@@ -1,71 +1,37 @@
-@mixin cycle($secs){
-	animation:spin $secs infinite;
-	-webkit-animation:spin $secs infinite;
-	animation-timing-function: linear;
-	-webkit-animation-timing-function: linear;
-}
-
-@keyframes spin{
-	from{-webkit-transform: rotate(0deg);}
-	to{-webkit-transform: rotate(360deg);}
-}
-
-@-webkit-keyframes spin{
-	from{-webkit-transform: rotate(0deg);}
-	to{-webkit-transform: rotate(360deg);}
-}
-
 body{
-    margin:0;
-    padding:0;
+  background:#222;
+  color:#fff;
 
 }
-
-#loadIcon{
-	margin: 60px auto;
-	height:120px;
-	width:120px;
-	position:relative;
-
-	div{
-		position:absolute;
-
-		&:first-child{
-			height:120px;
-			width:120px;
-			border-radius:60px;
-			border-top:solid 10px #237699;
-			@include cycle(2s);
-		}
-
-
-		&:nth-child(2){
-			height:90px;
-			width:90px;
-			border-radius:45px;
-			border-top:solid 10px #6CC5EC;
-			top: 15px;
-			left:15px;
-			@include cycle(1.5s);
-		}
-
-		&:nth-child(3){
-			height:60px;
-			width:60px;
-			border-radius:30px;
-			border-top:solid 10px #ACDFF6;
-			top: 30px;
-			left:30px;
-			@include cycle(1s);
-		}
-		&:nth-child(4){
-			height:30px;
-			width:30px;
-			border-radius:15px;
-			border-top:solid 10px #D1EEFB;
-			top: 45px;
-			left:45px;
-			@include cycle(.5s);
-		}
-	}
+.loading-icon{
+  padding:10px;
+  margin: auto 47%;
+  width:10px;
+  height:10px;
+  border-top:20px solid #ED5548;
+  border-right:20px solid #599CD3;
+  border-bottom: 20px solid #5CBD5E;
+  border-left:20px solid #FDD901;
+  background:transparent;
+   -webkit-animation: rotate-right-round 1200ms ease-in-out infinite  alternate ;
+  -moz-animation: rotate-right-round 1200ms ease-in-out infinite  alternate ;
+ }
+@-webkit-keyframes rotate-right-round
+{
+  0% { -webkit-transform: rotate(0deg);}
+  50% {-webkit-transform: rotate(180deg); }
+ 100% {-webkit-transform: rotate(360deg);-webkit-border-radius:50%;}
+}
+@-moz-keyframes rotate-right-round
+{
+  0% { transform: rotate(0deg);}
+  50% {transform: rotate(180deg); }
+ 100% {transform: rotate(360deg);border-radius:50%;}
+}
+h1{
+  text-align:center;
+  margin:5% 0;
+  font-family: 'Droid Sans', sans-serif;
+  font-weight:normal;
+  font-size:50px;
 }
