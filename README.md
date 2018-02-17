@@ -28,9 +28,9 @@ the user can learn more about the champion by collapsing data in the body.
 6. AJAX
 7. Bootstrap
 8. Express.js server (hosted on Heroku)
+9. Loading Screen for links
 
 #### Features to be added
 
 1. D3 Library
 2. Search Implementation
-3. Loading Icons
