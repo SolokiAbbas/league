@@ -7,12 +7,14 @@ class Spells extends React.Component{
     super(props);
     this.state = {
       spellsList: {},
+      isLoading: true
     };
     this.data = {};
     this.fetchSpellsList = this.fetchSpellsList.bind(this);
   }
 
   componentWillMount(){
+    setTimeout(()=>this.setState({isLoading: false}), 800);
     this.fetchSpellsList();
   }
 
@@ -31,7 +33,10 @@ class Spells extends React.Component{
         return(
           <div className="jumbotron mx-auto jumbo-about">
             <div className="items">
-              {allSpells.map(spell => <SpellDetail key={spell.id} detail={spell.description} name={spell.name} image={spell.image}/>)}
+              {this.state.isLoading ? <div className="loading-icon"></div> :
+              allSpells.map(spell => <SpellDetail key={spell.id} detail={spell.description}
+                name={spell.name} image={spell.image}/>)
+              }
             </div>
           </div>
         );

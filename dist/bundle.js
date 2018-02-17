@@ -23676,7 +23676,7 @@ var Champions = function (_React$Component) {
 
       setTimeout(function () {
         return _this2.setState({ isLoading: false });
-      }, 1200);
+      }, 1400);
       this.fetchChampList();
     }
   }, {
@@ -24168,7 +24168,8 @@ var Items = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (Items.__proto__ || Object.getPrototypeOf(Items)).call(this, props));
 
     _this.state = {
-      itemsList: {}
+      itemsList: {},
+      isLoading: true
     };
     _this.data = {};
     _this.fetchItemsList = _this.fetchItemsList.bind(_this);
@@ -24178,12 +24179,17 @@ var Items = function (_React$Component) {
   _createClass(Items, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
+      var _this2 = this;
+
+      setTimeout(function () {
+        return _this2.setState({ isLoading: false });
+      }, 800);
       this.fetchItemsList();
     }
   }, {
     key: 'fetchItemsList',
     value: function fetchItemsList() {
-      var _this2 = this;
+      var _this3 = this;
 
       // const url ="https://na1.api.riotgames.com/lol/static-data/v3/items?locale=en_US&api_key=RGAPI-149ba0a2-62de-46e0-8c23-9ae7f2930aa1";
       // fetchItems().then(data=>{
@@ -24195,17 +24201,17 @@ var Items = function (_React$Component) {
           items[index] = value;
         });
       }).then(function (item) {
-        return _this2.setState({ itemsList: item.data });
+        return _this3.setState({ itemsList: item.data });
       });
     }
   }, {
     key: 'render',
     value: function render() {
-      var _this3 = this;
+      var _this4 = this;
 
       if (typeof this.state.itemsList[1001] !== 'undefined') {
         var allItems = Object.keys(this.state.itemsList).map(function (el) {
-          return _this3.state.itemsList[el];
+          return _this4.state.itemsList[el];
         });
         return _react2.default.createElement(
           'div',
@@ -24213,7 +24219,7 @@ var Items = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'items' },
-            allItems.map(function (item) {
+            this.state.isLoading ? _react2.default.createElement('div', { className: 'loading-icon' }) : allItems.map(function (item) {
               return _react2.default.createElement(_item_detail2.default, { key: item.id, detail: item.plaintext, name: item.name,
                 gold: item.gold, image: item.image });
             })
@@ -24346,7 +24352,8 @@ var Spells = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (Spells.__proto__ || Object.getPrototypeOf(Spells)).call(this, props));
 
     _this.state = {
-      spellsList: {}
+      spellsList: {},
+      isLoading: true
     };
     _this.data = {};
     _this.fetchSpellsList = _this.fetchSpellsList.bind(_this);
@@ -24356,12 +24363,17 @@ var Spells = function (_React$Component) {
   _createClass(Spells, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
+      var _this2 = this;
+
+      setTimeout(function () {
+        return _this2.setState({ isLoading: false });
+      }, 800);
       this.fetchSpellsList();
     }
   }, {
     key: 'fetchSpellsList',
     value: function fetchSpellsList() {
-      var _this2 = this;
+      var _this3 = this;
 
       var spells = {};
       $.getJSON("../../../data/spells.json", function (data) {
@@ -24369,17 +24381,17 @@ var Spells = function (_React$Component) {
           spells[index] = value;
         });
       }).then(function (spell) {
-        return _this2.setState({ spellsList: spell.data });
+        return _this3.setState({ spellsList: spell.data });
       });
     }
   }, {
     key: 'render',
     value: function render() {
-      var _this3 = this;
+      var _this4 = this;
 
       if (typeof this.state.spellsList.SummonerBarrier !== 'undefined') {
         var allSpells = Object.keys(this.state.spellsList).map(function (el) {
-          return _this3.state.spellsList[el];
+          return _this4.state.spellsList[el];
         });
         return _react2.default.createElement(
           'div',
@@ -24387,8 +24399,9 @@ var Spells = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'items' },
-            allSpells.map(function (spell) {
-              return _react2.default.createElement(_spell_detail2.default, { key: spell.id, detail: spell.description, name: spell.name, image: spell.image });
+            this.state.isLoading ? _react2.default.createElement('div', { className: 'loading-icon' }) : allSpells.map(function (spell) {
+              return _react2.default.createElement(_spell_detail2.default, { key: spell.id, detail: spell.description,
+                name: spell.name, image: spell.image });
             })
           )
         );

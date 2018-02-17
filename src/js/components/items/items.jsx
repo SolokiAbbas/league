@@ -7,11 +7,13 @@ class Items extends React.Component{
     super(props);
     this.state = {
       itemsList: {},
+      isLoading: true
     };
     this.data = {};
     this.fetchItemsList = this.fetchItemsList.bind(this);
   }
   componentWillMount(){
+    setTimeout(()=>this.setState({isLoading: false}), 800);
     this.fetchItemsList();
   }
 
@@ -35,8 +37,10 @@ class Items extends React.Component{
       return(
         <div className="jumbotron mx-auto jumbo-about">
           <div className="items">
-            {allItems.map(item => <ItemDetail key={item.id} detail={item.plaintext} name={item.name}
-                gold={item.gold} image={item.image}/>)}
+            {this.state.isLoading ? <div className="loading-icon"></div> :
+            allItems.map(item => <ItemDetail key={item.id} detail={item.plaintext} name={item.name}
+                gold={item.gold} image={item.image}/>)
+              }
           </div>
         </div>
       );

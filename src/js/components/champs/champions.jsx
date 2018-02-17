@@ -14,7 +14,7 @@ class Champions extends React.Component{
   }
 
   componentWillMount(){
-    setTimeout(()=>this.setState({isLoading: false}), 1200);
+    setTimeout(()=>this.setState({isLoading: false}), 1400);
     this.fetchChampList();
 
   }
