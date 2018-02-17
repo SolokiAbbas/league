@@ -19770,19 +19770,23 @@ var _about = __webpack_require__(78);
 
 var _about2 = _interopRequireDefault(_about);
 
+var _welcome = __webpack_require__(86);
+
+var _welcome2 = _interopRequireDefault(_welcome);
+
 var _champions = __webpack_require__(79);
 
 var _champions2 = _interopRequireDefault(_champions);
 
-var _items = __webpack_require__(82);
+var _items = __webpack_require__(81);
 
 var _items2 = _interopRequireDefault(_items);
 
-var _spells = __webpack_require__(84);
+var _spells = __webpack_require__(83);
 
 var _spells2 = _interopRequireDefault(_spells);
 
-var _summoners = __webpack_require__(86);
+var _summoners = __webpack_require__(85);
 
 var _summoners2 = _interopRequireDefault(_summoners);
 
@@ -19811,7 +19815,8 @@ var App = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _navbar2.default }),
+        _react2.default.createElement(_navbar2.default, null),
+        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _welcome2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { path: '/about', component: _about2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { path: '/champions', component: _champions2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { path: '/items', component: _items2.default }),
@@ -19843,6 +19848,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(15);
 
+var _welcome = __webpack_require__(86);
+
+var _welcome2 = _interopRequireDefault(_welcome);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var NavBar = function NavBar() {
@@ -19864,13 +19873,18 @@ var NavBar = function NavBar() {
       ),
       _react2.default.createElement(
         _reactRouterDom.Link,
-        { className: 'navbar-brand', to: '/champions' },
-        'Champions'
+        { className: 'navbar-brand', to: '/' },
+        'Stats'
       ),
       _react2.default.createElement(
         _reactRouterDom.Link,
         { className: 'navbar-brand', to: '/summoners' },
         'Summoners'
+      ),
+      _react2.default.createElement(
+        _reactRouterDom.Link,
+        { className: 'navbar-brand', to: '/champions' },
+        'Champions'
       ),
       _react2.default.createElement(
         _reactRouterDom.Link,
@@ -24067,8 +24081,7 @@ var ChampDetail = function (_React$Component) {
 exports.default = ChampDetail;
 
 /***/ }),
-/* 81 */,
-/* 82 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24084,7 +24097,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _item_detail = __webpack_require__(83);
+var _item_detail = __webpack_require__(82);
 
 var _item_detail2 = _interopRequireDefault(_item_detail);
 
@@ -24170,7 +24183,7 @@ var Items = function (_React$Component) {
 exports.default = Items;
 
 /***/ }),
-/* 83 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24246,7 +24259,7 @@ var ItemDetail = function (_React$Component) {
 exports.default = ItemDetail;
 
 /***/ }),
-/* 84 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24262,7 +24275,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _spell_detail = __webpack_require__(85);
+var _spell_detail = __webpack_require__(84);
 
 var _spell_detail2 = _interopRequireDefault(_spell_detail);
 
@@ -24343,7 +24356,7 @@ var Spells = function (_React$Component) {
 exports.default = Spells;
 
 /***/ }),
-/* 85 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24407,7 +24420,7 @@ var SpellDetail = function (_React$Component) {
 exports.default = SpellDetail;
 
 /***/ }),
-/* 86 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24456,7 +24469,7 @@ var Summoners = function (_React$Component) {
         _react2.default.createElement(
           "p",
           null,
-          "I am experienced in Ruby on Rails and JavaScript. Currently, I am working on a solo Project using Python and Django. Solving difficult algorithms is my hobby. I look forward to experience new technologies and challenges."
+          "Under Construction!"
         )
       );
     }
@@ -24466,6 +24479,49 @@ var Summoners = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Summoners;
+
+/***/ }),
+/* 86 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(15);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Welcome = function Welcome() {
+  return _react2.default.createElement(
+    'div',
+    { className: 'homepage' },
+    _react2.default.createElement(
+      'h2',
+      { className: 'text-center' },
+      'Welcome to League-Watcher Site!!'
+    ),
+    _react2.default.createElement(
+      'h2',
+      { className: 'text-center' },
+      'Here you find out about champions, spells, and items currently on League of Legends!!'
+    ),
+    _react2.default.createElement(
+      'h2',
+      { className: 'text-center' },
+      'Click on the Links above to find out more!'
+    )
+  );
+};
+
+exports.default = Welcome;
 
 /***/ })
 /******/ ]);

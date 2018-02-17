@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from './navbar/navbar';
 import About from './navbar/about';
+import Welcome from './navbar/welcome';
 import Champions from './champs/champions';
 import Items from './items/items';
 import Spells from './spells/spells';
@@ -11,7 +12,8 @@ class App extends React.Component {
   render(){
     return(
       <div>
-        <Route path="/" component={ NavBar } />
+        <NavBar />
+        <Route exact path="/" component={ Welcome } />
         <Route path="/about" component={ About } />
         <Route path="/champions" component={ Champions } />
         <Route path="/items" component={ Items } />

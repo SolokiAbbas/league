@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Welcome from './welcome';
 
 const NavBar = () => (
       <div>
@@ -12,6 +13,7 @@ const NavBar = () => (
           <Link className="navbar-brand" to="/spells">Summoner Spells</Link>
           <Link className="navbar-brand" to="/items">Summoner Items</Link>
         </nav>
+        
       </div>
     );
 
