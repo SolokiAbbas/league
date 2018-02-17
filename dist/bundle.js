@@ -24495,28 +24495,26 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(15);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Welcome = function Welcome() {
   return _react2.default.createElement(
-    'div',
-    { className: 'homepage' },
+    "div",
+    { className: "homepage" },
     _react2.default.createElement(
-      'h2',
-      { className: 'text-center' },
-      'Welcome to League-Watcher Site!!'
+      "h2",
+      { className: "text-center" },
+      "Welcome to League-Watcher Site!!"
     ),
     _react2.default.createElement(
-      'h2',
-      { className: 'text-center' },
-      'Here you find out about champions, spells, and items currently on League of Legends!!'
+      "h2",
+      { className: "text-center" },
+      "Here you find out about champions, spells, and items currently on League of Legends!!"
     ),
     _react2.default.createElement(
-      'h2',
-      { className: 'text-center' },
-      'Click on the Links above to find out more!'
+      "h2",
+      { className: "text-center" },
+      "Click on the Links above to find out more!"
     )
   );
 };
