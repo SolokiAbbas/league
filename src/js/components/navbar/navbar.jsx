@@ -25,6 +25,10 @@ const NavBar = () => (
             <img className="nav-images" src="../../../assets/images/rune.png" />
             <Link className="navbar-brand nav-size" to="/items">Items</Link>
 
+            <img className="nav-images" src="../../../assets/images/rune.png" />
+            <Link className="navbar-brand nav-size" to="/search">Search</Link>
+            <img className="nav-search" src="../../../assets/images/search.png" />
+
         </nav>
 
       </div>

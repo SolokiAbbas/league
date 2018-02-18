@@ -15,7 +15,7 @@
 }
 
 .nav-size{
-  font-size: 25px !important;
+  font-size: 22px !important;
   margin-right: 20px !important;
 }
 
@@ -23,6 +23,12 @@
   height: 18px;
   width: 18px;
   margin-right: 15px;
+}
+
+.nav-search {
+  height: 20px;
+  width: 20px;
+  margin-left: -15px;
 }
 
 .footer-image {
