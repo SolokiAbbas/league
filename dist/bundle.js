@@ -2407,6 +2407,11 @@ var Welcome = function Welcome() {
     _react2.default.createElement(
       "h2",
       { className: "text-center" },
+      "Search for your favorite Champs and Learn more about them!"
+    ),
+    _react2.default.createElement(
+      "h2",
+      { className: "text-center" },
       "Click on the Links above to find out more!"
     )
   );
