@@ -24579,6 +24579,10 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _champions = __webpack_require__(81);
+
+var _champions2 = _interopRequireDefault(_champions);
+
 var _reactSearchInput = __webpack_require__(89);
 
 var _reactSearchInput2 = _interopRequireDefault(_reactSearchInput);
@@ -24590,6 +24594,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var KEYS_TO_FILTERS = ['user.name'];
 
 var Search = function (_React$Component) {
   _inherits(Search, _React$Component);
@@ -24608,9 +24614,19 @@ var Search = function (_React$Component) {
   }
 
   _createClass(Search, [{
+    key: 'searchUpdate',
+    value: function searchUpdate(term) {
+      this.setState({ searchTerm: term });
+    }
+  }, {
     key: 'render',
     value: function render() {
-      return _react2.default.createElement('div', null);
+      var filteredChamps = emails.filter((0, _reactSearchInput.createFilter)(this.state.searchTerm, KEYS_TO_FILTERS));
+      return _react2.default.createElement(
+        'div',
+        { className: 'jumbotron mx-auto jumbo-about' },
+        _react2.default.createElement(_reactSearchInput2.default, { className: 'search-input', onChange: this.searchUpdated })
+      );
     }
   }]);
 
