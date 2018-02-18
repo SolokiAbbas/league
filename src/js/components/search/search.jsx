@@ -11,6 +11,12 @@ class Search extends React.Component{
     this.searchUpdate = this.searchUpdate.bind(this);
   }
 
+  render(){
+    return (
+      <div>
+      </div>
+    );
+  }
 
 }
 
