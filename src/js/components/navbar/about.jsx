@@ -2,11 +2,11 @@ import React from 'react';
 
 const About = () => (
       <div className="jumbotron mx-auto jumbo-about">
-        <p>I am experienced in Ruby on Rails and JavaScript.
+        <h4>I am experienced in Ruby on Rails and JavaScript.
           Currently, I am working on a solo Project using Python and Django.
           Solving difficult algorithms is my hobby.
           I look forward to experience new technologies and challenges.
-        </p>
+        </h4>
       </div>
     );
 

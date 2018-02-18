@@ -8,6 +8,7 @@ class Champions extends React.Component{
       champList: {},
       isLoading: true
     };
+    
     this.data = {};
     this.fetchChampList = this.fetchChampList.bind(this);
   }

@@ -1,6 +1,5 @@
 import React from 'react';
 import ItemDetail from './item_detail';
-// import fetchItems from '../util/util_items';
 
 class Items extends React.Component{
   constructor(props){
@@ -9,6 +8,7 @@ class Items extends React.Component{
       itemsList: {},
       isLoading: true
     };
+
     this.data = {};
     this.fetchItemsList = this.fetchItemsList.bind(this);
   }

@@ -23617,7 +23617,7 @@ var About = function About() {
     "div",
     { className: "jumbotron mx-auto jumbo-about" },
     _react2.default.createElement(
-      "p",
+      "h4",
       null,
       "I am experienced in Ruby on Rails and JavaScript. Currently, I am working on a solo Project using Python and Django. Solving difficult algorithms is my hobby. I look forward to experience new technologies and challenges."
     )
@@ -23668,6 +23668,7 @@ var Champions = function (_React$Component) {
       champList: {},
       isLoading: true
     };
+
     _this.data = {};
     _this.fetchChampList = _this.fetchChampList.bind(_this);
     return _this;
@@ -24161,8 +24162,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// import fetchItems from '../util/util_items';
-
 var Items = function (_React$Component) {
   _inherits(Items, _React$Component);
 
@@ -24175,6 +24174,7 @@ var Items = function (_React$Component) {
       itemsList: {},
       isLoading: true
     };
+
     _this.data = {};
     _this.fetchItemsList = _this.fetchItemsList.bind(_this);
     return _this;
