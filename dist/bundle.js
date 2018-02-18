@@ -19907,31 +19907,37 @@ var NavBar = function NavBar() {
                 { className: 'navbar-brand nav-size', to: '/' },
                 'Home'
             ),
+            _react2.default.createElement('img', { className: 'nav-images', src: '../../../assets/images/teemo.png' }),
             _react2.default.createElement(
                 _reactRouterDom.Link,
                 { className: 'navbar-brand nav-size', to: '/about' },
                 'About'
             ),
+            _react2.default.createElement('img', { className: 'nav-images', src: '../../../assets/images/teemo.png' }),
             _react2.default.createElement(
                 _reactRouterDom.Link,
                 { className: 'navbar-brand nav-size', to: '/' },
                 'Stats'
             ),
+            _react2.default.createElement('img', { className: 'nav-images', src: '../../../assets/images/teemo.png' }),
             _react2.default.createElement(
                 _reactRouterDom.Link,
                 { className: 'navbar-brand nav-size', to: '/summoners' },
                 'Summoners'
             ),
+            _react2.default.createElement('img', { className: 'nav-images', src: '../../../assets/images/teemo.png' }),
             _react2.default.createElement(
                 _reactRouterDom.Link,
                 { className: 'navbar-brand nav-size', to: '/champions' },
                 'Champions'
             ),
+            _react2.default.createElement('img', { className: 'nav-images', src: '../../../assets/images/teemo.png' }),
             _react2.default.createElement(
                 _reactRouterDom.Link,
                 { className: 'navbar-brand nav-size', to: '/spells' },
                 'Spells'
             ),
+            _react2.default.createElement('img', { className: 'nav-images', src: '../../../assets/images/teemo.png' }),
             _react2.default.createElement(
                 _reactRouterDom.Link,
                 { className: 'navbar-brand nav-size', to: '/items' },

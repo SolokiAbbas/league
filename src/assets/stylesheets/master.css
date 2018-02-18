@@ -16,7 +16,13 @@
 
 .nav-size{
   font-size: 25px !important;
-  margin-right: 40px !important;
+  margin-right: 20px !important;
+}
+
+.nav-images {
+  height: 22px;
+  width: 22px;
+  margin-right: 10px;
 }
 
 .footer-image {
