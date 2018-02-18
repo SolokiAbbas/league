@@ -11,7 +11,11 @@
 
 .nav-custom {
   background-color: #e3f2fd;
-  height: 40px;
+  height: 55px;
+}
+
+.nav-size{
+  font-size: 25px !important;
 }
 
 .footer-image {

@@ -5,15 +5,23 @@ import Welcome from './welcome';
 const NavBar = () => (
       <div>
         <nav className="navbar navbar-expand-lg navbar-light nav-custom">
-          <Link className="navbar-brand" to="/">Home</Link>
-          <Link className="navbar-brand" to="/about">About</Link>
-          <Link className="navbar-brand" to="/">Stats</Link>
-          <Link className="navbar-brand" to="/summoners">Summoners</Link>
-          <Link className="navbar-brand" to="/champions">Champions</Link>
-          <Link className="navbar-brand" to="/spells">Summoner Spells</Link>
-          <Link className="navbar-brand" to="/items">Summoner Items</Link>
+
+            <Link className="navbar-brand nav-size" to="/">Home</Link>
+
+            <Link className="navbar-brand nav-size" to="/about">About</Link>
+
+            <Link className="navbar-brand nav-size" to="/">Stats</Link>
+
+            <Link className="navbar-brand nav-size" to="/summoners">Summoners</Link>
+
+            <Link className="navbar-brand nav-size" to="/champions">Champions</Link>
+
+            <Link className="navbar-brand nav-size" to="/spells">Spells</Link>
+
+            <Link className="navbar-brand nav-size" to="/items">Items</Link>
+
         </nav>
-        
+
       </div>
     );
 
