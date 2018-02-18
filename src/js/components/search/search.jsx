@@ -5,10 +5,13 @@ class Search extends React.Component{
   constructor(){
     super();
     this.state = {
-      searchTerm: ''
+      searchTerm: '',
+      champList: {}
     };
     this.searchUpdate = this.searchUpdate.bind(this);
   }
+
+
 }
 
 export default Search;

@@ -2407,7 +2407,7 @@ var Welcome = function Welcome() {
     _react2.default.createElement(
       "h2",
       { className: "text-center" },
-      "Search for your favorite Champs and Learn more about them!"
+      "Search for your favorite Champions and learn more about them!"
     ),
     _react2.default.createElement(
       "h2",
@@ -24598,7 +24598,8 @@ var Search = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (Search.__proto__ || Object.getPrototypeOf(Search)).call(this));
 
     _this.state = {
-      searchTerm: ''
+      searchTerm: '',
+      champList: {}
     };
     _this.searchUpdate = _this.searchUpdate.bind(_this);
     return _this;
