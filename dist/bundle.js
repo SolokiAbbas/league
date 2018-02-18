@@ -24579,10 +24579,6 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _champions = __webpack_require__(81);
-
-var _champions2 = _interopRequireDefault(_champions);
-
 var _reactSearchInput = __webpack_require__(89);
 
 var _reactSearchInput2 = _interopRequireDefault(_reactSearchInput);
@@ -24595,7 +24591,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var KEYS_TO_FILTERS = ['user.name'];
+var KEYS_TO_FILTERS = ['champ.name'];
 
 var Search = function (_React$Component) {
   _inherits(Search, _React$Component);
@@ -24610,10 +24606,30 @@ var Search = function (_React$Component) {
       champList: {}
     };
     _this.searchUpdate = _this.searchUpdate.bind(_this);
+    _this.fetchChampList = _this.fetchChampList.bind(_this);
     return _this;
   }
 
   _createClass(Search, [{
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      this.fetchChampList();
+    }
+  }, {
+    key: 'fetchChampList',
+    value: function fetchChampList() {
+      var _this2 = this;
+
+      var champs = {};
+      $.getJSON("../../../data/champions.json", function (data) {
+        $.each(data, function (index, value) {
+          champs[index] = value;
+        });
+      }).then(function (champ) {
+        return _this2.setState({ champList: champ.data });
+      });
+    }
+  }, {
     key: 'searchUpdate',
     value: function searchUpdate(term) {
       this.setState({ searchTerm: term });
@@ -24621,10 +24637,10 @@ var Search = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       var allChamps = Object.keys(this.state.champList).map(function (el) {
-        return _this2.state.champList[el];
+        return _this3.state.champList[el];
       });
       var filteredChamps = allChamps.filter((0, _reactSearchInput.createFilter)(this.state.searchTerm, KEYS_TO_FILTERS));
 

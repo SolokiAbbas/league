@@ -1,8 +1,7 @@
 import React from 'react';
-import fetchChampList from '../champs/champions';
 import SearchInput, {createFilter} from 'react-search-input';
 
-const KEYS_TO_FILTERS = ['user.name'];
+const KEYS_TO_FILTERS = ['champ.name'];
 
 class Search extends React.Component{
   constructor(){
@@ -12,6 +11,20 @@ class Search extends React.Component{
       champList: {}
     };
     this.searchUpdate = this.searchUpdate.bind(this);
+    this.fetchChampList = this.fetchChampList.bind(this);
+  }
+
+  componentWillMount(){
+    this.fetchChampList();
+  }
+
+  fetchChampList(){
+    let champs = {};
+      $.getJSON("../../../data/champions.json", function (data) {
+        $.each(data, function (index, value) {
+            champs[index]=value;
+          });
+      }).then(champ => this.setState({champList : champ.data}));
   }
 
   searchUpdate(term) {
