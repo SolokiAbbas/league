@@ -24621,11 +24621,33 @@ var Search = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var filteredChamps = emails.filter((0, _reactSearchInput.createFilter)(this.state.searchTerm, KEYS_TO_FILTERS));
+      var _this2 = this;
+
+      var allChamps = Object.keys(this.state.champList).map(function (el) {
+        return _this2.state.champList[el];
+      });
+      var filteredChamps = allChamps.filter((0, _reactSearchInput.createFilter)(this.state.searchTerm, KEYS_TO_FILTERS));
+
       return _react2.default.createElement(
         'div',
         { className: 'jumbotron mx-auto jumbo-about' },
-        _react2.default.createElement(_reactSearchInput2.default, { className: 'search-input', onChange: this.searchUpdated })
+        _react2.default.createElement(_reactSearchInput2.default, { className: 'search-input', onChange: this.searchUpdated }),
+        filteredChamps.map(function (champ) {
+          return _react2.default.createElement(
+            'div',
+            { className: 'mail', key: champ.id },
+            _react2.default.createElement(
+              'div',
+              { className: 'from' },
+              champ.name
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'subject' },
+              champ.title
+            )
+          );
+        })
       );
     }
   }]);
