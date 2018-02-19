@@ -43,15 +43,15 @@ class Champions extends React.Component{
 
   render(){
     if(typeof this.state.champList !== 'undefined'){
-      this.allChamps = this.allChamps.filter(createFilter(this.state.searchTerm, KEYS_TO_FILTERS));
+      let filteredChamps = this.allChamps.filter(createFilter(this.state.searchTerm, KEYS_TO_FILTERS));
       return(
         <div className="jumbotron mx-auto jumbo-about">
           <div className="items">
             {this.state.isLoading ? <div className="loading-icon"></div> :
               <div>
-                <SearchInput className="search-input" onChange={this.searchUpdate} />
+                <SearchInput className="search-input search" onChange={this.searchUpdate} />
                 <div className="main-body">
-                  {this.allChamps.map(champ => <ChampDetail key={champ.id} info={champ.info} name={champ.name}
+                  {filteredChamps.map(champ => <ChampDetail key={champ.id} info={champ.info} name={champ.name}
                     image={champ.image} spells={champ.spells} stats={champ.stats} title={champ.title}
                     lore={champ.lore} passive={champ.passive} blurb={champ.blurb}/>)}
                 </div>

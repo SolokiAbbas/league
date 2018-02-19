@@ -23744,7 +23744,7 @@ var Champions = function (_React$Component) {
     key: 'render',
     value: function render() {
       if (typeof this.state.champList !== 'undefined') {
-        this.allChamps = this.allChamps.filter((0, _reactSearchInput.createFilter)(this.state.searchTerm, KEYS_TO_FILTERS));
+        var filteredChamps = this.allChamps.filter((0, _reactSearchInput.createFilter)(this.state.searchTerm, KEYS_TO_FILTERS));
         return _react2.default.createElement(
           'div',
           { className: 'jumbotron mx-auto jumbo-about' },
@@ -23754,11 +23754,11 @@ var Champions = function (_React$Component) {
             this.state.isLoading ? _react2.default.createElement('div', { className: 'loading-icon' }) : _react2.default.createElement(
               'div',
               null,
-              _react2.default.createElement(_reactSearchInput2.default, { className: 'search-input', onChange: this.searchUpdate }),
+              _react2.default.createElement(_reactSearchInput2.default, { className: 'search-input search', onChange: this.searchUpdate }),
               _react2.default.createElement(
                 'div',
                 { className: 'main-body' },
-                this.allChamps.map(function (champ) {
+                filteredChamps.map(function (champ) {
                   return _react2.default.createElement(_champion_detail2.default, { key: champ.id, info: champ.info, name: champ.name,
                     image: champ.image, spells: champ.spells, stats: champ.stats, title: champ.title,
                     lore: champ.lore, passive: champ.passive, blurb: champ.blurb });

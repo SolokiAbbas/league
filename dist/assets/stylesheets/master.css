@@ -79,3 +79,10 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.search {
+  font-size: 20px;
+  justify-content: center;
+  display: flex;
+  margin-bottom: 35px;
+}
