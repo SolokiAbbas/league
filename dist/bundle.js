@@ -19871,8 +19871,7 @@ var App = function (_React$Component) {
         _react2.default.createElement(_reactRouterDom.Route, { path: '/champions', component: _champions2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { path: '/items', component: _items2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { path: '/spells', component: _spells2.default }),
-        _react2.default.createElement(_reactRouterDom.Route, { path: '/summoners', component: _summoners2.default }),
-        _react2.default.createElement(_reactRouterDom.Route, { path: '/search', component: _search2.default })
+        _react2.default.createElement(_reactRouterDom.Route, { path: '/summoners', component: _summoners2.default })
       );
     }
   }]);
@@ -19952,14 +19951,7 @@ var NavBar = function NavBar() {
                 _reactRouterDom.Link,
                 { className: 'navbar-brand nav-size', to: '/items' },
                 'Items'
-            ),
-            _react2.default.createElement('img', { className: 'nav-images', src: '../../../assets/images/rune.png' }),
-            _react2.default.createElement(
-                _reactRouterDom.Link,
-                { className: 'navbar-brand nav-size', to: '/search' },
-                'Search'
-            ),
-            _react2.default.createElement('img', { className: 'nav-search', src: '../../../assets/images/search.png' })
+            )
         )
     );
 };
