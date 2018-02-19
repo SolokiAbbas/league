@@ -23646,13 +23646,540 @@ exports.default = About;
 /***/ }),
 /* 80 */,
 /* 81 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-throw new Error("Module build failed: SyntaxError: Unexpected token, expected } (49:18)\n\n\u001b[0m \u001b[90m 47 | \u001b[39m\n \u001b[90m 48 | \u001b[39m                \u001b[33m<\u001b[39m\u001b[33mSearchInput\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"search-input\"\u001b[39m onChange\u001b[33m=\u001b[39m{\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msearchUpdate} \u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 49 | \u001b[39m                  {allChamps\u001b[33m.\u001b[39mmap(champ \u001b[33m=>\u001b[39m \u001b[33m<\u001b[39m\u001b[33mChampDetail\u001b[39m key\u001b[33m=\u001b[39m{champ\u001b[33m.\u001b[39mid} info\u001b[33m=\u001b[39m{champ\u001b[33m.\u001b[39minfo} name\u001b[33m=\u001b[39m{champ\u001b[33m.\u001b[39mname}\n \u001b[90m    | \u001b[39m                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 50 | \u001b[39m                    image\u001b[33m=\u001b[39m{champ\u001b[33m.\u001b[39mimage} spells\u001b[33m=\u001b[39m{champ\u001b[33m.\u001b[39mspells} stats\u001b[33m=\u001b[39m{champ\u001b[33m.\u001b[39mstats} title\u001b[33m=\u001b[39m{champ\u001b[33m.\u001b[39mtitle}\n \u001b[90m 51 | \u001b[39m                    lore\u001b[33m=\u001b[39m{champ\u001b[33m.\u001b[39mlore} passive\u001b[33m=\u001b[39m{champ\u001b[33m.\u001b[39mpassive} blurb\u001b[33m=\u001b[39m{champ\u001b[33m.\u001b[39mblurb}\u001b[33m/\u001b[39m\u001b[33m>\u001b[39m)}\n \u001b[90m 52 | \u001b[39m\u001b[0m\n");
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _champion_detail = __webpack_require__(82);
+
+var _champion_detail2 = _interopRequireDefault(_champion_detail);
+
+var _reactSearchInput = __webpack_require__(89);
+
+var _reactSearchInput2 = _interopRequireDefault(_reactSearchInput);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var KEYS_TO_FILTERS = ['name'];
+
+var Champions = function (_React$Component) {
+  _inherits(Champions, _React$Component);
+
+  function Champions(props) {
+    _classCallCheck(this, Champions);
+
+    var _this = _possibleConstructorReturn(this, (Champions.__proto__ || Object.getPrototypeOf(Champions)).call(this, props));
+
+    _this.state = {
+      champList: {},
+      isLoading: true,
+      searchTerm: ''
+    };
+
+    _this.allChamps = [];
+    _this.fetchChampList = _this.fetchChampList.bind(_this);
+    _this.searchUpdate = _this.searchUpdate.bind(_this);
+    _this.selectChamps = _this.selectChamps.bind(_this);
+    return _this;
+  }
+
+  _createClass(Champions, [{
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      var _this2 = this;
+
+      setTimeout(function () {
+        return _this2.setState({ isLoading: false });
+      }, 1400);
+      this.fetchChampList();
+    }
+  }, {
+    key: 'searchUpdate',
+    value: function searchUpdate(term) {
+      this.setState({ searchTerm: term });
+    }
+  }, {
+    key: 'fetchChampList',
+    value: function fetchChampList() {
+      var _this3 = this;
+
+      var champs = {};
+      $.getJSON("../../../data/champions.json", function (data) {
+        $.each(data, function (index, value) {
+          champs[index] = value;
+        });
+      }).then(function (champ) {
+        return _this3.setState({ champList: champ.data });
+      }).then(function (allChamp) {
+        return _this3.selectChamps();
+      });
+    }
+  }, {
+    key: 'selectChamps',
+    value: function selectChamps() {
+      var _this4 = this;
+
+      this.allChamps = Object.keys(this.state.champList).map(function (el) {
+        return _this4.state.champList[el];
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      if (typeof this.state.champList !== 'undefined') {
+        this.allChamps = this.allChamps.filter((0, _reactSearchInput.createFilter)(this.state.searchTerm, KEYS_TO_FILTERS));
+        return _react2.default.createElement(
+          'div',
+          { className: 'jumbotron mx-auto jumbo-about' },
+          _react2.default.createElement(
+            'div',
+            { className: 'items' },
+            this.state.isLoading ? _react2.default.createElement('div', { className: 'loading-icon' }) : _react2.default.createElement(
+              'div',
+              null,
+              _react2.default.createElement(_reactSearchInput2.default, { className: 'search-input', onChange: this.searchUpdate }),
+              _react2.default.createElement(
+                'div',
+                { className: 'main-body' },
+                this.allChamps.map(function (champ) {
+                  return _react2.default.createElement(_champion_detail2.default, { key: champ.id, info: champ.info, name: champ.name,
+                    image: champ.image, spells: champ.spells, stats: champ.stats, title: champ.title,
+                    lore: champ.lore, passive: champ.passive, blurb: champ.blurb });
+                })
+              )
+            )
+          )
+        );
+      } else {
+        return _react2.default.createElement('div', null);
+      }
+    }
+  }]);
+
+  return Champions;
+}(_react2.default.Component);
+
+exports.default = Champions;
 
 /***/ }),
-/* 82 */,
+/* 82 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ChampDetail = function (_React$Component) {
+  _inherits(ChampDetail, _React$Component);
+
+  function ChampDetail(props) {
+    _classCallCheck(this, ChampDetail);
+
+    var _this = _possibleConstructorReturn(this, (ChampDetail.__proto__ || Object.getPrototypeOf(ChampDetail)).call(this, props));
+
+    _this.state = {
+      modal: false
+    };
+    return _this;
+  }
+
+  _createClass(ChampDetail, [{
+    key: 'render',
+    value: function render() {
+      var title = this.props.title.charAt(0).toUpperCase() + this.props.title.slice(1);
+      var loading = this.props.name.replace(/\s/g, '');
+      loading = loading.replace(/\'/g, '');
+      loading = loading.replace(/\./g, '');
+      if (loading === 'Wukong') {
+        loading = "MonkeyKing";
+      }
+      if (loading === "LeBlanc" || loading === "ChoGath" || loading === "KhaZix" || loading === "VelKoz") {
+        loading = loading.toLowerCase();
+        loading = loading.charAt(0).toUpperCase() + loading.slice(1);
+      }
+
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'div',
+          { className: 'modal fade', id: 'champmodal' + this.props.name, tabIndex: '-1', role: 'dialog', 'aria-labelledby': 'champmodal', 'aria-hidden': 'true' },
+          _react2.default.createElement(
+            'div',
+            { className: 'modal-dialog modal-lg', role: 'document' },
+            _react2.default.createElement(
+              'div',
+              { className: 'modal-content' },
+              _react2.default.createElement(
+                'div',
+                { className: 'modal-header' },
+                _react2.default.createElement(
+                  'h3',
+                  { className: 'modal-title', id: 'exampleModalLabel' },
+                  this.props.name
+                ),
+                _react2.default.createElement(
+                  'button',
+                  { type: 'button', className: 'close', 'data-dismiss': 'modal', 'aria-label': 'Close' },
+                  _react2.default.createElement(
+                    'span',
+                    { 'aria-hidden': 'true' },
+                    '\xD7'
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'modal-body' },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'row' },
+                  _react2.default.createElement('img', { className: 'loading-image', src: 'http://ddragon.leagueoflegends.com/cdn/img/champion/splash/' + loading + '_0.jpg' }),
+                  _react2.default.createElement(
+                    'div',
+                    { id: 'accordion' + this.props.name },
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'card' },
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'card-header', id: 'headingOne' },
+                        _react2.default.createElement(
+                          'h5',
+                          { className: 'mb-0' },
+                          _react2.default.createElement(
+                            'button',
+                            { className: 'btn btn-link', style: { width: "47rem" }, 'data-toggle': 'collapse', 'data-target': '#collapseOne' + this.props.name, 'aria-expanded': 'true', 'aria-controls': 'collapseOne' },
+                            'Lore'
+                          )
+                        )
+                      ),
+                      _react2.default.createElement(
+                        'div',
+                        { id: 'collapseOne' + this.props.name, className: 'collapse show', 'aria-labelledby': 'headingOne', 'data-parent': '#accordion' + this.props.name },
+                        _react2.default.createElement(
+                          'div',
+                          { className: 'card-body' },
+                          this.props.lore
+                        )
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'card' },
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'card-header', id: 'headingTwo' },
+                        _react2.default.createElement(
+                          'h5',
+                          { className: 'mb-0' },
+                          _react2.default.createElement(
+                            'button',
+                            { className: 'btn btn-link collapsed', style: { width: "47rem" }, 'data-toggle': 'collapse', 'data-target': '#collapseTwo' + this.props.name, 'aria-expanded': 'false', 'aria-controls': 'collapseTwo' },
+                            'Stats'
+                          )
+                        )
+                      ),
+                      _react2.default.createElement(
+                        'div',
+                        { id: 'collapseTwo' + this.props.name, className: 'collapse', 'aria-labelledby': 'headingTwo', 'data-parent': '#accordion' + this.props.name },
+                        _react2.default.createElement(
+                          'div',
+                          { className: 'card-body' },
+                          _react2.default.createElement(
+                            'div',
+                            { className: 'card-header' },
+                            _react2.default.createElement(
+                              'h5',
+                              null,
+                              'Stats'
+                            )
+                          ),
+                          _react2.default.createElement(
+                            'ul',
+                            { className: 'list-group list-group-flush' },
+                            _react2.default.createElement(
+                              'li',
+                              { className: 'list-group-item' },
+                              'Attack: ',
+                              this.props.info.attack
+                            ),
+                            _react2.default.createElement(
+                              'li',
+                              { className: 'list-group-item' },
+                              'Magic: ',
+                              this.props.info.magic
+                            ),
+                            _react2.default.createElement(
+                              'li',
+                              { className: 'list-group-item' },
+                              'Defense: ',
+                              this.props.info.defense
+                            ),
+                            _react2.default.createElement(
+                              'li',
+                              { className: 'list-group-item' },
+                              'Difficulty: ',
+                              this.props.info.difficulty
+                            )
+                          ),
+                          _react2.default.createElement(
+                            'div',
+                            { className: 'card-header' },
+                            _react2.default.createElement(
+                              'h5',
+                              null,
+                              'Base Stats:'
+                            )
+                          ),
+                          _react2.default.createElement(
+                            'ul',
+                            { className: 'list-group list-group-flush' },
+                            _react2.default.createElement(
+                              'li',
+                              { className: 'list-group-item' },
+                              'Armor: ',
+                              this.props.stats.armor
+                            ),
+                            _react2.default.createElement(
+                              'li',
+                              { className: 'list-group-item' },
+                              'Attack Damage: ',
+                              this.props.stats.attackdamage
+                            ),
+                            _react2.default.createElement(
+                              'li',
+                              { className: 'list-group-item' },
+                              'Health: ',
+                              this.props.stats.hp
+                            ),
+                            _react2.default.createElement(
+                              'li',
+                              { className: 'list-group-item' },
+                              'Mana: ',
+                              this.props.stats.mp
+                            ),
+                            _react2.default.createElement(
+                              'li',
+                              { className: 'list-group-item' },
+                              'Move Speed: ',
+                              this.props.stats.movespeed
+                            )
+                          )
+                        )
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'card' },
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'card-header', id: 'headingThree' },
+                        _react2.default.createElement(
+                          'h5',
+                          { className: 'mb-0' },
+                          _react2.default.createElement(
+                            'button',
+                            { className: 'btn btn-link collapsed', style: { width: "47rem" }, 'data-toggle': 'collapse', 'data-target': '#collapseThree' + this.props.name, 'aria-expanded': 'false', 'aria-controls': 'collapseThree' },
+                            'Skills'
+                          )
+                        )
+                      ),
+                      _react2.default.createElement(
+                        'div',
+                        { id: 'collapseThree' + this.props.name, className: 'collapse', 'aria-labelledby': 'headingThree', 'data-parent': '#accordion' + this.props.name },
+                        _react2.default.createElement(
+                          'div',
+                          { className: 'card-body card-skills' },
+                          _react2.default.createElement(
+                            'div',
+                            { className: 'card card-body', style: { width: "45rem" } },
+                            _react2.default.createElement(
+                              'div',
+                              { className: 'row' },
+                              _react2.default.createElement(
+                                'div',
+                                { className: 'card', style: { width: "16rem" } },
+                                _react2.default.createElement('img', { className: 'card-img-top abilities', src: 'http://ddragon.leagueoflegends.com/cdn/8.3.1/img/passive/' + this.props.passive.image.full, alt: 'Passive' }),
+                                _react2.default.createElement(
+                                  'div',
+                                  { className: 'card-body' },
+                                  _react2.default.createElement(
+                                    'h5',
+                                    { className: 'card-title' },
+                                    'Passive: ',
+                                    this.props.passive.name
+                                  ),
+                                  _react2.default.createElement(
+                                    'p',
+                                    { className: 'card-text' },
+                                    this.props.passive.description
+                                  )
+                                )
+                              ),
+                              _react2.default.createElement(
+                                'div',
+                                { className: 'card', style: { width: "14rem" } },
+                                _react2.default.createElement('img', { className: 'card-img-top abilities', src: 'http://ddragon.leagueoflegends.com/cdn/8.3.1/img/spell/' + this.props.spells["0"].image.full, alt: 'Skill 1' }),
+                                _react2.default.createElement(
+                                  'div',
+                                  { className: 'card-body' },
+                                  _react2.default.createElement(
+                                    'h5',
+                                    { className: 'card-title' },
+                                    this.props.spells["0"].name
+                                  ),
+                                  _react2.default.createElement(
+                                    'p',
+                                    { className: 'card-text' },
+                                    this.props.spells["0"].description
+                                  )
+                                )
+                              ),
+                              _react2.default.createElement(
+                                'div',
+                                { className: 'card', style: { width: "14rem" } },
+                                _react2.default.createElement('img', { className: 'card-img-top abilities', src: 'http://ddragon.leagueoflegends.com/cdn/8.3.1/img/spell/' + this.props.spells["1"].image.full, alt: 'Skill 2' }),
+                                _react2.default.createElement(
+                                  'div',
+                                  { className: 'card-body' },
+                                  _react2.default.createElement(
+                                    'h5',
+                                    { className: 'card-tile' },
+                                    this.props.spells["1"].name
+                                  ),
+                                  _react2.default.createElement(
+                                    'p',
+                                    { className: 'card-text' },
+                                    this.props.spells["1"].description
+                                  )
+                                )
+                              ),
+                              _react2.default.createElement(
+                                'div',
+                                { className: 'card', style: { width: "14rem" } },
+                                _react2.default.createElement('img', { className: 'card-img-top abilities', src: 'http://ddragon.leagueoflegends.com/cdn/8.3.1/img/spell/' + this.props.spells["2"].image.full, alt: 'Skill 3' }),
+                                _react2.default.createElement(
+                                  'div',
+                                  { className: 'card-body' },
+                                  _react2.default.createElement(
+                                    'h5',
+                                    { className: 'card-title' },
+                                    this.props.spells["2"].name
+                                  ),
+                                  _react2.default.createElement(
+                                    'p',
+                                    { className: 'card-text' },
+                                    this.props.spells["2"].description
+                                  )
+                                )
+                              ),
+                              _react2.default.createElement(
+                                'div',
+                                { className: 'card', style: { width: "14rem" } },
+                                _react2.default.createElement('img', { className: 'card-img-top abilities', src: 'http://ddragon.leagueoflegends.com/cdn/8.3.1/img/spell/' + this.props.spells["3"].image.full, alt: 'Ultimate' }),
+                                _react2.default.createElement(
+                                  'div',
+                                  { className: 'card-body' },
+                                  _react2.default.createElement(
+                                    'h5',
+                                    { className: 'card-title' },
+                                    'Ultimate: ',
+                                    this.props.spells["3"].name
+                                  ),
+                                  _react2.default.createElement(
+                                    'p',
+                                    { className: 'card-text' },
+                                    this.props.spells["3"].description
+                                  )
+                                )
+                              )
+                            )
+                          )
+                        )
+                      )
+                    )
+                  )
+                )
+              )
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'card item-details', style: { width: '16rem' } },
+          _react2.default.createElement('img', { className: 'card-img-top', style: { padding: '50px' }, src: 'http://ddragon.leagueoflegends.com/cdn/8.3.1/img/champion/' + this.props.image.full, alt: 'Card image cap' }),
+          _react2.default.createElement(
+            'div',
+            { className: 'card-body' },
+            _react2.default.createElement(
+              'h5',
+              { className: 'card-title' },
+              this.props.name
+            ),
+            _react2.default.createElement(
+              'p',
+              { className: 'card-text' },
+              '"',
+              title,
+              '"'
+            ),
+            _react2.default.createElement(
+              'p',
+              { className: 'card-text' },
+              this.props.blurb
+            ),
+            _react2.default.createElement(
+              'button',
+              { type: 'button', className: 'btn btn-primary', 'data-toggle': 'modal', 'data-target': '#champmodal' + this.props.name },
+              'Details'
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return ChampDetail;
+}(_react2.default.Component);
+
+exports.default = ChampDetail;
+
+/***/ }),
 /* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 

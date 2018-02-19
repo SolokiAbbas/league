@@ -13,9 +13,10 @@ class Champions extends React.Component{
       searchTerm: ''
     };
 
-    this.data = {};
+    this.allChamps = [];
     this.fetchChampList = this.fetchChampList.bind(this);
     this.searchUpdate = this.searchUpdate.bind(this);
+    this.selectChamps = this.selectChamps.bind(this);
   }
 
   componentWillMount(){
@@ -33,24 +34,30 @@ class Champions extends React.Component{
         $.each(data, function (index, value) {
             champs[index]=value;
           });
-      }).then(champ => this.setState({champList : champ.data}));
+      }).then(champ => this.setState({champList : champ.data})).then(allChamp => this.selectChamps());
+  }
+
+  selectChamps(){
+    this.allChamps = Object.keys(this.state.champList).map(el=> this.state.champList[el]);
   }
 
   render(){
     if(typeof this.state.champList !== 'undefined'){
-      let allChamps = Object.keys(this.state.champList).map(el=> this.state.champList[el]);
-      allChamps = allChamps.filter(createFilter(this.state.searchTerm, KEYS_TO_FILTERS));
+      this.allChamps = this.allChamps.filter(createFilter(this.state.searchTerm, KEYS_TO_FILTERS));
       return(
         <div className="jumbotron mx-auto jumbo-about">
           <div className="items">
             {this.state.isLoading ? <div className="loading-icon"></div> :
-
+              <div>
                 <SearchInput className="search-input" onChange={this.searchUpdate} />
-                  {allChamps.map(champ => <ChampDetail key={champ.id} info={champ.info} name={champ.name}
+                <div className="main-body">
+                  {this.allChamps.map(champ => <ChampDetail key={champ.id} info={champ.info} name={champ.name}
                     image={champ.image} spells={champ.spells} stats={champ.stats} title={champ.title}
                     lore={champ.lore} passive={champ.passive} blurb={champ.blurb}/>)}
+                </div>
+              </div>
+                }
 
-             }
           </div>
         </div>
       );
