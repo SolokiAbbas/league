@@ -23754,7 +23754,17 @@ var Champions = function (_React$Component) {
             this.state.isLoading ? _react2.default.createElement('div', { className: 'loading-icon' }) : _react2.default.createElement(
               'div',
               null,
-              _react2.default.createElement(_reactSearchInput2.default, { className: 'search-input search', onChange: this.searchUpdate }),
+              _react2.default.createElement(
+                'div',
+                { className: 'searching' },
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  'Search'
+                ),
+                _react2.default.createElement('img', { className: 'nav-search', src: '../../../assets/images/search.png' }),
+                _react2.default.createElement(_reactSearchInput2.default, { className: 'search-input search', onChange: this.searchUpdate })
+              ),
               _react2.default.createElement(
                 'div',
                 { className: 'main-body' },
