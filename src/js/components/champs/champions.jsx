@@ -50,9 +50,9 @@ class Champions extends React.Component{
             {this.state.isLoading ? <div className="loading-icon"></div> :
               <div>
                 <div className="searching">
-                  <h4>Search</h4>
                   <img className="nav-search" src="../../../assets/images/search.png" />
-                  <SearchInput className="search-input search" onChange={this.searchUpdate} />
+                  <h4 style={{margin: "0 10px 0 0"}}>Search</h4>
+                  <SearchInput className="search-input search" onChange={this.searchUpdate} placeholder="Search Champs"/>
                 </div>
                 <div className="main-body">
                   {filteredChamps.map(champ => <ChampDetail key={champ.id} info={champ.info} name={champ.name}

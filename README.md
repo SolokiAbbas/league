@@ -18,6 +18,13 @@ the user can learn more about the champion by collapsing data in the body.
 
 ![navbar](/src/assets/images/skills.png)
 
+Searching for Champs:
+
+Inputing the name of the champion or item leaves on the relevant objects.
+The search is instant.
+
+![searching](/src/assets/images/search-champs.png)
+
 
 #### Technologies
 1. React.js
@@ -29,8 +36,8 @@ the user can learn more about the champion by collapsing data in the body.
 7. Bootstrap
 8. Express.js server (hosted on Heroku)
 9. Loading Screen for links
+10. Searchable Champs and Items
 
 #### Features to be added
 
 1. D3 Library
-2. Search Implementation

@@ -55,9 +55,9 @@ class Items extends React.Component{
             {this.state.isLoading ? <div className="loading-icon"></div> :
               <div>
                 <div className="searching">
-                  <h4>Search</h4>
                   <img className="nav-search" src="../../../assets/images/search.png" />
-                  <SearchInput className="search-input search" onChange={this.searchUpdate} />
+                  <h4 style={{margin: "0 10px 0 0"}}> Search</h4>
+                  <SearchInput className="search-input search" onChange={this.searchUpdate} placeholder="Search Items"/>
                 </div>
                 <div className="main-body">
                     {filteredItems.map(item => <ItemDetail key={item.id} detail={item.plaintext} name={item.name}

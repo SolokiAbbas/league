@@ -23749,13 +23749,13 @@ var Champions = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'searching' },
+                _react2.default.createElement('img', { className: 'nav-search', src: '../../../assets/images/search.png' }),
                 _react2.default.createElement(
                   'h4',
-                  null,
+                  { style: { margin: "0 10px 0 0" } },
                   'Search'
                 ),
-                _react2.default.createElement('img', { className: 'nav-search', src: '../../../assets/images/search.png' }),
-                _react2.default.createElement(_reactSearchInput2.default, { className: 'search-input search', onChange: this.searchUpdate })
+                _react2.default.createElement(_reactSearchInput2.default, { className: 'search-input search', onChange: this.searchUpdate, placeholder: 'Search Champs' })
               ),
               _react2.default.createElement(
                 'div',
@@ -24299,13 +24299,13 @@ var Items = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'searching' },
+                _react2.default.createElement('img', { className: 'nav-search', src: '../../../assets/images/search.png' }),
                 _react2.default.createElement(
                   'h4',
-                  null,
-                  'Search'
+                  { style: { margin: "0 10px 0 0" } },
+                  ' Search'
                 ),
-                _react2.default.createElement('img', { className: 'nav-search', src: '../../../assets/images/search.png' }),
-                _react2.default.createElement(_reactSearchInput2.default, { className: 'search-input search', onChange: this.searchUpdate })
+                _react2.default.createElement(_reactSearchInput2.default, { className: 'search-input search', onChange: this.searchUpdate, placeholder: 'Search Items' })
               ),
               _react2.default.createElement(
                 'div',
