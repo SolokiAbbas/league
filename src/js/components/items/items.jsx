@@ -1,20 +1,31 @@
 import React from 'react';
 import ItemDetail from './item_detail';
+import SearchInput, {createFilter} from 'react-search-input';
+
+const KEYS_TO_FILTERS = ['name'];
 
 class Items extends React.Component{
   constructor(props){
     super(props);
     this.state = {
       itemsList: {},
-      isLoading: true
+      isLoading: true,
+      searchTerm: ''
     };
 
-    this.data = {};
+    this.allItems = [];
     this.fetchItemsList = this.fetchItemsList.bind(this);
+    this.searchUpdate = this.searchUpdate.bind(this);
+    this.selectItems = this.selectItems.bind(this);
   }
+
   componentWillMount(){
     setTimeout(()=>this.setState({isLoading: false}), 800);
     this.fetchItemsList();
+  }
+
+  searchUpdate(term) {
+    this.setState({searchTerm: term});
   }
 
   fetchItemsList(){
@@ -27,20 +38,33 @@ class Items extends React.Component{
         $.each(data, function (index, value) {
             items[index]=value;
           });
-      }).then(item => this.setState({itemsList : item.data}));
+      }).then(item => this.setState({itemsList : item.data})).then(allItems => this.selectItems());
+  }
+
+  selectItems(){
+    this.allItems = Object.keys(this.state.itemsList).map(el=> this.state.itemsList[el]);
   }
 
   render(){
 
     if(typeof this.state.itemsList[1001] !== 'undefined'){
-      const allItems = Object.keys(this.state.itemsList).map(el=> this.state.itemsList[el]);
+      let filteredItems = this.allItems.filter(createFilter(this.state.searchTerm, KEYS_TO_FILTERS));
       return(
         <div className="jumbotron mx-auto jumbo-about">
           <div className="items">
             {this.state.isLoading ? <div className="loading-icon"></div> :
-            allItems.map(item => <ItemDetail key={item.id} detail={item.plaintext} name={item.name}
-                gold={item.gold} image={item.image}/>)
-              }
+              <div>
+                <div className="searching">
+                  <h4>Search</h4>
+                  <img className="nav-search" src="../../../assets/images/search.png" />
+                  <SearchInput className="search-input search" onChange={this.searchUpdate} />
+                </div>
+                <div className="main-body">
+                    {filteredItems.map(item => <ItemDetail key={item.id} detail={item.plaintext} name={item.name}
+                      gold={item.gold} image={item.image}/>)}
+                  </div>
+              </div>
+            }
           </div>
         </div>
       );

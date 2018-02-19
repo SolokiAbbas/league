@@ -24202,6 +24202,10 @@ var _item_detail = __webpack_require__(84);
 
 var _item_detail2 = _interopRequireDefault(_item_detail);
 
+var _reactSearchInput = __webpack_require__(89);
+
+var _reactSearchInput2 = _interopRequireDefault(_reactSearchInput);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -24209,6 +24213,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var KEYS_TO_FILTERS = ['name'];
 
 var Items = function (_React$Component) {
   _inherits(Items, _React$Component);
@@ -24220,11 +24226,14 @@ var Items = function (_React$Component) {
 
     _this.state = {
       itemsList: {},
-      isLoading: true
+      isLoading: true,
+      searchTerm: ''
     };
 
-    _this.data = {};
+    _this.allItems = [];
     _this.fetchItemsList = _this.fetchItemsList.bind(_this);
+    _this.searchUpdate = _this.searchUpdate.bind(_this);
+    _this.selectItems = _this.selectItems.bind(_this);
     return _this;
   }
 
@@ -24237,6 +24246,11 @@ var Items = function (_React$Component) {
         return _this2.setState({ isLoading: false });
       }, 800);
       this.fetchItemsList();
+    }
+  }, {
+    key: 'searchUpdate',
+    value: function searchUpdate(term) {
+      this.setState({ searchTerm: term });
     }
   }, {
     key: 'fetchItemsList',
@@ -24254,27 +24268,54 @@ var Items = function (_React$Component) {
         });
       }).then(function (item) {
         return _this3.setState({ itemsList: item.data });
+      }).then(function (allItems) {
+        return _this3.selectItems();
+      });
+    }
+  }, {
+    key: 'selectItems',
+    value: function selectItems() {
+      var _this4 = this;
+
+      this.allItems = Object.keys(this.state.itemsList).map(function (el) {
+        return _this4.state.itemsList[el];
       });
     }
   }, {
     key: 'render',
     value: function render() {
-      var _this4 = this;
 
       if (typeof this.state.itemsList[1001] !== 'undefined') {
-        var allItems = Object.keys(this.state.itemsList).map(function (el) {
-          return _this4.state.itemsList[el];
-        });
+        var filteredItems = this.allItems.filter((0, _reactSearchInput.createFilter)(this.state.searchTerm, KEYS_TO_FILTERS));
         return _react2.default.createElement(
           'div',
           { className: 'jumbotron mx-auto jumbo-about' },
           _react2.default.createElement(
             'div',
             { className: 'items' },
-            this.state.isLoading ? _react2.default.createElement('div', { className: 'loading-icon' }) : allItems.map(function (item) {
-              return _react2.default.createElement(_item_detail2.default, { key: item.id, detail: item.plaintext, name: item.name,
-                gold: item.gold, image: item.image });
-            })
+            this.state.isLoading ? _react2.default.createElement('div', { className: 'loading-icon' }) : _react2.default.createElement(
+              'div',
+              null,
+              _react2.default.createElement(
+                'div',
+                { className: 'searching' },
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  'Search'
+                ),
+                _react2.default.createElement('img', { className: 'nav-search', src: '../../../assets/images/search.png' }),
+                _react2.default.createElement(_reactSearchInput2.default, { className: 'search-input search', onChange: this.searchUpdate })
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'main-body' },
+                filteredItems.map(function (item) {
+                  return _react2.default.createElement(_item_detail2.default, { key: item.id, detail: item.plaintext, name: item.name,
+                    gold: item.gold, image: item.image });
+                })
+              )
+            )
           )
         );
       } else {
