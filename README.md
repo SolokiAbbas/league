@@ -41,4 +41,5 @@ The search is instant.
 #### Features to be added
 
 1. D3 Library
-2. Add Summoner Searching
+2. 4 Bar Graphs and 1 particle graph
+3. Add Summoner Searching
