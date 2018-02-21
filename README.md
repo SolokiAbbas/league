@@ -42,4 +42,5 @@ The search is instant.
 
 1. D3 Library
 2. 4 Bar Graphs and 1 particle graph
-3. Add Summoner Searching
+3. Add Collapsing NavBar
+4. Add Summoner Searching
