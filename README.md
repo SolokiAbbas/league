@@ -41,3 +41,4 @@ The search is instant.
 #### Features to be added
 
 1. D3 Library
+2. Add Summoner Searching
