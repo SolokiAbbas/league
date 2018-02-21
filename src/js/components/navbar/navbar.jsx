@@ -11,7 +11,7 @@ const NavBar = () => (
             <Link className="navbar-brand nav-size" to="/about">About</Link>
 
             <img className="nav-images" src="../../../assets/images/rune.png" />
-            <Link className="navbar-brand nav-size" to="/">Stats</Link>
+            <Link className="navbar-brand nav-size" to="/stats">Stats</Link>
 
             <img className="nav-images" src="../../../assets/images/rune.png" />
             <Link className="navbar-brand nav-size" to="/summoners">Summoners</Link>
@@ -26,7 +26,6 @@ const NavBar = () => (
             <Link className="navbar-brand nav-size" to="/items">Items</Link>
 
         </nav>
-
       </div>
     );
 
