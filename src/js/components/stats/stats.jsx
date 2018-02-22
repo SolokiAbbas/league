@@ -1,5 +1,5 @@
 import React from 'react';
-import Forced from './forced_graph';
+import Forced from './forced/forced_graph';
 
 class Stats extends React.Component{
   constructor(){

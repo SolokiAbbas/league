@@ -35266,7 +35266,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _forced_graph = __webpack_require__(262);
+var _forced_graph = __webpack_require__(556);
 
 var _forced_graph2 = _interopRequireDefault(_forced_graph);
 
@@ -35304,144 +35304,7 @@ var Stats = function (_React$Component) {
 exports.default = Stats;
 
 /***/ }),
-/* 262 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _d = __webpack_require__(263);
-
-var d3 = _interopRequireWildcard(_d);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Forced = function (_React$Component) {
-  _inherits(Forced, _React$Component);
-
-  function Forced(props) {
-    _classCallCheck(this, Forced);
-
-    return _possibleConstructorReturn(this, (Forced.__proto__ || Object.getPrototypeOf(Forced)).call(this, props));
-  }
-
-  _createClass(Forced, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var url = 'https://raw.githubusercontent.com/DealPete/forceDirected/master/countries.json';
-
-      $.getJSON(url).then(function (res) {
-        var data = res.data;
-
-        var width = 640,
-            height = 480;
-
-        //Initializing chart
-        var chart = d3.select('.chart').attr('width', width).attr('height', height);
-
-        //Creating tooltip
-        var tooltip = d3.select('.container').append('div').attr('class', 'tooltip').html('Tooltip');
-
-        //Initializing force simulation
-        var simulation = d3.forceSimulation().force('link', d3.forceLink()).force('charge', d3.forceManyBody()).force('collide', d3.forceCollide()).force('center', d3.forceCenter(width / 2, height / 2)).force("y", d3.forceY(0)).force("x", d3.forceX(0));
-
-        //Drag functions
-        var dragStart = function dragStart(d) {
-          if (!d3.event.active) simulation.alphaTarget(0.3).restart();
-          d.fx = d.x;
-          d.fy = d.y;
-        };
-
-        var drag = function drag(d) {
-          d.fx = d3.event.x;
-          d.fy = d3.event.y;
-        };
-
-        var dragEnd = function dragEnd(d) {
-          if (!d3.event.active) simulation.alphaTarget(0);
-          d.fx = null;
-          d.fy = null;
-        };
-
-        //Creating links
-        var link = chart.append('g').attr('class', 'links').selectAll('line').data(data.links).enter().append('line');
-
-        //Creating nodes
-        var node = d3.select('.chartContainer').selectAll('div').data(data.nodes).enter().append('div').attr('class', function (d) {
-          return 'flag flag-' + d.code;
-        }).call(d3.drag().on('start', dragStart).on('drag', drag).on('end', dragEnd)).on('mouseover', function (d) {
-          tooltip.html(d.country).style('left', d3.event.pageX + 5 + 'px').style('top', d3.event.pageY + 5 + 'px').style('opacity', .9);
-        }).on('mouseout', function () {
-          tooltip.style('opacity', 0).style('left', '0px').style('top', '0px');
-        });
-
-        //Setting location when ticked
-        var ticked = function ticked() {
-          link.attr("x1", function (d) {
-            return d.source.x;
-          }).attr("y1", function (d) {
-            return d.source.y;
-          }).attr("x2", function (d) {
-            return d.target.x;
-          }).attr("y2", function (d) {
-            return d.target.y;
-          });
-
-          node.attr("style", function (d) {
-            return 'left: ' + d.x + 'px; top: ' + (d.y + 72) + 'px';
-          });
-        };
-
-        //Starting simulation
-        simulation.nodes(data.nodes).on('tick', ticked);
-
-        simulation.force('link').links(data.links);
-      });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        { className: 'jumobotron' },
-        _react2.default.createElement(
-          'h1',
-          null,
-          'National Contiguity'
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'chartContainer' },
-          _react2.default.createElement('svg', { className: 'chart' })
-        )
-      );
-    }
-  }]);
-
-  return Forced;
-}(_react2.default.Component);
-
-exports.default = Forced;
-
-/***/ }),
+/* 262 */,
 /* 263 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -48917,6 +48780,74 @@ var Summoners = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Summoners;
+
+/***/ }),
+/* 556 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _d = __webpack_require__(263);
+
+var d3 = _interopRequireWildcard(_d);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Forced = function (_React$Component) {
+  _inherits(Forced, _React$Component);
+
+  function Forced(props) {
+    _classCallCheck(this, Forced);
+
+    return _possibleConstructorReturn(this, (Forced.__proto__ || Object.getPrototypeOf(Forced)).call(this, props));
+  }
+
+  _createClass(Forced, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {}
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'jumobotron' },
+        _react2.default.createElement(
+          'h1',
+          null,
+          'National Contiguity'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'chartContainer' },
+          _react2.default.createElement('svg', { className: 'chart' })
+        )
+      );
+    }
+  }]);
+
+  return Forced;
+}(_react2.default.Component);
+
+exports.default = Forced;
 
 /***/ })
 /******/ ]);
