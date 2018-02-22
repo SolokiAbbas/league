@@ -92,3 +92,13 @@
   display: flex;
   justify-content: center;
 }
+
+.flag{
+  background: white;
+  background-color: #000;
+  position: absolute;
+}
+.links line{
+  stroke: grey;
+
+}

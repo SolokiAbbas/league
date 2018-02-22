@@ -19,4 +19,24 @@
     "Champion": "Varus",
     "Win Rate": 16.88
   },
+  {
+    "Champion": "Thresh",
+    "Win Rate": 16.70
+  },
+  {
+    "Champion": "Warwick",
+    "Win Rate": 16.06
+  },
+  {
+    "Champion": "Jax",
+    "Win Rate": 16.00
+  },
+  {
+    "Champion": "Yasuo",
+    "Win Rate": 15.97
+  },
+  {
+    "Champion": "Janna",
+    "Win Rate": 15.95
+  },
 ]
