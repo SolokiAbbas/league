@@ -25967,7 +25967,11 @@ var Forced = function (_React$Component) {
     _this.state = {
       graph: {}
     };
+    _this.allNodes = [];
+    _this.allQueues = [];
     _this.fetchForced = _this.fetchForced.bind(_this);
+    _this.selectNodes = _this.selectNodes.bind(_this);
+    _this.selectQueues = _this.selectQueues.bind(_this);
     return _this;
   }
 
@@ -25982,19 +25986,33 @@ var Forced = function (_React$Component) {
       var _this2 = this;
 
       var fgraph = {};
-      $.getJSON("../../../data/forced.json", function (data) {
+      $.getJSON("../../../../data/forced.json", function (data) {
         $.each(data, function (index, value) {
           fgraph[index] = value;
         });
       }).then(function (datas) {
         return _this2.setState({ graph: datas });
+      }).then(function () {
+        return _this2.selectNodes();
+      }).then(function () {
+        return _this2.selectQueues();
       });
+    }
+  }, {
+    key: 'selectNodes',
+    value: function selectNodes() {
+      this.allNodes = this.state.graph.nodes;
+    }
+  }, {
+    key: 'selectQueues',
+    value: function selectQueues() {
+      this.allQueues = this.state.graph.queues;
     }
   }, {
     key: 'render',
     value: function render() {
-
       if (typeof this.state.graph.nodes !== 'undefined') {
+        console.log(this.allNodes);
         return _react2.default.createElement(
           _reactVisForce.InteractiveForceGraph,
           { className: 'jumbotron text-center',
@@ -26004,12 +26022,16 @@ var Forced = function (_React$Component) {
               return console.log(node);
             },
             highlightDependencies: true },
-          _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'first-node', label: this.nodes[0].name }, fill: 'red' }),
-          _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'second-node', label: this.nodes[1].name }, fill: 'blue' }),
+          _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'first-node', label: this.state.graph.nodes[0].name }, fill: 'red' }),
+          _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'second-node', label: this.state.graph.nodes[1].name }, fill: 'blue' }),
           _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'first-node', target: 'second-node' } })
         );
       } else {
-        return _react2.default.createElement('div', null);
+        return _react2.default.createElement(
+          'div',
+          null,
+          'No Nodes'
+        );
       }
     }
   }]);
