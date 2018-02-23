@@ -10,7 +10,7 @@
     {"name":"Powerless", "leaguePoints": 309},
     {"name":"DrJuneJune", "leaguePoints": 310},
     {"name":"Kimchi the Cat", "leaguePoints": 216},
-    {"name":"huhi", "leaguePoints": 190},
+    {"name":"huhi", "leaguePoints": 190}
   ],
   "queue":[
         {
@@ -47,27 +47,26 @@
             "source": "Challenger",
             "target": "Spica1",
             "leaguePoints": 1038,
-        }
+        },
         {
             "source": "Master",
             "target": "Powerless",
             "leaguePoints": 309,
-        }
+        },
         {
             "source": "Master",
             "target": "DrJuneJune",
             "leaguePoints": 310,
-        }
+        },
         {
             "source": "Master",
             "target": "Kimchi the Cat",
             "leaguePoints": 216,
-        }
+        },
         {
             "source": "Master",
             "target": "huhi",
             "leaguePoints": 190,
         }
-  ]
-
-}
+      ]
+  }
