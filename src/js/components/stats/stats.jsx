@@ -21,14 +21,9 @@ class Stats extends React.Component{
   fetchForced(){
     let fgraph = {};
       $.getJSON("../../../data/forced.json", function (data) {
-        console.log("here");
         $.each(data, function (index, value) {
             fgraph[index]=value;
-
           });
-      }).fail((data,textStatus,err)=>{
-        let errors = textStatus + ", " + err;
-        console.log(errors);
       }).then(datas => this.setState({graph : datas}));
   }
 
@@ -41,7 +36,6 @@ class Stats extends React.Component{
   }
 
   render(){
-    console.log(this.state);
     return(
       <div>
         <Forced></Forced>

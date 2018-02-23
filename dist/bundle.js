@@ -25935,13 +25935,9 @@ var Stats = function (_React$Component) {
 
       var fgraph = {};
       $.getJSON("../../../data/forced.json", function (data) {
-        console.log("here");
         $.each(data, function (index, value) {
           fgraph[index] = value;
         });
-      }).fail(function (data, textStatus, err) {
-        var errors = textStatus + ", " + err;
-        console.log(errors);
       }).then(function (datas) {
         return _this2.setState({ graph: datas });
       });
@@ -25967,7 +25963,6 @@ var Stats = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      console.log(this.state);
       return _react2.default.createElement(
         'div',
         null,
