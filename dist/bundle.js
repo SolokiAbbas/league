@@ -25910,57 +25910,10 @@ var Stats = function (_React$Component) {
   function Stats() {
     _classCallCheck(this, Stats);
 
-    var _this = _possibleConstructorReturn(this, (Stats.__proto__ || Object.getPrototypeOf(Stats)).call(this));
-
-    _this.state = {
-      graph: {}
-    };
-    _this.nodes = [];
-    _this.queues = [];
-    _this.allNodes = _this.allNodes.bind(_this);
-    _this.allQueues = _this.allQueues.bind(_this);
-    _this.fetchForced = _this.fetchForced.bind(_this);
-    return _this;
+    return _possibleConstructorReturn(this, (Stats.__proto__ || Object.getPrototypeOf(Stats)).apply(this, arguments));
   }
 
   _createClass(Stats, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      this.fetchForced();
-    }
-  }, {
-    key: 'fetchForced',
-    value: function fetchForced() {
-      var _this2 = this;
-
-      var fgraph = {};
-      $.getJSON("../../../data/forced.json", function (data) {
-        $.each(data, function (index, value) {
-          fgraph[index] = value;
-        });
-      }).then(function (datas) {
-        return _this2.setState({ graph: datas });
-      });
-    }
-  }, {
-    key: 'allNodes',
-    value: function allNodes() {
-      var _this3 = this;
-
-      this.nodes = Object.keys(this.state.data).map(function (el) {
-        return _this3.state.data[el];
-      });
-    }
-  }, {
-    key: 'allQueues',
-    value: function allQueues() {
-      var _this4 = this;
-
-      this.queues = Object.keys(this.state.data).map(function (el) {
-        return _this4.state.data[el];
-      });
-    }
-  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -26009,13 +25962,55 @@ var Forced = function (_React$Component) {
   function Forced() {
     _classCallCheck(this, Forced);
 
-    return _possibleConstructorReturn(this, (Forced.__proto__ || Object.getPrototypeOf(Forced)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (Forced.__proto__ || Object.getPrototypeOf(Forced)).call(this));
+
+    _this.state = {
+      graph: {}
+    };
+    _this.fetchForced = _this.fetchForced.bind(_this);
+    return _this;
   }
 
   _createClass(Forced, [{
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      this.fetchForced();
+    }
+  }, {
+    key: 'fetchForced',
+    value: function fetchForced() {
+      var _this2 = this;
+
+      var fgraph = {};
+      $.getJSON("../../../data/forced.json", function (data) {
+        $.each(data, function (index, value) {
+          fgraph[index] = value;
+        });
+      }).then(function (datas) {
+        return _this2.setState({ graph: datas });
+      });
+    }
+  }, {
     key: 'render',
     value: function render() {
-      return _react2.default.createElement('div', null);
+
+      if (typeof this.state.graph.nodes !== 'undefined') {
+        return _react2.default.createElement(
+          _reactVisForce.InteractiveForceGraph,
+          { className: 'jumbotron text-center',
+            simulationOptions: { height: 300, width: 300, animate: true },
+            labelAttr: 'label',
+            onSelectNode: function onSelectNode(node) {
+              return console.log(node);
+            },
+            highlightDependencies: true },
+          _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'first-node', label: this.nodes[0].name }, fill: 'red' }),
+          _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'second-node', label: this.nodes[1].name }, fill: 'blue' }),
+          _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'first-node', target: 'second-node' } })
+        );
+      } else {
+        return _react2.default.createElement('div', null);
+      }
     }
   }]);
 
