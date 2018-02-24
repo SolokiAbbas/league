@@ -33684,26 +33684,36 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var FunGraph = function (_React$Component) {
-    _inherits(FunGraph, _React$Component);
+var FunPart = function (_React$Component) {
+    _inherits(FunPart, _React$Component);
 
-    function FunGraph() {
-        _classCallCheck(this, FunGraph);
+    function FunPart() {
+        _classCallCheck(this, FunPart);
 
-        return _possibleConstructorReturn(this, (FunGraph.__proto__ || Object.getPrototypeOf(FunGraph)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (FunPart.__proto__ || Object.getPrototypeOf(FunPart)).apply(this, arguments));
     }
 
-    _createClass(FunGraph, [{
+    _createClass(FunPart, [{
         key: 'render',
         value: function render() {
-            return _react2.default.createElement(_reactParticlesJs2.default, null);
+            return _react2.default.createElement(_reactParticlesJs2.default, { params: {
+                    particles: {
+                        line_linked: {
+                            shadow: {
+                                enable: true,
+                                color: "#3CA9D1",
+                                blur: 5
+                            }
+                        }
+                    }
+                } });
         }
     }]);
 
-    return FunGraph;
+    return FunPart;
 }(_react2.default.Component);
 
-exports.default = FunGraph;
+exports.default = FunPart;
 
 /***/ }),
 /* 94 */
