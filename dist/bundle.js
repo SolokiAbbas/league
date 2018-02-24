@@ -19987,6 +19987,10 @@ var _stats = __webpack_require__(89);
 
 var _stats2 = _interopRequireDefault(_stats);
 
+var _forced_graph = __webpack_require__(90);
+
+var _forced_graph2 = _interopRequireDefault(_forced_graph);
+
 var _summoners = __webpack_require__(92);
 
 var _summoners2 = _interopRequireDefault(_summoners);
@@ -20021,6 +20025,7 @@ var App = function (_React$Component) {
         _react2.default.createElement(_reactRouterDom.Route, { path: '/about', component: _about2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { path: '/champions', component: _champions2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { path: '/stats', component: _stats2.default }),
+        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/stats/forced', component: _forced_graph2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { path: '/items', component: _items2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { path: '/spells', component: _spells2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { path: '/summoners', component: _summoners2.default })
@@ -25896,6 +25901,8 @@ var _forced_graph = __webpack_require__(90);
 
 var _forced_graph2 = _interopRequireDefault(_forced_graph);
 
+var _reactRouterDom = __webpack_require__(15);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -25919,7 +25926,25 @@ var Stats = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement(_forced_graph2.default, null)
+        _react2.default.createElement(
+          'nav',
+          { className: 'navbar navbar-light bg-light' },
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { className: 'navbar-brand mb-0 h1', to: '/stats/forced' },
+            'League Challenger and Masters'
+          ),
+          _react2.default.createElement(
+            'span',
+            { className: 'navbar-brand mb-0 h1' },
+            'League Character Data'
+          ),
+          _react2.default.createElement(
+            'span',
+            { className: 'navbar-brand mb-0 h1' },
+            'Fun Graph Data'
+          )
+        )
       );
     }
   }]);
@@ -26013,42 +26038,47 @@ var Forced = function (_React$Component) {
     value: function render() {
       if (typeof this.state.graph.nodes !== 'undefined') {
         return _react2.default.createElement(
-          _reactVisForce.InteractiveForceGraph,
-          { className: 'jumbotron text-center',
-            simulationOptions: { height: 500, width: 500, animate: true, strength: 1 },
-            labelAttr: 'label',
-            highlightDependencies: true },
-          _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'first-node', label: this.state.graph.nodes[0].name, radius: 10 }, fill: 'red' }),
-          _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'second-node', label: this.state.graph.nodes[1].name, radius: 10 }, fill: 'red' }),
-          _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'third-node', label: this.state.graph.nodes[2].name, radius: 10 }, fill: 'red' }),
-          _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'fourth-node', label: this.state.graph.nodes[3].name, radius: 10 }, fill: 'red' }),
-          _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'fifth-node', label: this.state.graph.nodes[4].name, radius: 10 }, fill: 'red' }),
-          _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'sixth-node', label: this.state.graph.nodes[5].name, radius: 10 }, fill: 'red' }),
-          _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'seventh-node', label: this.state.graph.nodes[6].name, radius: 10 }, fill: 'red' }),
-          _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'challenger-node', label: "Challenger League", radius: 20 }, fill: 'gold' }),
-          _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'master-node', label: "Master League", radius: 20 }, fill: 'silver' }),
-          _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'eighth-node', label: this.state.graph.nodes[7].name, radius: 10 }, fill: 'blue' }),
-          _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'nineth-node', label: this.state.graph.nodes[8].name, radius: 10 }, fill: 'blue' }),
-          _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'tenth-node', label: this.state.graph.nodes[9].name, radius: 10 }, fill: 'blue' }),
-          _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'eleventh-node', label: this.state.graph.nodes[10].name, radius: 10 }, fill: 'blue' }),
-          _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'challenger-node', target: 'first-node' } }),
-          _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'challenger-node', target: 'second-node' } }),
-          _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'challenger-node', target: 'third-node' } }),
-          _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'challenger-node', target: 'fourth-node' } }),
-          _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'challenger-node', target: 'fifth-node' } }),
-          _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'challenger-node', target: 'sixth-node' } }),
-          _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'challenger-node', target: 'seventh-node' } }),
-          _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'master-node', target: 'eighth-node' } }),
-          _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'master-node', target: 'nineth-node' } }),
-          _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'master-node', target: 'tenth-node' } }),
-          _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'master-node', target: 'eleventh-node' } })
+          'div',
+          { className: 'forced-graph' },
+          _react2.default.createElement(
+            'h2',
+            { className: 'text-center' },
+            'League top 10 in Challengers and Masters'
+          ),
+          _react2.default.createElement(
+            _reactVisForce.InteractiveForceGraph,
+            { className: 'jumbotron mx-auto d-block border',
+              simulationOptions: { height: 400, width: 500, animate: true, strength: 1 },
+              labelAttr: 'label',
+              highlightDependencies: true },
+            _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'first-node', label: this.state.graph.nodes[0].name, radius: 10 }, fill: 'red' }),
+            _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'second-node', label: this.state.graph.nodes[1].name, radius: 10 }, fill: 'red' }),
+            _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'third-node', label: this.state.graph.nodes[2].name, radius: 10 }, fill: 'red' }),
+            _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'fourth-node', label: this.state.graph.nodes[3].name, radius: 10 }, fill: 'red' }),
+            _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'fifth-node', label: this.state.graph.nodes[4].name, radius: 10 }, fill: 'red' }),
+            _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'sixth-node', label: this.state.graph.nodes[5].name, radius: 10 }, fill: 'red' }),
+            _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'seventh-node', label: this.state.graph.nodes[6].name, radius: 10 }, fill: 'red' }),
+            _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'challenger-node', label: "Challenger League", radius: 20 }, fill: 'gold' }),
+            _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'master-node', label: "Master League", radius: 20 }, fill: 'silver' }),
+            _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'eighth-node', label: this.state.graph.nodes[7].name, radius: 10 }, fill: 'blue' }),
+            _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'nineth-node', label: this.state.graph.nodes[8].name, radius: 10 }, fill: 'blue' }),
+            _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'tenth-node', label: this.state.graph.nodes[9].name, radius: 10 }, fill: 'blue' }),
+            _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'eleventh-node', label: this.state.graph.nodes[10].name, radius: 10 }, fill: 'blue' }),
+            _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'challenger-node', target: 'first-node' } }),
+            _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'challenger-node', target: 'second-node' } }),
+            _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'challenger-node', target: 'third-node' } }),
+            _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'challenger-node', target: 'fourth-node' } }),
+            _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'challenger-node', target: 'fifth-node' } }),
+            _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'challenger-node', target: 'sixth-node' } }),
+            _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'challenger-node', target: 'seventh-node' } }),
+            _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'master-node', target: 'eighth-node' } }),
+            _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'master-node', target: 'nineth-node' } }),
+            _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'master-node', target: 'tenth-node' } }),
+            _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'master-node', target: 'eleventh-node' } })
+          )
         );
       } else {
-        return _react2.default.createElement(
-          'div',
-          null,
-          'No Nodes'
-        );
+        return _react2.default.createElement('div', null);
       }
     }
   }]);
