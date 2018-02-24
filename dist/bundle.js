@@ -26012,19 +26012,36 @@ var Forced = function (_React$Component) {
     key: 'render',
     value: function render() {
       if (typeof this.state.graph.nodes !== 'undefined') {
-        console.log(this.allNodes);
         return _react2.default.createElement(
           _reactVisForce.InteractiveForceGraph,
           { className: 'jumbotron text-center',
-            simulationOptions: { height: 300, width: 300, animate: true },
+            simulationOptions: { height: 500, width: 500, animate: true, strength: 1 },
             labelAttr: 'label',
-            onSelectNode: function onSelectNode(node) {
-              return console.log(node);
-            },
             highlightDependencies: true },
-          _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'first-node', label: this.state.graph.nodes[0].name }, fill: 'red' }),
-          _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'second-node', label: this.state.graph.nodes[1].name }, fill: 'blue' }),
-          _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'first-node', target: 'second-node' } })
+          _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'first-node', label: this.state.graph.nodes[0].name, radius: 10 }, fill: 'red' }),
+          _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'second-node', label: this.state.graph.nodes[1].name, radius: 10 }, fill: 'red' }),
+          _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'third-node', label: this.state.graph.nodes[2].name, radius: 10 }, fill: 'red' }),
+          _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'fourth-node', label: this.state.graph.nodes[3].name, radius: 10 }, fill: 'red' }),
+          _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'fifth-node', label: this.state.graph.nodes[4].name, radius: 10 }, fill: 'red' }),
+          _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'sixth-node', label: this.state.graph.nodes[5].name, radius: 10 }, fill: 'red' }),
+          _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'seventh-node', label: this.state.graph.nodes[6].name, radius: 10 }, fill: 'red' }),
+          _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'challenger-node', label: "Challenger League", radius: 20 }, fill: 'gold' }),
+          _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'master-node', label: "Master League", radius: 20 }, fill: 'silver' }),
+          _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'eighth-node', label: this.state.graph.nodes[7].name, radius: 10 }, fill: 'blue' }),
+          _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'nineth-node', label: this.state.graph.nodes[8].name, radius: 10 }, fill: 'blue' }),
+          _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'tenth-node', label: this.state.graph.nodes[9].name, radius: 10 }, fill: 'blue' }),
+          _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'eleventh-node', label: this.state.graph.nodes[10].name, radius: 10 }, fill: 'blue' }),
+          _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'challenger-node', target: 'first-node' } }),
+          _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'challenger-node', target: 'second-node' } }),
+          _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'challenger-node', target: 'third-node' } }),
+          _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'challenger-node', target: 'fourth-node' } }),
+          _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'challenger-node', target: 'fifth-node' } }),
+          _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'challenger-node', target: 'sixth-node' } }),
+          _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'challenger-node', target: 'seventh-node' } }),
+          _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'master-node', target: 'eighth-node' } }),
+          _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'master-node', target: 'nineth-node' } }),
+          _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'master-node', target: 'tenth-node' } }),
+          _react2.default.createElement(_reactVisForce.ForceGraphLink, { link: { source: 'master-node', target: 'eleventh-node' } })
         );
       } else {
         return _react2.default.createElement(

@@ -38,16 +38,36 @@ class Forced extends React.Component{
 
  render() {
    if(typeof this.state.graph.nodes !== 'undefined'){
-     console.log(this.allNodes);
      return (
        <InteractiveForceGraph className="jumbotron text-center"
-         simulationOptions={{ height: 300, width: 300, animate: true }}
+         simulationOptions={{ height: 500, width: 500, animate: true, strength: 1 }}
          labelAttr="label"
-         onSelectNode={(node) => console.log(node)}
          highlightDependencies>
-         <ForceGraphNode node={{ id: 'first-node', label: this.state.graph.nodes[0].name }} fill="red" />
-         <ForceGraphNode node={{ id: 'second-node', label: this.state.graph.nodes[1].name }} fill="blue" />
-         <ForceGraphLink link={{ source: 'first-node', target: 'second-node' }} />
+         <ForceGraphNode node={{ id: 'first-node', label: this.state.graph.nodes[0].name, radius: 10 }} fill="red" />
+         <ForceGraphNode node={{ id: 'second-node', label: this.state.graph.nodes[1].name, radius: 10 }} fill="red" />
+         <ForceGraphNode node={{ id: 'third-node', label: this.state.graph.nodes[2].name, radius: 10 }} fill="red" />
+         <ForceGraphNode node={{ id: 'fourth-node', label: this.state.graph.nodes[3].name, radius: 10 }} fill="red" />
+         <ForceGraphNode node={{ id: 'fifth-node', label: this.state.graph.nodes[4].name, radius: 10 }} fill="red" />
+         <ForceGraphNode node={{ id: 'sixth-node', label: this.state.graph.nodes[5].name, radius: 10 }} fill="red" />
+         <ForceGraphNode node={{ id: 'seventh-node', label: this.state.graph.nodes[6].name, radius: 10 }} fill="red" />
+         <ForceGraphNode node={{ id: 'challenger-node', label: "Challenger League", radius: 20 }} fill="gold" />
+         <ForceGraphNode node={{ id: 'master-node', label: "Master League", radius: 20 }} fill="silver" />
+         <ForceGraphNode node={{ id: 'eighth-node', label: this.state.graph.nodes[7].name, radius: 10 }} fill="blue" />
+         <ForceGraphNode node={{ id: 'nineth-node', label: this.state.graph.nodes[8].name, radius: 10 }} fill="blue" />
+         <ForceGraphNode node={{ id: 'tenth-node', label: this.state.graph.nodes[9].name, radius: 10 }} fill="blue" />
+         <ForceGraphNode node={{ id: 'eleventh-node', label: this.state.graph.nodes[10].name, radius: 10 }} fill="blue" />
+         <ForceGraphLink link={{ source: 'challenger-node', target: 'first-node' }} />
+         <ForceGraphLink link={{ source: 'challenger-node', target: 'second-node' }} />
+         <ForceGraphLink link={{ source: 'challenger-node', target: 'third-node' }} />
+         <ForceGraphLink link={{ source: 'challenger-node', target: 'fourth-node' }} />
+         <ForceGraphLink link={{ source: 'challenger-node', target: 'fifth-node' }} />
+         <ForceGraphLink link={{ source: 'challenger-node', target: 'sixth-node' }} />
+         <ForceGraphLink link={{ source: 'challenger-node', target: 'seventh-node' }} />
+         <ForceGraphLink link={{ source: 'master-node', target: 'eighth-node' }} />
+         <ForceGraphLink link={{ source: 'master-node', target: 'nineth-node' }} />
+         <ForceGraphLink link={{ source: 'master-node', target: 'tenth-node' }} />
+         <ForceGraphLink link={{ source: 'master-node', target: 'eleventh-node' }} />
+
        </InteractiveForceGraph>
      );
    } else{
