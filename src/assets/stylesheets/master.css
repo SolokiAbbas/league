@@ -92,7 +92,7 @@
   display: flex;
   justify-content: center;
 }
-.forced-graph {
-  padding-top: -50px;
-  padding-left: -20px;
+
+.bar-value {
+  color: black;
 }

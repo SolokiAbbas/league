@@ -8,6 +8,7 @@ import Spells from './spells/spells';
 import Stats from './stats/stats';
 import Forced from './stats/forced/forced_graph';
 import FunPart from './stats/fun_graph';
+import BarGraphs from './stats/bars/bar_graph';
 import Summoners from './summoner/summoners';
 import { Route } from 'react-router-dom';
 
@@ -22,6 +23,7 @@ class App extends React.Component {
         <Route path="/stats" component={ Stats } />
         <Route exact path="/stats/forced" component={ Forced } />
         <Route exact path="/stats/fun" component={ FunPart } />
+        <Route exact path="/stats/bar" component={ BarGraphs } />
 
         <Route path="/items" component={ Items } />
         <Route path="/spells" component={ Spells } />

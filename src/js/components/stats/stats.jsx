@@ -9,7 +9,7 @@ class Stats extends React.Component{
       <div>
         <nav className="navbar navbar-light bg-light">
           <Link className="navbar-brand mb-0 h1" to="/stats/forced">League Challenger and Masters</Link>
-          <span className="navbar-brand mb-0 h1">League Character Data</span>
+          <Link className="navbar-brand mb-0 h1" to="/stats/bar">League Champion Stats</Link>
           <Link className="navbar-brand mb-0 h1" to="/stats/fun">Fun Graphs</Link>
         </nav>
       </div>
