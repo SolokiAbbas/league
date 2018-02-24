@@ -49218,7 +49218,6 @@ var BarSolo = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      console.log(this.props);
       return _react2.default.createElement(
         'div',
         { className: 'jumbotron text-center' },
@@ -49237,11 +49236,13 @@ var BarSolo = function (_React$Component) {
             width: 600,
             height: 300,
             xDistance: 150,
+            animation: true,
             stackBy: 'y' },
           _react2.default.createElement(_reactVis.XAxis, null),
           _react2.default.createElement(_reactVis.YAxis, null),
           _react2.default.createElement(_reactVis.HorizontalGridLines, null),
           _react2.default.createElement(_reactVis.VerticalBarSeries, {
+
             onValueMouseOver: function onValueMouseOver(datapoint, event) {
               _this2.maxValue(datapoint.x, datapoint.y);
             },

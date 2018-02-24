@@ -16,7 +16,6 @@ class BarSolo extends React.Component{
   }
 
   render(){
-    console.log(this.props);
     return(
       <div className="jumbotron text-center">
         <h2 className="bar-value">{this.state.champ} is {this.state.value}%</h2>
@@ -25,11 +24,13 @@ class BarSolo extends React.Component{
           width={600}
           height={300}
           xDistance={150}
+          animation={true}
           stackBy="y">
           <XAxis />
           <YAxis />
           <HorizontalGridLines />
           <VerticalBarSeries
+
             onValueMouseOver={(datapoint, event)=>{
               this.maxValue(datapoint.x, datapoint.y);
             }}
