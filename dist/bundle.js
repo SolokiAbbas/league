@@ -33961,7 +33961,7 @@ exports.default = App;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _react = __webpack_require__(0);
@@ -33977,55 +33977,64 @@ var _welcome2 = _interopRequireDefault(_welcome);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var NavBar = function NavBar() {
-    return _react2.default.createElement(
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(
+      'nav',
+      { className: 'navbar navbar-expand-lg navbar-light nav-custom' },
+      _react2.default.createElement(
+        _reactRouterDom.Link,
+        { className: 'navbar-brand nav-size', to: '/' },
+        'Home'
+      ),
+      _react2.default.createElement('img', { className: 'nav-images', src: '../../../assets/images/rune.png' }),
+      _react2.default.createElement(
+        _reactRouterDom.Link,
+        { className: 'navbar-brand nav-size', to: '/about' },
+        'About'
+      ),
+      _react2.default.createElement('img', { className: 'nav-images', src: '../../../assets/images/rune.png' }),
+      _react2.default.createElement(
+        _reactRouterDom.Link,
+        { className: 'navbar-brand nav-size', to: '/stats' },
+        'Stats'
+      ),
+      _react2.default.createElement(
+        'button',
+        { className: 'navbar-toggler', type: 'button', 'data-toggle': 'collapse', 'data-target': '#navbarNav', 'aria-controls': 'navbarNav', 'aria-expanded': 'false', 'aria-label': 'Toggle navigation' },
+        _react2.default.createElement('span', { className: 'navbar-toggler-icon' })
+      ),
+      _react2.default.createElement(
         'div',
-        null,
+        { className: 'collapse navbar-collapse', id: 'navbarNav' },
+        _react2.default.createElement('img', { className: 'nav-images', src: '../../../assets/images/rune.png' }),
         _react2.default.createElement(
-            'nav',
-            { className: 'navbar navbar-expand-lg navbar-light nav-custom' },
-            _react2.default.createElement(
-                _reactRouterDom.Link,
-                { className: 'navbar-brand nav-size', to: '/' },
-                'Home'
-            ),
-            _react2.default.createElement('img', { className: 'nav-images', src: '../../../assets/images/rune.png' }),
-            _react2.default.createElement(
-                _reactRouterDom.Link,
-                { className: 'navbar-brand nav-size', to: '/about' },
-                'About'
-            ),
-            _react2.default.createElement('img', { className: 'nav-images', src: '../../../assets/images/rune.png' }),
-            _react2.default.createElement(
-                _reactRouterDom.Link,
-                { className: 'navbar-brand nav-size', to: '/stats' },
-                'Stats'
-            ),
-            _react2.default.createElement('img', { className: 'nav-images', src: '../../../assets/images/rune.png' }),
-            _react2.default.createElement(
-                _reactRouterDom.Link,
-                { className: 'navbar-brand nav-size', to: '/summoners' },
-                'Summoners'
-            ),
-            _react2.default.createElement('img', { className: 'nav-images', src: '../../../assets/images/rune.png' }),
-            _react2.default.createElement(
-                _reactRouterDom.Link,
-                { className: 'navbar-brand nav-size', to: '/champions' },
-                'Champions'
-            ),
-            _react2.default.createElement('img', { className: 'nav-images', src: '../../../assets/images/rune.png' }),
-            _react2.default.createElement(
-                _reactRouterDom.Link,
-                { className: 'navbar-brand nav-size', to: '/spells' },
-                'Spells'
-            ),
-            _react2.default.createElement('img', { className: 'nav-images', src: '../../../assets/images/rune.png' }),
-            _react2.default.createElement(
-                _reactRouterDom.Link,
-                { className: 'navbar-brand nav-size', to: '/items' },
-                'Items'
-            )
+          _reactRouterDom.Link,
+          { className: 'navbar-brand nav-size', to: '/summoners' },
+          'Summoners'
+        ),
+        _react2.default.createElement('img', { className: 'nav-images', src: '../../../assets/images/rune.png' }),
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { className: 'navbar-brand nav-size', to: '/champions' },
+          'Champions'
+        ),
+        _react2.default.createElement('img', { className: 'nav-images', src: '../../../assets/images/rune.png' }),
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { className: 'navbar-brand nav-size', to: '/spells' },
+          'Spells'
+        ),
+        _react2.default.createElement('img', { className: 'nav-images', src: '../../../assets/images/rune.png' }),
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { className: 'navbar-brand nav-size', to: '/items' },
+          'Items'
         )
-    );
+      )
+    )
+  );
 };
 
 exports.default = NavBar;
