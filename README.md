@@ -37,10 +37,11 @@ The search is instant.
 8. Express.js server (hosted on Heroku)
 9. Loading Screen for links
 10. Searchable Champs and Items
+11. Added Collapsing NavBar
+12. 4 Bar Graphs, 1 particle graph, and 1 force graph
+13. D3 Library
 
 #### Features to be added
 
-1. D3 Library
-2. 4 Bar Graphs and 1 particle graph
-3. Add Collapsing NavBar
-4. Add Summoner Searching
+1. Fix CSS
+2. Add Summoner Searching
