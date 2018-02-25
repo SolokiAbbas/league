@@ -7,7 +7,9 @@
 This is an application to access League of Legends API using React.
 
 #### Layout
-The main page has a NavBar that lead to different parts of the site.
+The main page has a NavBar (collapsable) that lead to different parts of the site.
+Mobile Friendly Version
+
 ![navbar](/src/assets/images/champs.png)
 
 Clicking the champion link will give a list of champions.
@@ -18,12 +20,23 @@ the user can learn more about the champion by collapsing data in the body.
 
 ![navbar](/src/assets/images/skills.png)
 
-Searching for Champs:
+##### Searching for Champs:
 
 Inputing the name of the champion or item leaves on the relevant objects.
 The search is instant.
 
 ![searching](/src/assets/images/search-champs.png)
+
+
+##### D3 Library and Graphs
+
+Used react-vis-force to make D3's Forced Graphs
+
+
+Used react-vis to make charts using Bar Graphs
+
+
+Created a fun visual with Particles-JS
 
 
 #### Technologies
