@@ -9,7 +9,9 @@ class BarGraphs extends React.Component{
       bar2: {},
       bar3: {},
       bar4: {},
-      showBar: "bar1"
+      showBar: "bar1",
+      range: [60,80],
+      name: "Champions Win Rate in Challenger"
     };
     this.fetchBar1 = this.fetchBar1.bind(this);
     this.fetchBar2 = this.fetchBar2.bind(this);
@@ -58,30 +60,33 @@ class BarGraphs extends React.Component{
       }).then(datas => this.setState({bar4 : datas}));
   }
 
-  whichBar(val){
-    this.setState({showBar: val});
+  whichBar(val, arr, title){
+    this.setState({showBar: val,
+                  range: arr, name: title});
   }
 
   render(){
     if(typeof this.state.bar1[0] !== 'undefined'){
       return(
         <div>
-            <label className="radio-inline">
-              <input type="radio" name="radioGroup" id="radio1" value="bar1" onChange={()=>this.whichBar("bar1")} /> Chamption Win Rate in Challenger League
+          <div className="text-center">
+            <label className="radio-inline radio-solo">
+              <input type="radio" defaultChecked={true} name="radioGroup" id="radio1" value="bar1" onChange={()=>this.whichBar("bar1",[60,80], "Champions Win Rate in Challenger")} /> Chamption Win Rate in Challenger League
             </label>
-            <label className="radio-inline">
-              <input type="radio" name="radioGroup" id="radio2" value="bar2" onChange={()=>this.whichBar("bar2")} /> Chamption Win Rate in Master League
+            <label className="radio-inline radio-solo">
+              <input type="radio" name="radioGroup" id="radio2" value="bar2" onChange={()=>this.whichBar("bar2", [55,80], "Champions Win Rate in Master")} /> Chamption Win Rate in Master League
             </label>
-            <label className="radio-inline">
-              <input type="radio" name="radioGroup" id="radio3" value="bar3" onChange={()=>this.whichBar("bar3")} /> Chamption Win Rate in All Leagues
+            <label className="radio-inline radio-solo">
+              <input type="radio" name="radioGroup" id="radio3" value="bar3" onChange={()=>this.whichBar("bar3", [52,54], "Champions Win Rate Overall")} /> Chamption Win Rate in All Leagues
             </label>
-            <label className="radio-inline">
-              <input type="radio" name="radioGroup" id="radio4" value="bar4" onChange={()=>this.whichBar("bar4")} /> Most picked Champions in All Leagues
+            <label className="radio-inline radio-solo">
+              <input type="radio" name="radioGroup" id="radio4" value="bar4" onChange={()=>this.whichBar("bar4", [15.9,30.1], "Most Picked Champions")} /> Most picked Champions in All Leagues
             </label>
-            {this.state.showBar === "bar1" ? <BarSolo champ={this.state.bar1} /> :
-          this.state.showBar === "bar2" ? <BarSolo champ={this.state.bar2} /> :
-        this.state.showBar === "bar3" ? <BarSolo champ={this.state.bar3} /> :
-      this.state.showBar === "bar4" ? <BarSolo champ={this.state.bar4} /> : <div></div>}
+          </div>
+            {this.state.showBar === "bar1" ? <BarSolo champ={this.state.bar1} range={this.state.range} title={this.state.name} /> :
+          this.state.showBar === "bar2" ? <BarSolo champ={this.state.bar2} range={this.state.range} title={this.state.name} /> :
+        this.state.showBar === "bar3" ? <BarSolo champ={this.state.bar3} range={this.state.range} title={this.state.name} /> :
+      this.state.showBar === "bar4" ? <BarSolo champ={this.state.bar4} range={this.state.range} title={this.state.name} /> : <div></div>}
 
         </div>
       );

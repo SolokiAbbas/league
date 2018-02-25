@@ -18,13 +18,15 @@ class BarSolo extends React.Component{
   render(){
     return(
       <div className="jumbotron text-center">
+        <h2 className="bar-value">{this.props.title}</h2>
         <h2 className="bar-value">{this.state.champ} is {this.state.value}%</h2>
-        <XYPlot
+        <XYPlot 
           xType="ordinal"
           width={600}
           height={300}
           xDistance={150}
           animation={true}
+          yDomain={this.props.range}
           stackBy="y">
           <XAxis />
           <YAxis />

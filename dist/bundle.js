@@ -49066,7 +49066,9 @@ var BarGraphs = function (_React$Component) {
       bar2: {},
       bar3: {},
       bar4: {},
-      showBar: "bar1"
+      showBar: "bar1",
+      range: [60, 80],
+      name: "Champions Win Rate in Challenger"
     };
     _this.fetchBar1 = _this.fetchBar1.bind(_this);
     _this.fetchBar2 = _this.fetchBar2.bind(_this);
@@ -49145,8 +49147,9 @@ var BarGraphs = function (_React$Component) {
     }
   }, {
     key: 'whichBar',
-    value: function whichBar(val) {
-      this.setState({ showBar: val });
+    value: function whichBar(val, arr, title) {
+      this.setState({ showBar: val,
+        range: arr, name: title });
     }
   }, {
     key: 'render',
@@ -49158,38 +49161,42 @@ var BarGraphs = function (_React$Component) {
           'div',
           null,
           _react2.default.createElement(
-            'label',
-            { className: 'radio-inline' },
-            _react2.default.createElement('input', { type: 'radio', name: 'radioGroup', id: 'radio1', value: 'bar1', onChange: function onChange() {
-                return _this6.whichBar("bar1");
-              } }),
-            ' Chamption Win Rate in Challenger League'
+            'div',
+            { className: 'text-center' },
+            _react2.default.createElement(
+              'label',
+              { className: 'radio-inline radio-solo' },
+              _react2.default.createElement('input', { type: 'radio', defaultChecked: true, name: 'radioGroup', id: 'radio1', value: 'bar1', onChange: function onChange() {
+                  return _this6.whichBar("bar1", [60, 80], "Champions Win Rate in Challenger");
+                } }),
+              ' Chamption Win Rate in Challenger League'
+            ),
+            _react2.default.createElement(
+              'label',
+              { className: 'radio-inline radio-solo' },
+              _react2.default.createElement('input', { type: 'radio', name: 'radioGroup', id: 'radio2', value: 'bar2', onChange: function onChange() {
+                  return _this6.whichBar("bar2", [55, 80], "Champions Win Rate in Master");
+                } }),
+              ' Chamption Win Rate in Master League'
+            ),
+            _react2.default.createElement(
+              'label',
+              { className: 'radio-inline radio-solo' },
+              _react2.default.createElement('input', { type: 'radio', name: 'radioGroup', id: 'radio3', value: 'bar3', onChange: function onChange() {
+                  return _this6.whichBar("bar3", [52, 54], "Champions Win Rate Overall");
+                } }),
+              ' Chamption Win Rate in All Leagues'
+            ),
+            _react2.default.createElement(
+              'label',
+              { className: 'radio-inline radio-solo' },
+              _react2.default.createElement('input', { type: 'radio', name: 'radioGroup', id: 'radio4', value: 'bar4', onChange: function onChange() {
+                  return _this6.whichBar("bar4", [15.9, 30.1], "Most Picked Champions");
+                } }),
+              ' Most picked Champions in All Leagues'
+            )
           ),
-          _react2.default.createElement(
-            'label',
-            { className: 'radio-inline' },
-            _react2.default.createElement('input', { type: 'radio', name: 'radioGroup', id: 'radio2', value: 'bar2', onChange: function onChange() {
-                return _this6.whichBar("bar2");
-              } }),
-            ' Chamption Win Rate in Master League'
-          ),
-          _react2.default.createElement(
-            'label',
-            { className: 'radio-inline' },
-            _react2.default.createElement('input', { type: 'radio', name: 'radioGroup', id: 'radio3', value: 'bar3', onChange: function onChange() {
-                return _this6.whichBar("bar3");
-              } }),
-            ' Chamption Win Rate in All Leagues'
-          ),
-          _react2.default.createElement(
-            'label',
-            { className: 'radio-inline' },
-            _react2.default.createElement('input', { type: 'radio', name: 'radioGroup', id: 'radio4', value: 'bar4', onChange: function onChange() {
-                return _this6.whichBar("bar4");
-              } }),
-            ' Most picked Champions in All Leagues'
-          ),
-          this.state.showBar === "bar1" ? _react2.default.createElement(_bar_solo2.default, { champ: this.state.bar1 }) : this.state.showBar === "bar2" ? _react2.default.createElement(_bar_solo2.default, { champ: this.state.bar2 }) : this.state.showBar === "bar3" ? _react2.default.createElement(_bar_solo2.default, { champ: this.state.bar3 }) : this.state.showBar === "bar4" ? _react2.default.createElement(_bar_solo2.default, { champ: this.state.bar4 }) : _react2.default.createElement('div', null)
+          this.state.showBar === "bar1" ? _react2.default.createElement(_bar_solo2.default, { champ: this.state.bar1, range: this.state.range, title: this.state.name }) : this.state.showBar === "bar2" ? _react2.default.createElement(_bar_solo2.default, { champ: this.state.bar2, range: this.state.range, title: this.state.name }) : this.state.showBar === "bar3" ? _react2.default.createElement(_bar_solo2.default, { champ: this.state.bar3, range: this.state.range, title: this.state.name }) : this.state.showBar === "bar4" ? _react2.default.createElement(_bar_solo2.default, { champ: this.state.bar4, range: this.state.range, title: this.state.name }) : _react2.default.createElement('div', null)
         );
       } else {
         return _react2.default.createElement(
@@ -49265,6 +49272,11 @@ var BarSolo = function (_React$Component) {
         _react2.default.createElement(
           'h2',
           { className: 'bar-value' },
+          this.props.title
+        ),
+        _react2.default.createElement(
+          'h2',
+          { className: 'bar-value' },
           this.state.champ,
           ' is ',
           this.state.value,
@@ -49278,6 +49290,7 @@ var BarSolo = function (_React$Component) {
             height: 300,
             xDistance: 150,
             animation: true,
+            yDomain: this.props.range,
             stackBy: 'y' },
           _react2.default.createElement(_reactVis.XAxis, null),
           _react2.default.createElement(_reactVis.YAxis, null),
