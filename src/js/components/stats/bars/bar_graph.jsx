@@ -8,12 +8,14 @@ class BarGraphs extends React.Component{
       bar1: {},
       bar2: {},
       bar3: {},
-      bar4: {}
+      bar4: {},
+      showBar: "bar1"
     };
     this.fetchBar1 = this.fetchBar1.bind(this);
     this.fetchBar2 = this.fetchBar2.bind(this);
     this.fetchBar3 = this.fetchBar3.bind(this);
     this.fetchBar4 = this.fetchBar4.bind(this);
+    this.whichBar = this.whichBar.bind(this);
   }
 
   componentWillMount(){
@@ -56,11 +58,30 @@ class BarGraphs extends React.Component{
       }).then(datas => this.setState({bar4 : datas}));
   }
 
+  whichBar(val){
+    this.setState({showBar: val});
+  }
+
   render(){
     if(typeof this.state.bar1[0] !== 'undefined'){
       return(
         <div>
-          <BarSolo champ={this.state.bar1} />
+            <label className="radio-inline">
+              <input type="radio" name="radioGroup" id="radio1" value="bar1" onChange={()=>this.whichBar("bar1")} /> Chamption Win Rate in Challenger League
+            </label>
+            <label className="radio-inline">
+              <input type="radio" name="radioGroup" id="radio2" value="bar2" onChange={()=>this.whichBar("bar2")} /> Chamption Win Rate in Master League
+            </label>
+            <label className="radio-inline">
+              <input type="radio" name="radioGroup" id="radio3" value="bar3" onChange={()=>this.whichBar("bar3")} /> Chamption Win Rate in All Leagues
+            </label>
+            <label className="radio-inline">
+              <input type="radio" name="radioGroup" id="radio4" value="bar4" onChange={()=>this.whichBar("bar4")} /> Most picked Champions in All Leagues
+            </label>
+            {this.state.showBar === "bar1" ? <BarSolo champ={this.state.bar1} /> :
+          this.state.showBar === "bar2" ? <BarSolo champ={this.state.bar2} /> :
+        this.state.showBar === "bar3" ? <BarSolo champ={this.state.bar3} /> :
+      this.state.showBar === "bar4" ? <BarSolo champ={this.state.bar4} /> : <div></div>}
 
         </div>
       );

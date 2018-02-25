@@ -49065,12 +49065,14 @@ var BarGraphs = function (_React$Component) {
       bar1: {},
       bar2: {},
       bar3: {},
-      bar4: {}
+      bar4: {},
+      showBar: "bar1"
     };
     _this.fetchBar1 = _this.fetchBar1.bind(_this);
     _this.fetchBar2 = _this.fetchBar2.bind(_this);
     _this.fetchBar3 = _this.fetchBar3.bind(_this);
     _this.fetchBar4 = _this.fetchBar4.bind(_this);
+    _this.whichBar = _this.whichBar.bind(_this);
     return _this;
   }
 
@@ -49142,13 +49144,52 @@ var BarGraphs = function (_React$Component) {
       });
     }
   }, {
+    key: 'whichBar',
+    value: function whichBar(val) {
+      this.setState({ showBar: val });
+    }
+  }, {
     key: 'render',
     value: function render() {
+      var _this6 = this;
+
       if (typeof this.state.bar1[0] !== 'undefined') {
         return _react2.default.createElement(
           'div',
           null,
-          _react2.default.createElement(_bar_solo2.default, { champ: this.state.bar1 })
+          _react2.default.createElement(
+            'label',
+            { className: 'radio-inline' },
+            _react2.default.createElement('input', { type: 'radio', name: 'radioGroup', id: 'radio1', value: 'bar1', onChange: function onChange() {
+                return _this6.whichBar("bar1");
+              } }),
+            ' Chamption Win Rate in Challenger League'
+          ),
+          _react2.default.createElement(
+            'label',
+            { className: 'radio-inline' },
+            _react2.default.createElement('input', { type: 'radio', name: 'radioGroup', id: 'radio2', value: 'bar2', onChange: function onChange() {
+                return _this6.whichBar("bar2");
+              } }),
+            ' Chamption Win Rate in Master League'
+          ),
+          _react2.default.createElement(
+            'label',
+            { className: 'radio-inline' },
+            _react2.default.createElement('input', { type: 'radio', name: 'radioGroup', id: 'radio3', value: 'bar3', onChange: function onChange() {
+                return _this6.whichBar("bar3");
+              } }),
+            ' Chamption Win Rate in All Leagues'
+          ),
+          _react2.default.createElement(
+            'label',
+            { className: 'radio-inline' },
+            _react2.default.createElement('input', { type: 'radio', name: 'radioGroup', id: 'radio4', value: 'bar4', onChange: function onChange() {
+                return _this6.whichBar("bar4");
+              } }),
+            ' Most picked Champions in All Leagues'
+          ),
+          this.state.showBar === "bar1" ? _react2.default.createElement(_bar_solo2.default, { champ: this.state.bar1 }) : this.state.showBar === "bar2" ? _react2.default.createElement(_bar_solo2.default, { champ: this.state.bar2 }) : this.state.showBar === "bar3" ? _react2.default.createElement(_bar_solo2.default, { champ: this.state.bar3 }) : this.state.showBar === "bar4" ? _react2.default.createElement(_bar_solo2.default, { champ: this.state.bar4 }) : _react2.default.createElement('div', null)
         );
       } else {
         return _react2.default.createElement(
