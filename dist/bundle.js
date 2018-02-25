@@ -39857,7 +39857,7 @@ var Stats = function (_React$Component) {
           _react2.default.createElement(
             _reactRouterDom.Link,
             { className: 'navbar-brand mb-0 h1', to: '/stats/fun' },
-            'Fun Graphs'
+            'Fun Visual'
           )
         )
       );
