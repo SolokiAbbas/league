@@ -91,7 +91,7 @@ class BarGraphs extends React.Component{
         </div>
       );
     } else {
-      return(<div>No Bar Graph</div>);
+      return(<div></div>);
     }
   }
 }

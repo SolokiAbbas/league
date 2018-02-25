@@ -49199,11 +49199,7 @@ var BarGraphs = function (_React$Component) {
           this.state.showBar === "bar1" ? _react2.default.createElement(_bar_solo2.default, { champ: this.state.bar1, range: this.state.range, title: this.state.name }) : this.state.showBar === "bar2" ? _react2.default.createElement(_bar_solo2.default, { champ: this.state.bar2, range: this.state.range, title: this.state.name }) : this.state.showBar === "bar3" ? _react2.default.createElement(_bar_solo2.default, { champ: this.state.bar3, range: this.state.range, title: this.state.name }) : this.state.showBar === "bar4" ? _react2.default.createElement(_bar_solo2.default, { champ: this.state.bar4, range: this.state.range, title: this.state.name }) : _react2.default.createElement('div', null)
         );
       } else {
-        return _react2.default.createElement(
-          'div',
-          null,
-          'No Bar Graph'
-        );
+        return _react2.default.createElement('div', null);
       }
     }
   }]);
