@@ -31,13 +31,13 @@ The search is instant.
 ##### D3 Library and Graphs
 
 Used react-vis-force to make D3's Forced Graphs
-
+![bar](/src/assets/images/forced-graph.png)
 
 Used react-vis to make charts using Bar Graphs
-
+![forced](/src/assets/images/bar-graph.png)
 
 Created a fun visual with Particles-JS
-
+![visual](/src/assets/images/fun-visual.png)
 
 #### Technologies
 1. React.js
