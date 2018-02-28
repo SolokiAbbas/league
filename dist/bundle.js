@@ -39537,7 +39537,7 @@ var Items = function (_React$Component) {
                 _react2.default.createElement('img', { className: 'nav-search', src: '../../../assets/images/search.png' }),
                 _react2.default.createElement(
                   'h4',
-                  { style: { margin: "0 10px 0 0" } },
+                  { className: 'forced-value', style: { margin: "0 10px 0 0" } },
                   ' Search'
                 ),
                 _react2.default.createElement(_reactSearchInput2.default, { className: 'search-input search', onChange: this.searchUpdate, placeholder: 'Search Items' })
