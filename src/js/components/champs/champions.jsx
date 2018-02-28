@@ -51,7 +51,7 @@ class Champions extends React.Component{
               <div>
                 <div className="searching">
                   <img className="nav-search" src="../../../assets/images/search.png" />
-                  <h4 style={{margin: "0 10px 0 0"}}>Search</h4>
+                  <h4 className="forced-value" style={{margin: "0 10px 0 0"}}>Search</h4>
                   <SearchInput className="search-input search" onChange={this.searchUpdate} placeholder="Search Champs"/>
                 </div>
                 <div className="main-body">

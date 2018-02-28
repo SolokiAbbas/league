@@ -10810,22 +10810,22 @@ var Welcome = function Welcome() {
     { className: "homepage" },
     _react2.default.createElement(
       "h2",
-      { className: "text-center" },
+      { className: "text-center forced-value" },
       "Welcome to League-Watcher Site!!"
     ),
     _react2.default.createElement(
       "h2",
-      { className: "text-center" },
+      { className: "text-center forced-value" },
       "Here you find out about champions, spells, and items currently on League of Legends!!"
     ),
     _react2.default.createElement(
       "h2",
-      { className: "text-center" },
+      { className: "text-center forced-value" },
       "Search for your favorite Champions and learn more about them!"
     ),
     _react2.default.createElement(
       "h2",
-      { className: "text-center" },
+      { className: "text-center forced-value" },
       "Click on the Links above to find out more!"
     )
   );
@@ -37836,7 +37836,7 @@ var Champions = function (_React$Component) {
                 _react2.default.createElement('img', { className: 'nav-search', src: '../../../assets/images/search.png' }),
                 _react2.default.createElement(
                   'h4',
-                  { style: { margin: "0 10px 0 0" } },
+                  { className: 'forced-value', style: { margin: "0 10px 0 0" } },
                   'Search'
                 ),
                 _react2.default.createElement(_reactSearchInput2.default, { className: 'search-input search', onChange: this.searchUpdate, placeholder: 'Search Champs' })
