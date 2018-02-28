@@ -10811,7 +10811,7 @@ var Welcome = function Welcome() {
     _react2.default.createElement(
       "h2",
       { className: "text-center forced-value" },
-      "Welcome to League-Watcher Site!!"
+      "Welcome to League-Watcher Site!"
     ),
     _react2.default.createElement(
       "h2",
@@ -37713,7 +37713,7 @@ var About = function About() {
     _react2.default.createElement(
       "h4",
       null,
-      "I am experienced in Ruby on Rails and JavaScript. Currently, I am working on a solo Project using Python and Django. Solving difficult algorithms is my hobby. I look forward to experience new technologies and challenges."
+      "I am experienced in Ruby on Rails, Python, Django, and JavaScript. Currently, I am working on a solo Project using React.js. Solving difficult algorithms is my hobby and I am passionate about coding. I look forward to experience new technologies and challenges."
     )
   );
 };
