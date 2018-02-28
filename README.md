@@ -65,4 +65,5 @@ Created a fun visual with Particles-JS
 2. Navbar for Stats
 3. Navbar for BarGraphs
 4. Forced Graph alignment
-5. Searching 
+5. Searching
+6. HighLight Text so users know where they are.

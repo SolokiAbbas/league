@@ -7,6 +7,7 @@ const About = () => (
           Solving difficult algorithms is my hobby.
           I look forward to experience new technologies and challenges.
         </h4>
+
       </div>
     );
 
