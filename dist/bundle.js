@@ -38237,7 +38237,7 @@ var ChampDetail = function (_React$Component) {
             ),
             _react2.default.createElement(
               'p',
-              { className: 'card-text' },
+              { className: 'card-text font-italic' },
               '"',
               title,
               '"'
@@ -39611,13 +39611,13 @@ var ItemDetail = function (_React$Component) {
           ),
           _react2.default.createElement(
             'p',
-            { className: 'card-text' },
+            { className: 'card-text font-italic' },
             'Cost: ',
             this.props.gold.base
           ),
           _react2.default.createElement(
             'p',
-            { className: 'card-text' },
+            { className: 'card-text font-italic' },
             'Sells for: ',
             this.props.gold.sell
           ),

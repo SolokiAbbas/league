@@ -150,7 +150,7 @@ class ChampDetail extends React.Component{
           <img className="card-img-top" style={{padding: '50px'}} src={`http://ddragon.leagueoflegends.com/cdn/8.3.1/img/champion/${this.props.image.full}`} alt="Card image cap" />
           <div className="card-body">
             <h5 className="card-title">{this.props.name}</h5>
-            <p className="card-text">"{title}"</p>
+            <p className="card-text font-italic">"{title}"</p>
             <p className="card-text">{this.props.blurb}</p>
             <button type="button" className="btn btn-primary" data-toggle="modal" data-target={`#champmodal${this.props.name}`}>Details</button>
           </div>
