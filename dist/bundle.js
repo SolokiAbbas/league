@@ -11072,7 +11072,7 @@ var Forced = function (_React$Component) {
           { className: 'forced-graph' },
           _react2.default.createElement(
             'h2',
-            { className: 'text-center' },
+            { className: 'text-center forced-value' },
             'League top 10 in Challengers and Masters'
           ),
           _react2.default.createElement(

@@ -111,11 +111,16 @@
 
 .bar-value {
   color: black;
+  font-family: "Raleway";
 }
 
 .bar-titles {
   font-family: "Raleway";
   display: inline-flex;
+}
+
+.forced-value{
+  font-family: "Raleway";
 }
 
 .radio-all {
