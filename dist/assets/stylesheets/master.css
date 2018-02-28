@@ -12,10 +12,26 @@
 .nav-custom {
   background-color: #e3f2fd;
   font-family: "Raleway";
+  display: flex !important;
+  justify-content: space-between !important;
+}
+
+.nav-home {
+  height: 35px;
+  width: 35px;
+}
+
+.nav-others{
+  display: inline-flex;
+}
+
+.nav-home-title {
+  font-size: 35px !important;
+  font-family: "Indie Flower"
 }
 
 .nav-size{
-  font-size: 23px !important;
+  font-size: 22px !important;
   margin-right: 20px !important;
 }
 
