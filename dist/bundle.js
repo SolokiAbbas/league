@@ -39856,21 +39856,21 @@ var Stats = function (_React$Component) {
         null,
         _react2.default.createElement(
           'nav',
-          { className: 'navbar navbar-light bg-light' },
+          { className: 'navbar navbar-light bg-light custom-graphs' },
           _react2.default.createElement(
             _reactRouterDom.Link,
-            { className: 'navbar-brand mb-0 h1', to: '/stats/forced' },
-            'League Challenger and Masters'
+            { className: 'navbar-brand', to: '/stats/forced' },
+            'Forced Graph'
           ),
           _react2.default.createElement(
             _reactRouterDom.Link,
-            { className: 'navbar-brand mb-0 h1', to: '/stats/bar' },
-            'League Champion Stats'
+            { className: 'navbar-brand', to: '/stats/bar' },
+            'Bar Graphs'
           ),
           _react2.default.createElement(
             _reactRouterDom.Link,
-            { className: 'navbar-brand mb-0 h1', to: '/stats/fun' },
-            'Fun Visual'
+            { className: 'navbar-brand', to: '/stats/fun' },
+            'Fun Visuals'
           )
         )
       );
@@ -49182,7 +49182,11 @@ var BarGraphs = function (_React$Component) {
               _react2.default.createElement('input', { type: 'radio', defaultChecked: true, name: 'radioGroup', id: 'radio1', value: 'bar1', onChange: function onChange() {
                   return _this6.whichBar("bar1", [60, 80], "Champions Win Rate in Challenger");
                 } }),
-              ' Chamption Win Rate in Challenger League'
+              _react2.default.createElement(
+                'div',
+                { className: 'bar-titles' },
+                'Champion Win Rate in Challenger League'
+              )
             ),
             _react2.default.createElement(
               'label',
@@ -49190,7 +49194,11 @@ var BarGraphs = function (_React$Component) {
               _react2.default.createElement('input', { type: 'radio', name: 'radioGroup', id: 'radio2', value: 'bar2', onChange: function onChange() {
                   return _this6.whichBar("bar2", [55, 80], "Champions Win Rate in Master");
                 } }),
-              ' Chamption Win Rate in Master League'
+              _react2.default.createElement(
+                'div',
+                { className: 'bar-titles' },
+                'Champion Win Rate in Master League'
+              )
             ),
             _react2.default.createElement(
               'label',
@@ -49198,7 +49206,11 @@ var BarGraphs = function (_React$Component) {
               _react2.default.createElement('input', { type: 'radio', name: 'radioGroup', id: 'radio3', value: 'bar3', onChange: function onChange() {
                   return _this6.whichBar("bar3", [52, 54], "Champions Win Rate Overall");
                 } }),
-              ' Chamption Win Rate in All Leagues'
+              _react2.default.createElement(
+                'div',
+                { className: 'bar-titles' },
+                'Champion Win Rate in All Leagues'
+              )
             ),
             _react2.default.createElement(
               'label',
@@ -49206,7 +49218,11 @@ var BarGraphs = function (_React$Component) {
               _react2.default.createElement('input', { type: 'radio', name: 'radioGroup', id: 'radio4', value: 'bar4', onChange: function onChange() {
                   return _this6.whichBar("bar4", [15.9, 30.1], "Most Picked Champions");
                 } }),
-              ' Most picked Champions in All Leagues'
+              _react2.default.createElement(
+                'div',
+                { className: 'bar-titles' },
+                'Most picked Champions in All Leagues'
+              )
             )
           ),
           this.state.showBar === "bar1" ? _react2.default.createElement(_bar_solo2.default, { champ: this.state.bar1, range: this.state.range, title: this.state.name }) : this.state.showBar === "bar2" ? _react2.default.createElement(_bar_solo2.default, { champ: this.state.bar2, range: this.state.range, title: this.state.name }) : this.state.showBar === "bar3" ? _react2.default.createElement(_bar_solo2.default, { champ: this.state.bar3, range: this.state.range, title: this.state.name }) : this.state.showBar === "bar4" ? _react2.default.createElement(_bar_solo2.default, { champ: this.state.bar4, range: this.state.range, title: this.state.name }) : _react2.default.createElement('div', null)

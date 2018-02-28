@@ -116,3 +116,10 @@
 .radio-solo {
   margin-right: 15px;
 }
+
+.custom-graphs {
+  display: flex;
+  justify-content: space-around !important;
+  font-family: "Inconsolata";
+  font-size: 25px !important;
+}
