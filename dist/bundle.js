@@ -10816,7 +10816,7 @@ var Welcome = function Welcome() {
     _react2.default.createElement(
       "h2",
       { className: "text-center forced-value" },
-      "Here you find out about champions, spells, and items currently on League of Legends!!"
+      "Here you find out about champions, spells, and items currently on League of Legends!"
     ),
     _react2.default.createElement(
       "h2",
@@ -37832,14 +37832,12 @@ var Champions = function (_React$Component) {
               null,
               _react2.default.createElement(
                 'div',
-                { className: 'searching' },
-                _react2.default.createElement('img', { className: 'nav-search', src: '../../../assets/images/search.png' }),
+                { className: 'box' },
                 _react2.default.createElement(
-                  'h4',
-                  { className: 'forced-value', style: { margin: "0 10px 0 0" } },
-                  'Search'
-                ),
-                _react2.default.createElement(_reactSearchInput2.default, { className: 'search-input search', onChange: this.searchUpdate, placeholder: 'Search Champs' })
+                  'div',
+                  { className: 'container-1' },
+                  _react2.default.createElement(_reactSearchInput2.default, { className: 'search-input search', id: 'search', onChange: this.searchUpdate, placeholder: 'Search Champs' })
+                )
               ),
               _react2.default.createElement(
                 'div',
