@@ -66530,7 +66530,7 @@ var Summoners = function (_React$Component) {
         "div",
         { className: "jumbotron mx-auto jumbo-about" },
         _react2.default.createElement(
-          "p",
+          "h3",
           null,
           "Under Construction!"
         )

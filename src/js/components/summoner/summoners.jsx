@@ -11,8 +11,8 @@ class Summoners extends React.Component{
   render(){
     return(
           <div className="jumbotron mx-auto jumbo-about">
-            <p>Under Construction!
-            </p>
+            <h3>Under Construction!
+            </h3>
           </div>
         );
   }

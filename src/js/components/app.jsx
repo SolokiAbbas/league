@@ -18,15 +18,20 @@ class App extends React.Component {
       <div>
         <NavBar />
         <Route exact path="/" component={ Welcome } />
+
         <Route path="/about" component={ About } />
+
         <Route path="/champions" component={ Champions } />
+
         <Route path="/stats" component={ Stats } />
         <Route exact path="/stats/forced" component={ Forced } />
         <Route exact path="/stats/fun" component={ FunPart } />
         <Route exact path="/stats/bar" component={ BarGraphs } />
 
         <Route path="/items" component={ Items } />
+
         <Route path="/spells" component={ Spells } />
+        
         <Route path="/summoners" component={ Summoners } />
       </div>
     );
