@@ -39531,14 +39531,12 @@ var Items = function (_React$Component) {
               null,
               _react2.default.createElement(
                 'div',
-                { className: 'searching' },
-                _react2.default.createElement('img', { className: 'nav-search', src: '../../../assets/images/search.png' }),
+                { className: 'box' },
                 _react2.default.createElement(
-                  'h4',
-                  { className: 'forced-value', style: { margin: "0 10px 0 0" } },
-                  ' Search'
-                ),
-                _react2.default.createElement(_reactSearchInput2.default, { className: 'search-input search', onChange: this.searchUpdate, placeholder: 'Search Items' })
+                  'div',
+                  { className: 'container-1' },
+                  _react2.default.createElement(_reactSearchInput2.default, { className: 'search-input search', id: 'search', onChange: this.searchUpdate, placeholder: 'Search Items' })
+                )
               ),
               _react2.default.createElement(
                 'div',

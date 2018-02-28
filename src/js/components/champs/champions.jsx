@@ -53,7 +53,7 @@ class Champions extends React.Component{
                   <div className="container-1">
                     <SearchInput className="search-input search" id="search" onChange={this.searchUpdate} placeholder="Search Champs"/>
                   </div>
-              </div>
+                </div>
                 <div className="main-body">
                   {filteredChamps.map(champ => <ChampDetail key={champ.id} info={champ.info} name={champ.name}
                     image={champ.image} spells={champ.spells} stats={champ.stats} title={champ.title}
