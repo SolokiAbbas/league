@@ -70,26 +70,26 @@ class BarGraphs extends React.Component{
       return(
         <div>
           <div className="text-center">
-            <label className="radio-inline radio-solo">
-              <input type="radio" defaultChecked={true} name="radioGroup" id="radio1" value="bar1" onChange={()=>this.whichBar("bar1",[60,80], "Champions Win Rate in Challenger")} />
+            <label className="radio-inline radio-all">
+              <input className="radio-solo" type="radio" defaultChecked={true} name="radioGroup" id="radio1" value="bar1" onChange={()=>this.whichBar("bar1",[60,80], "Champions Win Rate in Challenger")} />
               <div className="bar-titles">
                 Champion Win Rate in Challenger League
               </div>
             </label>
-            <label className="radio-inline radio-solo">
-              <input type="radio" name="radioGroup" id="radio2" value="bar2" onChange={()=>this.whichBar("bar2", [55,80], "Champions Win Rate in Master")} />
+            <label className="radio-inline radio-all">
+              <input className="radio-solo" type="radio" name="radioGroup" id="radio2" value="bar2" onChange={()=>this.whichBar("bar2", [55,80], "Champions Win Rate in Master")} />
               <div className="bar-titles">
                 Champion Win Rate in Master League
               </div>
             </label>
-            <label className="radio-inline radio-solo">
-              <input type="radio" name="radioGroup" id="radio3" value="bar3" onChange={()=>this.whichBar("bar3", [52,54], "Champions Win Rate Overall")} />
+            <label className="radio-inline radio-all">
+              <input className="radio-solo" type="radio" name="radioGroup" id="radio3" value="bar3" onChange={()=>this.whichBar("bar3", [52,54], "Champions Win Rate Overall")} />
               <div className="bar-titles">
                 Champion Win Rate in All Leagues
               </div>
             </label>
-            <label className="radio-inline radio-solo">
-              <input type="radio" name="radioGroup" id="radio4" value="bar4" onChange={()=>this.whichBar("bar4", [15.9,30.1], "Most Picked Champions")} />
+            <label className="radio-inline radio-all">
+              <input className="radio-solo" type="radio" name="radioGroup" id="radio4" value="bar4" onChange={()=>this.whichBar("bar4", [15.9,30.1], "Most Picked Champions")} />
               <div className="bar-titles">
                 Most picked Champions in All Leagues
               </div>

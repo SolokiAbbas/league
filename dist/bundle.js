@@ -49178,8 +49178,8 @@ var BarGraphs = function (_React$Component) {
             { className: 'text-center' },
             _react2.default.createElement(
               'label',
-              { className: 'radio-inline radio-solo' },
-              _react2.default.createElement('input', { type: 'radio', defaultChecked: true, name: 'radioGroup', id: 'radio1', value: 'bar1', onChange: function onChange() {
+              { className: 'radio-inline radio-all' },
+              _react2.default.createElement('input', { className: 'radio-solo', type: 'radio', defaultChecked: true, name: 'radioGroup', id: 'radio1', value: 'bar1', onChange: function onChange() {
                   return _this6.whichBar("bar1", [60, 80], "Champions Win Rate in Challenger");
                 } }),
               _react2.default.createElement(
@@ -49190,8 +49190,8 @@ var BarGraphs = function (_React$Component) {
             ),
             _react2.default.createElement(
               'label',
-              { className: 'radio-inline radio-solo' },
-              _react2.default.createElement('input', { type: 'radio', name: 'radioGroup', id: 'radio2', value: 'bar2', onChange: function onChange() {
+              { className: 'radio-inline radio-all' },
+              _react2.default.createElement('input', { className: 'radio-solo', type: 'radio', name: 'radioGroup', id: 'radio2', value: 'bar2', onChange: function onChange() {
                   return _this6.whichBar("bar2", [55, 80], "Champions Win Rate in Master");
                 } }),
               _react2.default.createElement(
@@ -49202,8 +49202,8 @@ var BarGraphs = function (_React$Component) {
             ),
             _react2.default.createElement(
               'label',
-              { className: 'radio-inline radio-solo' },
-              _react2.default.createElement('input', { type: 'radio', name: 'radioGroup', id: 'radio3', value: 'bar3', onChange: function onChange() {
+              { className: 'radio-inline radio-all' },
+              _react2.default.createElement('input', { className: 'radio-solo', type: 'radio', name: 'radioGroup', id: 'radio3', value: 'bar3', onChange: function onChange() {
                   return _this6.whichBar("bar3", [52, 54], "Champions Win Rate Overall");
                 } }),
               _react2.default.createElement(
@@ -49214,8 +49214,8 @@ var BarGraphs = function (_React$Component) {
             ),
             _react2.default.createElement(
               'label',
-              { className: 'radio-inline radio-solo' },
-              _react2.default.createElement('input', { type: 'radio', name: 'radioGroup', id: 'radio4', value: 'bar4', onChange: function onChange() {
+              { className: 'radio-inline radio-all' },
+              _react2.default.createElement('input', { className: 'radio-solo', type: 'radio', name: 'radioGroup', id: 'radio4', value: 'bar4', onChange: function onChange() {
                   return _this6.whichBar("bar4", [15.9, 30.1], "Most Picked Champions");
                 } }),
               _react2.default.createElement(

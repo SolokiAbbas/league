@@ -113,8 +113,18 @@
   color: black;
 }
 
+.bar-titles {
+  font-family: "Raleway";
+  display: inline-flex;
+}
+
+.radio-all {
+  margin-right: 10px;
+}
+
 .radio-solo {
-  margin-right: 15px;
+  margin-right: 5px;
+  padding-top: -5px;
 }
 
 .custom-graphs {
