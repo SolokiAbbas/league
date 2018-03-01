@@ -56,14 +56,4 @@ Created a fun visual with Particles-JS
 
 #### Features to be added
 
-1. Fix CSS
-2. Add Summoner Searching
-
-#### Improvements Needed
-
-1. NavBar
-2. Navbar for Stats
-3. Navbar for BarGraphs
-4. Forced Graph alignment
-5. Searching
-6. HighLight Text so users know where they are.
+1. Add Summoner Searching
