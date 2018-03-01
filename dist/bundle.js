@@ -66660,22 +66660,28 @@ var Summoner = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'card item-details', style: { width: '15rem' } },
         _react2.default.createElement('img', { src: 'http://ddragon.leagueoflegends.com/cdn/8.4.1/img/profileicon/' + this.props.profileicon }),
         _react2.default.createElement(
           'div',
-          null,
-          this.props.name
-        ),
-        _react2.default.createElement(
-          'div',
-          null,
-          this.props.level
-        ),
-        _react2.default.createElement(
-          'div',
-          null,
-          this.props.mastery
+          { className: 'card-body' },
+          _react2.default.createElement(
+            'h5',
+            { className: 'card-title' },
+            this.props.name
+          ),
+          _react2.default.createElement(
+            'p',
+            { className: 'card-text' },
+            'Level: ',
+            this.props.level
+          ),
+          _react2.default.createElement(
+            'p',
+            { className: 'card-text' },
+            'Mastery Score: ',
+            this.props.mastery
+          )
         )
       );
     }

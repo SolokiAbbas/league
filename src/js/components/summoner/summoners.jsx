@@ -6,10 +6,10 @@ class Summoners extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      summonerList: [],
+      summonerInfo: [],
     };
   }
-  
+
   render(){
     return(
           <div className="jumbotron mx-auto jumbo-about">
