@@ -39907,19 +39907,39 @@ var Stats = function (_React$Component) {
           'nav',
           { className: 'navbar navbar-light bg-light custom-graphs' },
           _react2.default.createElement(
-            _reactRouterDom.Link,
-            { className: 'navbar-brand', to: '/stats/forced' },
-            'Forced Graph'
-          ),
-          _react2.default.createElement(
-            _reactRouterDom.Link,
-            { className: 'navbar-brand', to: '/stats/bar' },
-            'Bar Graphs'
-          ),
-          _react2.default.createElement(
-            _reactRouterDom.Link,
-            { className: 'navbar-brand', to: '/stats/fun' },
-            'Fun Visuals'
+            'div',
+            { id: 'menu' },
+            _react2.default.createElement(
+              'ul',
+              null,
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { className: this.props.location.pathname === "/stats/forced" ? "active navbar-brand" : "navbar-brand", to: '/stats/forced' },
+                  'Forced Graph'
+                )
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { className: this.props.location.pathname === "/stats/bar" ? "active navbar-brand" : "navbar-brand", to: '/stats/bar' },
+                  'Bar Graphs'
+                )
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { className: this.props.location.pathname === "/stats/fun" ? "active navbar-brand" : "navbar-brand", to: '/stats/fun' },
+                  'Fun Visuals'
+                )
+              )
+            )
           )
         )
       );
