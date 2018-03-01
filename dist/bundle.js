@@ -37711,9 +37711,33 @@ var About = function About() {
     "div",
     { className: "jumbotron mx-auto jumbo-about" },
     _react2.default.createElement(
+      "h3",
+      null,
+      _react2.default.createElement(
+        "u",
+        null,
+        "About Me"
+      )
+    ),
+    _react2.default.createElement(
       "h4",
       null,
       "I am experienced in Ruby on Rails, Python, Django, and JavaScript. Currently, I am working on a solo Project using React.js. Solving difficult algorithms is my hobby and I am passionate about coding. I look forward to experience new technologies and challenges."
+    ),
+    _react2.default.createElement("hr", null),
+    _react2.default.createElement(
+      "h3",
+      null,
+      _react2.default.createElement(
+        "u",
+        null,
+        "About App"
+      )
+    ),
+    _react2.default.createElement(
+      "h4",
+      null,
+      "Project using Node, Webpack, and React.js. Users can check the stats of champions, items, and spells. When a user clicks on details, a modal appears with collapsing details that show case the power of bootstrap. JavaScript's D3 library shows stats of champions with information received from 3rd Party APIs."
     )
   );
 };
