@@ -112,6 +112,13 @@
 .bar-value {
   color: black;
   font-family: "Raleway";
+
+}
+
+.bar-value1{
+  color: black;
+  font-family: "Raleway";
+  margin-top: -40px;
 }
 
 .bar-titles {

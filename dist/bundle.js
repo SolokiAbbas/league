@@ -49365,7 +49365,7 @@ var BarSolo = function (_React$Component) {
         { className: 'jumbotron text-center' },
         _react2.default.createElement(
           'h2',
-          { className: 'bar-value' },
+          { className: 'bar-value1' },
           this.props.title
         ),
         _react2.default.createElement(
