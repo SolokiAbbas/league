@@ -11073,12 +11073,12 @@ var Forced = function (_React$Component) {
           _react2.default.createElement(
             'h2',
             { className: 'text-center forced-value' },
-            'League top 10 in Challengers and Masters'
+            '~ League top 10 in Challengers and Masters ~'
           ),
           _react2.default.createElement(
             _reactVisForce.InteractiveForceGraph,
             { className: 'jumbotron mx-auto d-block border',
-              simulationOptions: { height: 400, width: 500, animate: true, strength: 1 },
+              simulationOptions: { height: 600, width: 500, animate: true, strength: 1, radiusMargin: 20 },
               labelAttr: 'label',
               highlightDependencies: true },
             _react2.default.createElement(_reactVisForce.ForceGraphNode, { node: { id: 'first-node', label: this.state.graph.nodes[0].name, radius: 10 }, fill: 'red' }),

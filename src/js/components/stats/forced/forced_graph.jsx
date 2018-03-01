@@ -40,9 +40,9 @@ class Forced extends React.Component{
    if(typeof this.state.graph.nodes !== 'undefined'){
      return (
        <div className="forced-graph">
-         <h2 className="text-center forced-value">League top 10 in Challengers and Masters</h2>
+         <h2 className="text-center forced-value">~ League top 10 in Challengers and Masters ~</h2>
          <InteractiveForceGraph className="jumbotron mx-auto d-block border"
-          simulationOptions={{ height: 400, width: 500, animate: true, strength: 1 }}
+          simulationOptions={{ height: 600, width: 500, animate: true, strength: 1, radiusMargin: 20 }}
            labelAttr="label"
            highlightDependencies>
            <ForceGraphNode node={{ id: 'first-node', label: this.state.graph.nodes[0].name, radius: 10 }} fill="red" />

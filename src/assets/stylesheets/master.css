@@ -122,8 +122,8 @@
 }
 
 .forced-value{
-  margin-top: 6px;
-  margin-bottom: 6px;
+  margin-top: 12px;
+  margin-bottom: 12px;
   font-family: "Raleway";
 }
 
@@ -241,8 +241,7 @@
 
 .radio-solo {
   -webkit-appearance: none; /* remove default */
-  margin-right: 5px;
-  padding-top: -5px;
+  margin-right: 4px !important;
   display: block;
   margin: 10px;
   width: 24px;
@@ -266,8 +265,6 @@
   -webkit-transform: scale(1.5);
   -webkit-transition: -webkit-transform .1s cubic-bezier(0, 0, .2, 1);
 }
-
-
 
 /* The up/down direction logic */
 
