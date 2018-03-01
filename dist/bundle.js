@@ -33933,7 +33933,7 @@ var App = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement(_navbar2.default, null),
+        _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _navbar2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _welcome2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { path: '/about', component: _about2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { path: '/champions', component: _champions2.default }),
@@ -33964,6 +33964,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
@@ -33976,70 +33980,95 @@ var _welcome2 = _interopRequireDefault(_welcome);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var NavBar = function NavBar() {
-  return _react2.default.createElement(
-    'div',
-    null,
-    _react2.default.createElement(
-      'nav',
-      { className: 'navbar navbar-expand-lg navbar-light nav-custom' },
-      _react2.default.createElement(
-        _reactRouterDom.Link,
-        { className: 'navbar-brand nav-home-title', to: '/' },
-        _react2.default.createElement('img', { className: 'nav-home', src: '../../../assets/images/w-icon.png' }),
-        'League Watcher'
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'nav-others' },
-        _react2.default.createElement(
-          'button',
-          { className: 'navbar-toggler', type: 'button', 'data-toggle': 'collapse', 'data-target': '#navbarNav', 'aria-controls': 'navbarNav', 'aria-expanded': 'false', 'aria-label': 'Toggle navigation' },
-          _react2.default.createElement('span', { className: 'navbar-toggler-icon' })
-        ),
-        _react2.default.createElement(
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var NavBar = function (_React$Component) {
+  _inherits(NavBar, _React$Component);
+
+  function NavBar() {
+    _classCallCheck(this, NavBar);
+
+    return _possibleConstructorReturn(this, (NavBar.__proto__ || Object.getPrototypeOf(NavBar)).apply(this, arguments));
+  }
+
+  _createClass(NavBar, [{
+    key: 'render',
+    value: function render() {
+      if (_typeof(this.props.location) === "object") {
+        return _react2.default.createElement(
           'div',
-          { className: 'collapse navbar-collapse', id: 'navbarNav' },
+          null,
           _react2.default.createElement(
-            _reactRouterDom.Link,
-            { className: 'navbar-brand nav-size', to: '/about' },
-            'About'
-          ),
-          _react2.default.createElement('img', { className: 'nav-images', src: '../../../assets/images/rune.png' }),
-          _react2.default.createElement(
-            _reactRouterDom.Link,
-            { className: 'navbar-brand nav-size', to: '/stats' },
-            'Stats'
-          ),
-          _react2.default.createElement('img', { className: 'nav-images', src: '../../../assets/images/rune.png' }),
-          _react2.default.createElement(
-            _reactRouterDom.Link,
-            { className: 'navbar-brand nav-size', to: '/summoners' },
-            'Summoners'
-          ),
-          _react2.default.createElement('img', { className: 'nav-images', src: '../../../assets/images/rune.png' }),
-          _react2.default.createElement(
-            _reactRouterDom.Link,
-            { className: 'navbar-brand nav-size', to: '/champions' },
-            'Champions'
-          ),
-          _react2.default.createElement('img', { className: 'nav-images', src: '../../../assets/images/rune.png' }),
-          _react2.default.createElement(
-            _reactRouterDom.Link,
-            { className: 'navbar-brand nav-size', to: '/spells' },
-            'Spells'
-          ),
-          _react2.default.createElement('img', { className: 'nav-images', src: '../../../assets/images/rune.png' }),
-          _react2.default.createElement(
-            _reactRouterDom.Link,
-            { className: 'navbar-brand nav-size', to: '/items' },
-            'Items'
+            'nav',
+            { className: 'navbar navbar-expand-lg navbar-light nav-custom' },
+            _react2.default.createElement(
+              _reactRouterDom.Link,
+              { className: 'navbar-brand nav-home-title', to: '/' },
+              _react2.default.createElement('img', { className: 'nav-home', src: '../../../assets/images/w-icon.png' }),
+              'League Watcher'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'nav-others' },
+              _react2.default.createElement(
+                'button',
+                { className: 'navbar-toggler', type: 'button', 'data-toggle': 'collapse', 'data-target': '#navbarNav', 'aria-controls': 'navbarNav', 'aria-expanded': 'false', 'aria-label': 'Toggle navigation' },
+                _react2.default.createElement('span', { className: 'navbar-toggler-icon' })
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'collapse navbar-collapse', id: 'navbarNav' },
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { className: this.props.location.pathname === "/about" ? "navbar-brand nav-size glow" : "navbar-brand nav-size", to: '/about' },
+                  'About'
+                ),
+                _react2.default.createElement('img', { className: 'nav-images', src: '../../../assets/images/rune.png' }),
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { className: this.props.location.pathname === "/stats" ? "navbar-brand nav-size glow" : "navbar-brand nav-size", to: '/stats' },
+                  'Stats'
+                ),
+                _react2.default.createElement('img', { className: 'nav-images', src: '../../../assets/images/rune.png' }),
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { className: this.props.location.pathname === "/summoners" ? "navbar-brand nav-size glow" : "navbar-brand nav-size", to: '/summoners' },
+                  'Summoners'
+                ),
+                _react2.default.createElement('img', { className: 'nav-images', src: '../../../assets/images/rune.png' }),
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { className: this.props.location.pathname === "/champions" ? "navbar-brand nav-size glow" : "navbar-brand nav-size", to: '/champions' },
+                  'Champions'
+                ),
+                _react2.default.createElement('img', { className: 'nav-images', src: '../../../assets/images/rune.png' }),
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { className: this.props.location.pathname === "/spells" ? "navbar-brand nav-size glow" : "navbar-brand nav-size", to: '/spells' },
+                  'Spells'
+                ),
+                _react2.default.createElement('img', { className: 'nav-images', src: '../../../assets/images/rune.png' }),
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { className: this.props.location.pathname === "/items" ? "navbar-brand nav-size glow" : "navbar-brand nav-size", to: '/items' },
+                  'Items'
+                )
+              )
+            )
           )
-        )
-      )
-    )
-  );
-};
+        );
+      } else {
+        return _react2.default.createElement('div', null);
+      }
+    }
+  }]);
+
+  return NavBar;
+}(_react2.default.Component);
 
 exports.default = NavBar;
 

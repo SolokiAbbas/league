@@ -13,10 +13,12 @@ import Summoners from './summoner/summoners';
 import { Route } from 'react-router-dom';
 
 class App extends React.Component {
+
   render(){
     return(
       <div>
-        <NavBar />
+
+        <Route path="/" component={ NavBar } />
         <Route exact path="/" component={ Welcome } />
 
         <Route path="/about" component={ About } />
@@ -31,7 +33,7 @@ class App extends React.Component {
         <Route path="/items" component={ Items } />
 
         <Route path="/spells" component={ Spells } />
-        
+
         <Route path="/summoners" component={ Summoners } />
       </div>
     );
