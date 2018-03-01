@@ -49244,53 +49244,53 @@ var BarGraphs = function (_React$Component) {
           null,
           _react2.default.createElement(
             'div',
-            { className: 'text-center' },
+            { className: 'text-center bg-secondary' },
             _react2.default.createElement(
               'label',
               { className: 'radio-inline radio-all' },
-              _react2.default.createElement('input', { className: 'radio-solo', type: 'radio', defaultChecked: true, name: 'radioGroup', id: 'radio1', value: 'bar1', onChange: function onChange() {
-                  return _this6.whichBar("bar1", [60, 80], "Champions Win Rate in Challenger");
-                } }),
               _react2.default.createElement(
                 'div',
                 { className: 'bar-titles' },
-                'Champion Win Rate in Challenger League'
+                _react2.default.createElement('input', { className: 'radio-solo', type: 'radio', defaultChecked: true, name: 'radioGroup', id: 'radio1', value: 'bar1', onChange: function onChange() {
+                    return _this6.whichBar("bar1", [60, 80], "Champions Win Rate in Challenger");
+                  } }),
+                'Win Rate in Challenger'
               )
             ),
             _react2.default.createElement(
               'label',
               { className: 'radio-inline radio-all' },
-              _react2.default.createElement('input', { className: 'radio-solo', type: 'radio', name: 'radioGroup', id: 'radio2', value: 'bar2', onChange: function onChange() {
-                  return _this6.whichBar("bar2", [55, 80], "Champions Win Rate in Master");
-                } }),
               _react2.default.createElement(
                 'div',
                 { className: 'bar-titles' },
-                'Champion Win Rate in Master League'
+                _react2.default.createElement('input', { className: 'radio-solo', type: 'radio', name: 'radioGroup', id: 'radio2', value: 'bar2', onChange: function onChange() {
+                    return _this6.whichBar("bar2", [55, 80], "Champions Win Rate in Master");
+                  } }),
+                'Win Rate in Master'
               )
             ),
             _react2.default.createElement(
               'label',
               { className: 'radio-inline radio-all' },
-              _react2.default.createElement('input', { className: 'radio-solo', type: 'radio', name: 'radioGroup', id: 'radio3', value: 'bar3', onChange: function onChange() {
-                  return _this6.whichBar("bar3", [52, 54], "Champions Win Rate Overall");
-                } }),
               _react2.default.createElement(
                 'div',
                 { className: 'bar-titles' },
-                'Champion Win Rate in All Leagues'
+                _react2.default.createElement('input', { className: 'radio-solo', type: 'radio', name: 'radioGroup', id: 'radio3', value: 'bar3', onChange: function onChange() {
+                    return _this6.whichBar("bar3", [52, 54], "Champions Win Rate Overall");
+                  } }),
+                'Win Rate in All'
               )
             ),
             _react2.default.createElement(
               'label',
               { className: 'radio-inline radio-all' },
-              _react2.default.createElement('input', { className: 'radio-solo', type: 'radio', name: 'radioGroup', id: 'radio4', value: 'bar4', onChange: function onChange() {
-                  return _this6.whichBar("bar4", [15.9, 30.1], "Most Picked Champions");
-                } }),
               _react2.default.createElement(
                 'div',
                 { className: 'bar-titles' },
-                'Most picked Champions in All Leagues'
+                _react2.default.createElement('input', { className: 'radio-solo', type: 'radio', name: 'radioGroup', id: 'radio4', value: 'bar4', onChange: function onChange() {
+                    return _this6.whichBar("bar4", [15.9, 30.1], "Most Picked Champions");
+                  } }),
+                'Most picked Champs'
               )
             )
           ),
