@@ -19,7 +19,7 @@ class NavBar extends React.Component {
               <Link className={this.props.location.pathname === "/about" ? "navbar-brand nav-size glow" : "navbar-brand nav-size"} to="/about">About</Link>
 
               <img className="nav-images" src="../../../assets/images/rune.png" />
-              <Link className={this.props.location.pathname === "/stats" ? "navbar-brand nav-size glow" : "navbar-brand nav-size"} to="/stats">Stats</Link>
+              <Link className={this.props.location.pathname.substring(0,6) === "/stats" ? "navbar-brand nav-size glow" : "navbar-brand nav-size" } to="/stats">Stats</Link>
 
               <img className="nav-images" src="../../../assets/images/rune.png" />
               <Link className={this.props.location.pathname === "/summoners" ? "navbar-brand nav-size glow" : "navbar-brand nav-size"} to="/summoners">Summoners</Link>

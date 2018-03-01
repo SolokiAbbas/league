@@ -34030,7 +34030,7 @@ var NavBar = function (_React$Component) {
                 _react2.default.createElement('img', { className: 'nav-images', src: '../../../assets/images/rune.png' }),
                 _react2.default.createElement(
                   _reactRouterDom.Link,
-                  { className: this.props.location.pathname === "/stats" ? "navbar-brand nav-size glow" : "navbar-brand nav-size", to: '/stats' },
+                  { className: this.props.location.pathname.substring(0, 6) === "/stats" ? "navbar-brand nav-size glow" : "navbar-brand nav-size", to: '/stats' },
                   'Stats'
                 ),
                 _react2.default.createElement('img', { className: 'nav-images', src: '../../../assets/images/rune.png' }),
