@@ -66568,6 +66568,10 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _summoner = __webpack_require__(489);
+
+var _summoner2 = _interopRequireDefault(_summoner);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -66576,7 +66580,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// import utilAPI from '../util/util_sum';
+// import fetchSumAPI from '../util/util_sum';
 
 var Summoners = function (_React$Component) {
   _inherits(Summoners, _React$Component);
@@ -66593,20 +66597,20 @@ var Summoners = function (_React$Component) {
   }
 
   _createClass(Summoners, [{
-    key: "render",
+    key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        "div",
-        { className: "jumbotron mx-auto jumbo-about" },
+        'div',
+        { className: 'jumbotron mx-auto jumbo-about' },
         _react2.default.createElement(
-          "h3",
-          { className: "text-center" },
-          "Under Construction!"
+          'h3',
+          { className: 'text-center' },
+          'Under Construction!'
         ),
         _react2.default.createElement(
-          "h5",
-          { className: "text-center" },
-          "Riot's API keys last for 24 hours. If search is not working, it means I need a new key."
+          'h5',
+          { className: 'text-center' },
+          'Riot\'s API keys last for 24 hours. If search is not working, it means I need a new key.'
         )
       );
     }
@@ -66616,6 +66620,52 @@ var Summoners = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Summoners;
+
+/***/ }),
+/* 489 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Summoner = function (_React$Component) {
+  _inherits(Summoner, _React$Component);
+
+  function Summoner() {
+    _classCallCheck(this, Summoner);
+
+    return _possibleConstructorReturn(this, (Summoner.__proto__ || Object.getPrototypeOf(Summoner)).apply(this, arguments));
+  }
+
+  _createClass(Summoner, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement('div', null);
+    }
+  }]);
+
+  return Summoner;
+}(_react2.default.Component);
+
+exports.default = Summoner;
 
 /***/ })
 /******/ ]);

@@ -1,5 +1,6 @@
 import React from 'react';
-// import utilAPI from '../util/util_sum';
+import Summoner from './summoner';
+// import fetchSumAPI from '../util/util_sum';
 
 class Summoners extends React.Component{
   constructor(props){
@@ -8,6 +9,7 @@ class Summoners extends React.Component{
       summonerList: [],
     };
   }
+  
   render(){
     return(
           <div className="jumbotron mx-auto jumbo-about">
