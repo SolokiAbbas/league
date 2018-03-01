@@ -66658,7 +66658,26 @@ var Summoner = function (_React$Component) {
   _createClass(Summoner, [{
     key: 'render',
     value: function render() {
-      return _react2.default.createElement('div', null);
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement('img', { src: 'http://ddragon.leagueoflegends.com/cdn/8.4.1/img/profileicon/' + this.props.profileicon }),
+        _react2.default.createElement(
+          'div',
+          null,
+          this.props.name
+        ),
+        _react2.default.createElement(
+          'div',
+          null,
+          this.props.level
+        ),
+        _react2.default.createElement(
+          'div',
+          null,
+          this.props.mastery
+        )
+      );
     }
   }]);
 
