@@ -9,9 +9,9 @@ class Summoners extends React.Component{
       summonerInfo: [],
     };
   }
-  
+
   componentWillMount(){
-    const url = "https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/hayasama";
+    const url = "https://cors-anywhere.herokuapp.com/https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/hayasama?api_key=RGAPI-0b8d853c-dc2a-4eec-9051-2abdc7e452db";
     fetchSumAPI(url).then(data => this.setState({summonerInfo: data}));
   }
 
