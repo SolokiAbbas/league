@@ -1,6 +1,6 @@
 import React from 'react';
 import Summoner from './summoner';
-// import fetchSumAPI from '../util/util_sum';
+import fetchSumAPI from '../util/util_sum';
 
 class Summoners extends React.Component{
   constructor(props){
@@ -8,6 +8,11 @@ class Summoners extends React.Component{
     this.state = {
       summonerInfo: [],
     };
+  }
+  
+  componentWillMount(){
+    const url = "https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/hayasama";
+    fetchSumAPI(url).then(data => this.setState({summonerInfo: data}));
   }
 
   render(){
