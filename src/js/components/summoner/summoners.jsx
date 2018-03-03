@@ -11,7 +11,7 @@ class Summoners extends React.Component{
   }
 
   componentWillMount(){
-    const url = "https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/hayasama?api_key=RGAPI-0b8d853c-dc2a-4eec-9051-2abdc7e452db";
+    const url = "https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/hayasama?api_key=RGAPI-0598451f-57b5-402f-a3fc-7f408ffe13b4";
     fetchSumAPI(url).then(data => this.setState({summonerInfo: data}));
   }
 
