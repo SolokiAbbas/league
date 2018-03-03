@@ -66593,20 +66593,22 @@ var Summoners = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (Summoners.__proto__ || Object.getPrototypeOf(Summoners)).call(this, props));
 
     _this.state = {
-      summonerInfo: []
+      summonerInfo: [{ name: "Hayasama", level: 50, mastery: 300, profileicon: 539 }, { name: "Jooe", level: 34, mastery: 200, profileicon: 539 }]
     };
+    _this.fetchChamp = _this.fetchChamp.bind(_this);
     return _this;
   }
 
   _createClass(Summoners, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
-      var _this2 = this;
-
-      var url = "https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/hayasama?api_key=RGAPI-0598451f-57b5-402f-a3fc-7f408ffe13b4";
-      (0, _util_sum2.default)(url).then(function (data) {
-        return _this2.setState({ summonerInfo: data });
-      });
+      // const url = "https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/hayasama?api_key=RGAPI-0598451f-57b5-402f-a3fc-7f408ffe13b4";
+      // fetchSumAPI(url).then(data => this.setState({summonerInfo: data}));
+    }
+  }, {
+    key: 'fetchChamp',
+    value: function fetchChamp() {
+      // get champ
     }
   }, {
     key: 'render',
@@ -66623,7 +66625,21 @@ var Summoners = function (_React$Component) {
           'h5',
           { className: 'text-center' },
           'Riot\'s API keys last for 24 hours. If search is not working, it means a new key is needed.'
-        )
+        ),
+        _react2.default.createElement(
+          'form',
+          { onSubmit: this.fetchChamp() },
+          _react2.default.createElement('input', { type: 'text', placeholder: 'Search...' }),
+          _react2.default.createElement(
+            'button',
+            { type: 'submit' },
+            'Search'
+          )
+        ),
+        _react2.default.createElement(_summoner2.default, { profileicon: this.state.summonerInfo[0].profileicon,
+          name: this.state.summonerInfo[0].name,
+          level: this.state.summonerInfo[0].level,
+          mastery: this.state.summonerInfo[0].mastery })
       );
     }
   }]);
@@ -66673,7 +66689,7 @@ var Summoner = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         { className: 'card item-details', style: { width: '15rem' } },
-        _react2.default.createElement('img', { src: 'http://ddragon.leagueoflegends.com/cdn/8.4.1/img/profileicon/' + this.props.profileicon }),
+        _react2.default.createElement('img', { src: 'http://ddragon.leagueoflegends.com/cdn/8.4.1/img/profileicon/' + this.props.profileicon + '.png' }),
         _react2.default.createElement(
           'div',
           { className: 'card-body' },
