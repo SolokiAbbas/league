@@ -66603,7 +66603,7 @@ var Summoners = function (_React$Component) {
     value: function componentWillMount() {
       var _this2 = this;
 
-      var url = "https://cors-anywhere.herokuapp.com/https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/hayasama?api_key=RGAPI-0b8d853c-dc2a-4eec-9051-2abdc7e452db";
+      var url = "https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/hayasama?api_key=RGAPI-0b8d853c-dc2a-4eec-9051-2abdc7e452db";
       (0, _util_sum2.default)(url).then(function (data) {
         return _this2.setState({ summonerInfo: data });
       });
@@ -66622,7 +66622,7 @@ var Summoners = function (_React$Component) {
         _react2.default.createElement(
           'h5',
           { className: 'text-center' },
-          'Riot\'s API keys last for 24 hours. If search is not working, it means I need a new key.'
+          'Riot\'s API keys last for 24 hours. If search is not working, it means a new key is needed.'
         )
       );
     }

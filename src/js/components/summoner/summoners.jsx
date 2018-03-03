@@ -11,7 +11,7 @@ class Summoners extends React.Component{
   }
 
   componentWillMount(){
-    const url = "https://cors-anywhere.herokuapp.com/https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/hayasama?api_key=RGAPI-0b8d853c-dc2a-4eec-9051-2abdc7e452db";
+    const url = "https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/hayasama?api_key=RGAPI-0b8d853c-dc2a-4eec-9051-2abdc7e452db";
     fetchSumAPI(url).then(data => this.setState({summonerInfo: data}));
   }
 
@@ -19,7 +19,7 @@ class Summoners extends React.Component{
     return(
           <div className="jumbotron mx-auto jumbo-about">
             <h3 className="text-center">Under Construction!</h3>
-            <h5 className="text-center">Riot's API keys last for 24 hours. If search is not working, it means I need a new key.</h5>
+            <h5 className="text-center">Riot's API keys last for 24 hours. If search is not working, it means a new key is needed.</h5>
           </div>
         );
   }
