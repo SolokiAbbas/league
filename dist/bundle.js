@@ -66628,8 +66628,8 @@ var Summoners = function (_React$Component) {
         ),
         _react2.default.createElement(
           'form',
-          { onSubmit: this.fetchChamp() },
-          _react2.default.createElement('input', { type: 'text', placeholder: 'Search...' }),
+          { className: 'text-center searchform cf', onSubmit: this.fetchChamp() },
+          _react2.default.createElement('input', { type: 'text', placeholder: 'Search Summoners...' }),
           _react2.default.createElement(
             'button',
             { type: 'submit' },
@@ -66688,7 +66688,7 @@ var Summoner = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'card item-details', style: { width: '15rem' } },
+        { className: 'card item-details text-center', style: { width: '15rem' } },
         _react2.default.createElement('img', { src: 'http://ddragon.leagueoflegends.com/cdn/8.4.1/img/profileicon/' + this.props.profileicon + '.png' }),
         _react2.default.createElement(
           'div',
