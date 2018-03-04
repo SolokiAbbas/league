@@ -309,7 +309,7 @@
 .searchform input {
 	background:#fefefe;
 	border: none;
-	font:12px/12px 'HelveticaNeue', Helvetica, Arial, sans-serif;
+	font:14px/14px 'HelveticaNeue', Helvetica, Arial, sans-serif;
 	margin-right: 5px;
 	padding: 10px;
 	width: 216px;
@@ -365,7 +365,7 @@
   .sum-image {
     padding: 30px;
   }
-  
+
   .summoner-center{
     margin-top: 20px;
     display: flex;

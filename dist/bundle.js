@@ -66591,8 +66591,10 @@ var Summoners = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (Summoners.__proto__ || Object.getPrototypeOf(Summoners)).call(this, props));
 
     _this.state = {
-      summonerInfo: [{ name: "Hayasama", level: 50, mastery: 300, profileicon: 539 }]
+      summonerInfo: [],
+      tester: [{ name: "Hayasama", level: 50, mastery: 300, profileicon: 539 }]
     };
+    _this.summoner = { info: [] };
     _this.fetchChamp = _this.fetchChamp.bind(_this);
     _this.fetchMastery = _this.fetchMastery.bind(_this);
     return _this;
@@ -66600,10 +66602,12 @@ var Summoners = function (_React$Component) {
 
   _createClass(Summoners, [{
     key: 'fetchChamp',
-    value: function fetchChamp() {
+    value: function fetchChamp(e) {
       // get champ
-      // const url = "https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/hayasama?api_key=RGAPI-0598451f-57b5-402f-a3fc-7f408ffe13b4";
-      // fetchSumAPI(url).then(data => this.setState({summonerInfo: data}));
+      console.log(e);
+      var url = "https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/hayasama?api_key=RGAPI-d590429d-1a69-4afc-8761-b9dfd9c162cb";
+      this.summoner.info = (0, _util_sum.fetchSumAPI)(url);
+      console.log(this.summoner.info);
     }
   }, {
     key: 'fetchMastery',
@@ -66613,6 +66617,9 @@ var Summoners = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
+      console.log(this.state);
       return _react2.default.createElement(
         'div',
         { className: 'jumbotron mx-auto jumbo-about' },
@@ -66631,8 +66638,10 @@ var Summoners = function (_React$Component) {
           { className: 'summoner-center' },
           _react2.default.createElement(
             'form',
-            { className: 'searchform cf', onSubmit: this.fetchChamp() },
-            _react2.default.createElement('input', { type: 'text', placeholder: 'Search Summoners...' }),
+            { className: 'searchform cf', onSubmit: function onSubmit(e) {
+                return _this2.fetchChamp(e);
+              } },
+            _react2.default.createElement('input', { type: 'text', placeholder: 'Search Summoners...', value: 'name' }),
             _react2.default.createElement(
               'button',
               { type: 'submit' },
@@ -66643,10 +66652,10 @@ var Summoners = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { className: 'summoner-center' },
-          _react2.default.createElement(_summoner2.default, { profileicon: this.state.summonerInfo[0].profileicon,
-            name: this.state.summonerInfo[0].name,
-            level: this.state.summonerInfo[0].level,
-            mastery: this.state.summonerInfo[0].mastery })
+          _react2.default.createElement(_summoner2.default, { profileicon: this.state.tester[0].profileicon,
+            name: this.state.tester[0].name,
+            level: this.state.tester[0].level,
+            mastery: this.state.tester[0].mastery })
         )
       );
     }
@@ -66739,17 +66748,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var fetchSumAPI = exports.fetchSumAPI = function fetchSumAPI(url) {
-  fetch(url, { method: 'GET', headers: {
-      "Origin": "https://localhost:8080",
-      "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
-      "X-Riot-Token": "RGAPI-0598451f-57b5-402f-a3fc-7f408ffe13b4",
-      "Accept-Language": "en-US,en;q=0.9",
-      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36"
-    }
-  }).then(function (res) {
-    return res.json();
-  }).catch(function (error) {
-    return console.log(error);
+  fetch(url).then(function (res) {
+    res.json();
   });
 };
 
