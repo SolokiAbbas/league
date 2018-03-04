@@ -66593,6 +66593,7 @@ var Summoners = function (_React$Component) {
     _this.state = {
       search: "",
       summonerInfo: [],
+      mastery: 0,
       tester: [{ name: "Hayasama", level: 50, mastery: 300, profileicon: 539 }]
     };
     _this.fetchChamp = _this.fetchChamp.bind(_this);
@@ -66623,7 +66624,15 @@ var Summoners = function (_React$Component) {
   }, {
     key: 'fetchMastery',
     value: function fetchMastery() {
+      var _this3 = this;
+
       //get mastery
+      var urlMast = 'https://na1.api.riotgames.com/lol/champion-mastery/v3/scores/by-summoner/' + this.state.summonerInfo.id + '?api_key=RGAPI-d590429d-1a69-4afc-8761-b9dfd9c162cb';
+      fetch(urlMast).then(function (res) {
+        return res.json();
+      }).then(function (data) {
+        return _this3.setState({ mastery: data });
+      });
     }
   }, {
     key: 'render',
