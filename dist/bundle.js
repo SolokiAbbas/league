@@ -66595,7 +66595,6 @@ var Summoners = function (_React$Component) {
       summonerInfo: [],
       tester: [{ name: "Hayasama", level: 50, mastery: 300, profileicon: 539 }]
     };
-    _this.summoner = { info: [] };
     _this.fetchChamp = _this.fetchChamp.bind(_this);
     _this.fetchMastery = _this.fetchMastery.bind(_this);
     _this.handleChange = _this.handleChange.bind(_this);
@@ -66609,11 +66608,17 @@ var Summoners = function (_React$Component) {
     }
   }, {
     key: 'fetchChamp',
-    value: function fetchChamp() {
+    value: function fetchChamp(event) {
+      var _this2 = this;
+
       // get champ
-      var url = "https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/hayasama?api_key=RGAPI-d590429d-1a69-4afc-8761-b9dfd9c162cb";
-      this.summoner.info = (0, _util_sum.fetchSumAPI)(url);
-      console.log(this.summoner.info);
+      event.preventDefault();
+      var url = 'https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/' + this.state.search + '?api_key=RGAPI-d590429d-1a69-4afc-8761-b9dfd9c162cb';
+      fetch(url).then(function (res) {
+        return res.json();
+      }).then(function (data) {
+        return _this2.setState({ summonerInfo: data });
+      });
     }
   }, {
     key: 'fetchMastery',
@@ -66623,8 +66628,6 @@ var Summoners = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
-
       console.log(this.state);
       return _react2.default.createElement(
         'div',
@@ -66644,10 +66647,8 @@ var Summoners = function (_React$Component) {
           { className: 'summoner-center' },
           _react2.default.createElement(
             'form',
-            { className: 'searchform cf', onSubmit: function onSubmit(e) {
-                return _this2.fetchChamp(e);
-              } },
-            _react2.default.createElement('input', { type: 'text', placeholder: 'Search Summoners...', onChange: this.handleChange }),
+            { className: 'searchform cf', onSubmit: this.fetchChamp },
+            _react2.default.createElement('input', { type: 'text', placeholder: 'Search Summoners...', value: this.state.search, onChange: this.handleChange }),
             _react2.default.createElement(
               'button',
               { type: 'submit' },

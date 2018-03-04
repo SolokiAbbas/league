@@ -10,7 +10,6 @@ class Summoners extends React.Component{
       summonerInfo: [],
       tester: [{name: "Hayasama", level: 50, mastery: 300, profileicon:539}]
     };
-    this.summoner = {info: []};
     this.fetchChamp = this.fetchChamp.bind(this);
     this.fetchMastery = this.fetchMastery.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -20,11 +19,11 @@ class Summoners extends React.Component{
     this.setState({search: event.target.value});
   }
 
-  fetchChamp(){
+  fetchChamp(event){
     // get champ
-    const url = "https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/hayasama?api_key=RGAPI-d590429d-1a69-4afc-8761-b9dfd9c162cb";
-    this.summoner.info = fetchSumAPI(url);
-    console.log(this.summoner.info);
+    event.preventDefault();
+    const url = `https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/${this.state.search}?api_key=RGAPI-d590429d-1a69-4afc-8761-b9dfd9c162cb`;
+    fetch(url).then((res) => res.json()).then(data => this.setState({summonerInfo: data}));
   }
 
   fetchMastery(){
@@ -38,8 +37,8 @@ class Summoners extends React.Component{
             <h3 className="text-center">Under Construction!</h3>
             <h5 className="text-center">Riot's API keys last for 24 hours. If search is not working, it means a new key is needed.</h5>
             <div className="summoner-center">
-              <form className="searchform cf" onSubmit={(e)=>this.fetchChamp(e)}>
-                <input type="text" placeholder="Search Summoners..." onChange={this.handleChange}/>
+              <form className="searchform cf" onSubmit={this.fetchChamp}>
+                <input type="text" placeholder="Search Summoners..." value={this.state.search} onChange={this.handleChange}/>
                 <button type="submit">Search</button>
               </form>
             </div>
