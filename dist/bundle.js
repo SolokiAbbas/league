@@ -66591,20 +66591,26 @@ var Summoners = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (Summoners.__proto__ || Object.getPrototypeOf(Summoners)).call(this, props));
 
     _this.state = {
+      search: "",
       summonerInfo: [],
       tester: [{ name: "Hayasama", level: 50, mastery: 300, profileicon: 539 }]
     };
     _this.summoner = { info: [] };
     _this.fetchChamp = _this.fetchChamp.bind(_this);
     _this.fetchMastery = _this.fetchMastery.bind(_this);
+    _this.handleChange = _this.handleChange.bind(_this);
     return _this;
   }
 
   _createClass(Summoners, [{
+    key: 'handleChange',
+    value: function handleChange(event) {
+      this.setState({ search: event.target.value });
+    }
+  }, {
     key: 'fetchChamp',
-    value: function fetchChamp(e) {
+    value: function fetchChamp() {
       // get champ
-      console.log(e);
       var url = "https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/hayasama?api_key=RGAPI-d590429d-1a69-4afc-8761-b9dfd9c162cb";
       this.summoner.info = (0, _util_sum.fetchSumAPI)(url);
       console.log(this.summoner.info);
@@ -66641,7 +66647,7 @@ var Summoners = function (_React$Component) {
             { className: 'searchform cf', onSubmit: function onSubmit(e) {
                 return _this2.fetchChamp(e);
               } },
-            _react2.default.createElement('input', { type: 'text', placeholder: 'Search Summoners...', value: 'name' }),
+            _react2.default.createElement('input', { type: 'text', placeholder: 'Search Summoners...', onChange: this.handleChange }),
             _react2.default.createElement(
               'button',
               { type: 'submit' },
