@@ -7,9 +7,10 @@ class Summoners extends React.Component{
     super(props);
     this.state = {
       search: "",
+      found: false,
       summonerInfo: [],
       mastery: 0,
-      tester: [{name: "Hayasama", level: 50, mastery: 300, profileicon:539}]
+      tester: [{name: "Hayasama", level: 500, mastery: 3000, profileicon:539}]
     };
     this.fetchChamp = this.fetchChamp.bind(this);
     this.fetchMastery = this.fetchMastery.bind(this);
@@ -24,13 +25,13 @@ class Summoners extends React.Component{
     // get champ
     event.preventDefault();
     const url = `https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/${this.state.search}?api_key=RGAPI-d590429d-1a69-4afc-8761-b9dfd9c162cb`;
-    fetch(url).then((res) => res.json()).then(data => this.setState({summonerInfo: data})).then(()=> this.fetchMastery());
+    fetch(url).then((res) => res.json()).catch(error=>this.setState({found: false})).then(data => this.setState({summonerInfo: data})).then(()=> this.fetchMastery());
   }
 
   fetchMastery(){
     //get mastery
     const urlMast = `https://na1.api.riotgames.com/lol/champion-mastery/v3/scores/by-summoner/${this.state.summonerInfo.id}?api_key=RGAPI-d590429d-1a69-4afc-8761-b9dfd9c162cb`;
-    fetch(urlMast).then((res) => res.json()).then(data =>this.setState({mastery: data}));
+    fetch(urlMast).then((res) => res.json()).then(data =>this.setState({mastery: data})).then(()=>this.setState({found: true}));
 
   }
 
@@ -47,10 +48,15 @@ class Summoners extends React.Component{
               </form>
             </div>
             <div className="summoner-center">
+              {this.state.found ? <Summoner profileicon={this.state.summonerInfo.profileIconId}
+                              name={this.state.summonerInfo.name}
+                              level={this.state.summonerInfo.summonerLevel}
+                              mastery={this.state.mastery}/> :
               <Summoner profileicon={this.state.tester[0].profileicon}
                 name={this.state.tester[0].name}
                 level={this.state.tester[0].level}
                 mastery={this.state.tester[0].mastery}/>
+            }
             </div>
           </div>
         );

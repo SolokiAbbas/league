@@ -66592,9 +66592,10 @@ var Summoners = function (_React$Component) {
 
     _this.state = {
       search: "",
+      found: false,
       summonerInfo: [],
       mastery: 0,
-      tester: [{ name: "Hayasama", level: 50, mastery: 300, profileicon: 539 }]
+      tester: [{ name: "Hayasama", level: 500, mastery: 3000, profileicon: 539 }]
     };
     _this.fetchChamp = _this.fetchChamp.bind(_this);
     _this.fetchMastery = _this.fetchMastery.bind(_this);
@@ -66617,6 +66618,8 @@ var Summoners = function (_React$Component) {
       var url = 'https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/' + this.state.search + '?api_key=RGAPI-d590429d-1a69-4afc-8761-b9dfd9c162cb';
       fetch(url).then(function (res) {
         return res.json();
+      }).catch(function (error) {
+        return _this2.setState({ found: false });
       }).then(function (data) {
         return _this2.setState({ summonerInfo: data });
       }).then(function () {
@@ -66634,6 +66637,8 @@ var Summoners = function (_React$Component) {
         return res.json();
       }).then(function (data) {
         return _this3.setState({ mastery: data });
+      }).then(function () {
+        return _this3.setState({ found: true });
       });
     }
   }, {
@@ -66670,7 +66675,10 @@ var Summoners = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { className: 'summoner-center' },
-          _react2.default.createElement(_summoner2.default, { profileicon: this.state.tester[0].profileicon,
+          this.state.found ? _react2.default.createElement(_summoner2.default, { profileicon: this.state.summonerInfo.profileIconId,
+            name: this.state.summonerInfo.name,
+            level: this.state.summonerInfo.summonerLevel,
+            mastery: this.state.mastery }) : _react2.default.createElement(_summoner2.default, { profileicon: this.state.tester[0].profileicon,
             name: this.state.tester[0].name,
             level: this.state.tester[0].level,
             mastery: this.state.tester[0].mastery })
