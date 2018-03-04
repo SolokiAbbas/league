@@ -66619,6 +66619,8 @@ var Summoners = function (_React$Component) {
         return res.json();
       }).then(function (data) {
         return _this2.setState({ summonerInfo: data });
+      }).then(function () {
+        return _this2.fetchMastery();
       });
     }
   }, {

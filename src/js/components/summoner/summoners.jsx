@@ -24,7 +24,7 @@ class Summoners extends React.Component{
     // get champ
     event.preventDefault();
     const url = `https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/${this.state.search}?api_key=RGAPI-d590429d-1a69-4afc-8761-b9dfd9c162cb`;
-    fetch(url).then((res) => res.json()).then(data => this.setState({summonerInfo: data}));
+    fetch(url).then((res) => res.json()).then(data => this.setState({summonerInfo: data})).then(()=> this.fetchMastery());
   }
 
   fetchMastery(){
