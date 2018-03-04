@@ -66689,7 +66689,7 @@ var Summoner = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         { className: 'card item-details text-center', style: { width: '15rem' } },
-        _react2.default.createElement('img', { src: 'http://ddragon.leagueoflegends.com/cdn/8.4.1/img/profileicon/' + this.props.profileicon + '.png' }),
+        _react2.default.createElement('img', { className: 'sum-image', src: 'http://ddragon.leagueoflegends.com/cdn/8.4.1/img/profileicon/' + this.props.profileicon + '.png' }),
         _react2.default.createElement(
           'div',
           { className: 'card-body' },

@@ -361,3 +361,7 @@
 	.searchform button:hover {
 		opacity:.9;
 	}
+
+  .sum-image {
+    padding: 30px;
+  }
