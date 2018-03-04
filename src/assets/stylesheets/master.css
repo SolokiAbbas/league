@@ -365,3 +365,9 @@
   .sum-image {
     padding: 30px;
   }
+  
+  .summoner-center{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }

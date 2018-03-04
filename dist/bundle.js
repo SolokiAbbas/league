@@ -66574,8 +66574,6 @@ var _summoner2 = _interopRequireDefault(_summoner);
 
 var _util_sum = __webpack_require__(490);
 
-var _util_sum2 = _interopRequireDefault(_util_sum);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -66593,22 +66591,24 @@ var Summoners = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (Summoners.__proto__ || Object.getPrototypeOf(Summoners)).call(this, props));
 
     _this.state = {
-      summonerInfo: [{ name: "Hayasama", level: 50, mastery: 300, profileicon: 539 }, { name: "Jooe", level: 34, mastery: 200, profileicon: 539 }]
+      summonerInfo: [{ name: "Hayasama", level: 50, mastery: 300, profileicon: 539 }]
     };
     _this.fetchChamp = _this.fetchChamp.bind(_this);
+    _this.fetchMastery = _this.fetchMastery.bind(_this);
     return _this;
   }
 
   _createClass(Summoners, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
+    key: 'fetchChamp',
+    value: function fetchChamp() {
+      // get champ
       // const url = "https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/hayasama?api_key=RGAPI-0598451f-57b5-402f-a3fc-7f408ffe13b4";
       // fetchSumAPI(url).then(data => this.setState({summonerInfo: data}));
     }
   }, {
-    key: 'fetchChamp',
-    value: function fetchChamp() {
-      // get champ
+    key: 'fetchMastery',
+    value: function fetchMastery() {
+      //get mastery
     }
   }, {
     key: 'render',
@@ -66627,19 +66627,27 @@ var Summoners = function (_React$Component) {
           'Riot\'s API keys last for 24 hours. If search is not working, it means a new key is needed.'
         ),
         _react2.default.createElement(
-          'form',
-          { className: 'text-center searchform cf', onSubmit: this.fetchChamp() },
-          _react2.default.createElement('input', { type: 'text', placeholder: 'Search Summoners...' }),
+          'div',
+          { className: 'summoner-center' },
           _react2.default.createElement(
-            'button',
-            { type: 'submit' },
-            'Search'
+            'form',
+            { className: 'searchform cf', onSubmit: this.fetchChamp() },
+            _react2.default.createElement('input', { type: 'text', placeholder: 'Search Summoners...' }),
+            _react2.default.createElement(
+              'button',
+              { type: 'submit' },
+              'Search'
+            )
           )
         ),
-        _react2.default.createElement(_summoner2.default, { profileicon: this.state.summonerInfo[0].profileicon,
-          name: this.state.summonerInfo[0].name,
-          level: this.state.summonerInfo[0].level,
-          mastery: this.state.summonerInfo[0].mastery })
+        _react2.default.createElement(
+          'div',
+          { className: 'summoner-center' },
+          _react2.default.createElement(_summoner2.default, { profileicon: this.state.summonerInfo[0].profileicon,
+            name: this.state.summonerInfo[0].name,
+            level: this.state.summonerInfo[0].level,
+            mastery: this.state.summonerInfo[0].mastery })
+        )
       );
     }
   }]);
@@ -66688,7 +66696,7 @@ var Summoner = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'card item-details text-center', style: { width: '15rem' } },
+        { className: 'card item-details', style: { width: '15rem' } },
         _react2.default.createElement('img', { className: 'sum-image', src: 'http://ddragon.leagueoflegends.com/cdn/8.4.1/img/profileicon/' + this.props.profileicon + '.png' }),
         _react2.default.createElement(
           'div',
@@ -66731,6 +66739,21 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var fetchSumAPI = exports.fetchSumAPI = function fetchSumAPI(url) {
+  fetch(url, { method: 'GET', headers: {
+      "Origin": "https://localhost:8080",
+      "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
+      "X-Riot-Token": "RGAPI-0598451f-57b5-402f-a3fc-7f408ffe13b4",
+      "Accept-Language": "en-US,en;q=0.9",
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36"
+    }
+  }).then(function (res) {
+    return res.json();
+  }).catch(function (error) {
+    return console.log(error);
+  });
+};
+
+var fetchMasteryAPI = exports.fetchMasteryAPI = function fetchMasteryAPI(url) {
   fetch(url, { method: 'GET', headers: {
       "Origin": "https://localhost:8080",
       "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
