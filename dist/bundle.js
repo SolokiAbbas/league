@@ -66595,7 +66595,7 @@ var Summoners = function (_React$Component) {
       found: false,
       summonerInfo: [],
       mastery: 0,
-      tester: [{ name: "Hayasama", level: 500, mastery: 3000, profileicon: 539 }]
+      tester: [{ name: "Hayasama (Default)", level: 500, mastery: 3000, profileicon: 539 }]
     };
     _this.fetchChamp = _this.fetchChamp.bind(_this);
     _this.fetchMastery = _this.fetchMastery.bind(_this);

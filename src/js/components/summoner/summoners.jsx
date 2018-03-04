@@ -10,7 +10,7 @@ class Summoners extends React.Component{
       found: false,
       summonerInfo: [],
       mastery: 0,
-      tester: [{name: "Hayasama", level: 500, mastery: 3000, profileicon:539}]
+      tester: [{name: "Hayasama (Default)", level: 500, mastery: 3000, profileicon:539}]
     };
     this.fetchChamp = this.fetchChamp.bind(this);
     this.fetchMastery = this.fetchMastery.bind(this);
