@@ -10,6 +10,7 @@ class Summoners extends React.Component{
       found: false,
       summonerInfo: [],
       mastery: 0,
+      errors: '',
       tester: [{name: "Hayasama (Default)", level: 500, mastery: 3000, profileicon:539}]
     };
     this.fetchChamp = this.fetchChamp.bind(this);
@@ -25,7 +26,7 @@ class Summoners extends React.Component{
     // get champ
     event.preventDefault();
     const url = `https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/${this.state.search}?api_key=RGAPI-d590429d-1a69-4afc-8761-b9dfd9c162cb`;
-    fetch(url).then((res) => res.json()).catch(error=>this.setState({found: false})).then(data => this.setState({summonerInfo: data})).then(()=> this.fetchMastery());
+    fetch(url).then((res) => res.json()).catch(err=> this.setState({errors: 'Could not Find Summoner'})).then(data => this.setState({summonerInfo: data})).then(()=> this.fetchMastery());
   }
 
   fetchMastery(){

@@ -66595,6 +66595,7 @@ var Summoners = function (_React$Component) {
       found: false,
       summonerInfo: [],
       mastery: 0,
+      errors: '',
       tester: [{ name: "Hayasama (Default)", level: 500, mastery: 3000, profileicon: 539 }]
     };
     _this.fetchChamp = _this.fetchChamp.bind(_this);
@@ -66618,8 +66619,8 @@ var Summoners = function (_React$Component) {
       var url = 'https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/' + this.state.search + '?api_key=RGAPI-d590429d-1a69-4afc-8761-b9dfd9c162cb';
       fetch(url).then(function (res) {
         return res.json();
-      }).catch(function (error) {
-        return _this2.setState({ found: false });
+      }).catch(function (err) {
+        return _this2.setState({ errors: 'Could not Find Summoner' });
       }).then(function (data) {
         return _this2.setState({ summonerInfo: data });
       }).then(function () {
