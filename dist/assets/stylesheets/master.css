@@ -373,6 +373,8 @@
   }
 
   .errors-center{
+    color: red;
+    margin-top: 20px;
     display: flex;
-    flex-wrap: nowrap;
+    justify-content: center;
   }

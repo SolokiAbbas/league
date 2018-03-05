@@ -66618,9 +66618,10 @@ var Summoners = function (_React$Component) {
       var url = 'https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/' + this.state.search + '?api_key=RGAPI-d590429d-1a69-4afc-8761-b9dfd9c162cb';
       fetch(url).then(function (res) {
         if (res.status >= 200 && res.status <= 300) {
+          _this2.clearErrors();
           return res.json();
         } else {
-          _this2.setState({ errors: 'Couldnt Find Summoner' });
+          _this2.setState({ errors: 'Could not find Summoner', found: false });
         }
       }).then(function (data) {
         if (_this2.state.errors.length < 1) {
@@ -66687,7 +66688,7 @@ var Summoners = function (_React$Component) {
         ),
         _react2.default.createElement(
           'div',
-          { className: 'summoner-center' },
+          { className: 'errors-center' },
           this.state.errors
         ),
         _react2.default.createElement(

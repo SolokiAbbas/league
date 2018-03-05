@@ -29,9 +29,10 @@ class Summoners extends React.Component{
     const url = `https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/${this.state.search}?api_key=RGAPI-d590429d-1a69-4afc-8761-b9dfd9c162cb`;
     fetch(url).then((res) => {
       if(res.status >= 200 && res.status <= 300){
+        this.clearErrors();
         return res.json();
       }else{
-        this.setState({errors: 'Couldnt Find Summoner'});
+        this.setState({errors: 'Could not find Summoner', found: false});
       }
     }).then(data => {
       if(this.state.errors.length < 1){
@@ -50,6 +51,7 @@ class Summoners extends React.Component{
   clearErrors(){
     this.setState({errors: ''});
   }
+
   render(){
     console.log(this.state);
     return(
@@ -62,7 +64,7 @@ class Summoners extends React.Component{
                 <button type="submit">Search</button>
               </form>
             </div>
-            <div className="summoner-center">
+            <div className="errors-center">
               {this.state.errors}
             </div>
             <div className="summoner-center">
