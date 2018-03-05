@@ -66688,6 +66688,11 @@ var Summoners = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { className: 'summoner-center' },
+          this.state.errors
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'summoner-center' },
           this.state.found ? _react2.default.createElement(_summoner2.default, { profileicon: this.state.summonerInfo.profileIconId,
             name: this.state.summonerInfo.name,
             level: this.state.summonerInfo.summonerLevel,

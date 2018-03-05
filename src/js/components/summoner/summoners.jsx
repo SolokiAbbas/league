@@ -63,6 +63,9 @@ class Summoners extends React.Component{
               </form>
             </div>
             <div className="summoner-center">
+              {this.state.errors}
+            </div>
+            <div className="summoner-center">
               {this.state.found ? <Summoner profileicon={this.state.summonerInfo.profileIconId}
                               name={this.state.summonerInfo.name}
                               level={this.state.summonerInfo.summonerLevel}

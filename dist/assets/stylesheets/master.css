@@ -371,3 +371,8 @@
     display: flex;
     justify-content: center;
   }
+
+  .errors-center{
+    display: flex;
+    flex-wrap: nowrap;
+  }
