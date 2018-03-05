@@ -66599,6 +66599,7 @@ var Summoners = function (_React$Component) {
     _this.fetchChamp = _this.fetchChamp.bind(_this);
     _this.fetchMastery = _this.fetchMastery.bind(_this);
     _this.handleChange = _this.handleChange.bind(_this);
+    _this.clearErrors = _this.clearErrors.bind(_this);
     return _this;
   }
 
@@ -66644,7 +66645,14 @@ var Summoners = function (_React$Component) {
         return _this3.setState({ mastery: data });
       }).then(function () {
         return _this3.setState({ found: true });
+      }).then(function () {
+        return _this3.clearErrors();
       });
+    }
+  }, {
+    key: 'clearErrors',
+    value: function clearErrors() {
+      this.setState({ errors: '' });
     }
   }, {
     key: 'render',

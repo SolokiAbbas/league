@@ -16,6 +16,7 @@ class Summoners extends React.Component{
     this.fetchChamp = this.fetchChamp.bind(this);
     this.fetchMastery = this.fetchMastery.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.clearErrors = this.clearErrors.bind(this);
   }
 
   handleChange(event) {
@@ -43,10 +44,12 @@ class Summoners extends React.Component{
   fetchMastery(){
     //get mastery
     const urlMast = `https://na1.api.riotgames.com/lol/champion-mastery/v3/scores/by-summoner/${this.state.summonerInfo.id}?api_key=RGAPI-d590429d-1a69-4afc-8761-b9dfd9c162cb`;
-    fetch(urlMast).then((res) => res.json()).then(data =>this.setState({mastery: data})).then(()=>this.setState({found: true}));
-
+    fetch(urlMast).then((res) => res.json()).then(data =>this.setState({mastery: data})).then(()=>this.setState({found: true})).then(()=>this.clearErrors());
   }
 
+  clearErrors(){
+    this.setState({errors: ''});
+  }
   render(){
     console.log(this.state);
     return(
