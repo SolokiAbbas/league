@@ -66618,13 +66618,19 @@ var Summoners = function (_React$Component) {
       event.preventDefault();
       var url = 'https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/' + this.state.search + '?api_key=RGAPI-d590429d-1a69-4afc-8761-b9dfd9c162cb';
       fetch(url).then(function (res) {
-        return res.json();
-      }).catch(function (err) {
-        return _this2.setState({ errors: 'Could not Find Summoner' });
+        if (res.status >= 200 && res.status <= 300) {
+          res.json();
+        } else {
+          _this2.setState({ errors: 'Couldnt Find Summoner' });
+        }
       }).then(function (data) {
-        return _this2.setState({ summonerInfo: data });
+        if (_this2.state.errors.length < 1) {
+          _this2.setState({ summonerInfo: data });
+        }
       }).then(function () {
-        return _this2.fetchMastery();
+        if (_this2.state.errors.length < 1) {
+          _this2.fetchMastery();
+        }
       });
     }
   }, {
@@ -66766,34 +66772,9 @@ exports.default = Summoner;
 
 /***/ }),
 /* 490 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var fetchSumAPI = exports.fetchSumAPI = function fetchSumAPI(url) {
-  fetch(url).then(function (res) {
-    res.json();
-  });
-};
-
-var fetchMasteryAPI = exports.fetchMasteryAPI = function fetchMasteryAPI(url) {
-  fetch(url, { method: 'GET', headers: {
-      "Origin": "https://localhost:8080",
-      "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
-      "X-Riot-Token": "RGAPI-0598451f-57b5-402f-a3fc-7f408ffe13b4",
-      "Accept-Language": "en-US,en;q=0.9",
-      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36"
-    }
-  }).then(function (res) {
-    return res.json();
-  }).catch(function (error) {
-    return console.log(error);
-  });
-};
+throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/Users/SolokiAbbas/Desktop/web-dev/league-site/src/js/components/util/util_sum.jsx'\n    at Error (native)");
 
 /***/ })
 /******/ ]);
