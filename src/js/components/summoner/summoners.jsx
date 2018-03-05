@@ -1,6 +1,6 @@
 import React from 'react';
 import Summoner from './summoner';
-import { fetchSumAPI, fetchMasteryAPI } from '../util/util_sum';
+
 
 class Summoners extends React.Component{
   constructor(props){
@@ -27,8 +27,8 @@ class Summoners extends React.Component{
     event.preventDefault();
     const url = `https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/${this.state.search}?api_key=RGAPI-d590429d-1a69-4afc-8761-b9dfd9c162cb`;
     fetch(url).then((res) => {
-      if(res.status >= 200 && res.status <=300){
-        res.json();
+      if(res.status >= 200 && res.status <= 300){
+        return res.json();
       }else{
         this.setState({errors: 'Couldnt Find Summoner'});
       }

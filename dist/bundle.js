@@ -66572,8 +66572,6 @@ var _summoner = __webpack_require__(489);
 
 var _summoner2 = _interopRequireDefault(_summoner);
 
-var _util_sum = __webpack_require__(490);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -66619,7 +66617,7 @@ var Summoners = function (_React$Component) {
       var url = 'https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/' + this.state.search + '?api_key=RGAPI-d590429d-1a69-4afc-8761-b9dfd9c162cb';
       fetch(url).then(function (res) {
         if (res.status >= 200 && res.status <= 300) {
-          res.json();
+          return res.json();
         } else {
           _this2.setState({ errors: 'Couldnt Find Summoner' });
         }
@@ -66769,12 +66767,6 @@ var Summoner = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Summoner;
-
-/***/ }),
-/* 490 */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/Users/SolokiAbbas/Desktop/web-dev/league-site/src/js/components/util/util_sum.jsx'\n    at Error (native)");
 
 /***/ })
 /******/ ]);
