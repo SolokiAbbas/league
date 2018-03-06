@@ -57,8 +57,7 @@ class Summoners extends React.Component{
     console.log(this.api);
     return(
           <div className="jumbotron mx-auto jumbo-about">
-            <h3 className="text-center">Under Construction!</h3>
-            <h5 className="text-center">Riot's API keys last for 24 hours. If search is not working, it means a new key is needed.</h5>
+            <h5 className="text-center">Riot's API keys last for 24 hours. If search is not working, a new key is needed.</h5>
             <div className="summoner-center">
               <form className="searchform cf" onSubmit={this.fetchChamp}>
                 <input type="text" placeholder="Search Summoners..." value={this.state.search} onChange={this.handleChange}/>

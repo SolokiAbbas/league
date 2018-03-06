@@ -66665,14 +66665,9 @@ var Summoners = function (_React$Component) {
         'div',
         { className: 'jumbotron mx-auto jumbo-about' },
         _react2.default.createElement(
-          'h3',
-          { className: 'text-center' },
-          'Under Construction!'
-        ),
-        _react2.default.createElement(
           'h5',
           { className: 'text-center' },
-          'Riot\'s API keys last for 24 hours. If search is not working, it means a new key is needed.'
+          'Riot\'s API keys last for 24 hours. If search is not working, a new key is needed.'
         ),
         _react2.default.createElement(
           'div',
