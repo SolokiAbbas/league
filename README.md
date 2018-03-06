@@ -28,6 +28,20 @@ The search is instant.
 ![searching](/src/assets/images/search-champs.png)
 
 
+##### Searching for Summoner using Riot's API
+Riot's API keys last for 24 hours before requiring a new one.
+I have hidden and set up an env variable to hide the api key.
+
+Searching Summoners can be done and it shows the summoner's level and
+mastery level with their profile icon.
+
+![summoner](/src/assets/images/search-summoner.png)
+
+When the summoner is not found it will display an error. This
+error is cleared once it finds a match.
+
+![not found](/src/assets/images/not-found.png)
+
 ##### D3 Library and Graphs
 
 Used react-vis-force to make D3's Forced Graphs
@@ -56,3 +70,5 @@ Created a fun visual with Particles-JS
 14. Added Summoner Searching 3rd Party Api
 
 #### Features to be added
+
+## Status = Completed
