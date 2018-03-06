@@ -1,5 +1,6 @@
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var path = require("path");
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: './src/js/index.jsx',
@@ -55,7 +56,8 @@ module.exports = {
     ]),
     new CopyWebpackPlugin([
       { from: './src/assets', to: 'assets' }
-    ])
+    ]),
+    new Dotenv(),
   ],
 
   resolve: {

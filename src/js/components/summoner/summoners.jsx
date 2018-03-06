@@ -1,8 +1,6 @@
 import React from 'react';
 import Summoner from './summoner';
 
-
-
 class Summoners extends React.Component{
   constructor(props){
     super(props);
