@@ -53,7 +53,6 @@ Created a fun visual with Particles-JS
 11. Added Collapsing NavBar
 12. 4 Bar Graphs, 1 particle graph, and 1 force graph
 13. D3 Library
+14. Added Summoner Searching 3rd Party Api
 
 #### Features to be added
-
-1. Add Summoner Searching
