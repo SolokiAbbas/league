@@ -10,7 +10,8 @@
   "scripts": {
     "start": "./node_modules/webpack/bin/webpack.js -p --progress && node server.js",
     "dev": "webpack-dev-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "npm run build"
   },
   "author": "Abbas",
   "license": "ISC",
@@ -27,6 +28,7 @@
     "es6-promise": "^4.1.1",
     "express": "^4.14.0",
     "fetch-ie8": "^1.5.0",
+    "file-loader": "^1.1.6",
     "jquery": "^3.2.1",
     "less": "^2.7.2",
     "less-loader": "^2.2.3",
@@ -56,7 +58,5 @@
     "url": "https://github.com/SolokiAbbas/league/issues"
   },
   "homepage": "https://github.com/SolokiAbbas/league#readme",
-  "devDependencies": {
-    "file-loader": "^1.1.6"
-  }
+
 }
