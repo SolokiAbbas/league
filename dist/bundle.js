@@ -66556,7 +66556,7 @@ module.exports = win;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
+/* WEBPACK VAR INJECTION */(function(process) {
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -66596,7 +66596,8 @@ var Summoners = function (_React$Component) {
       errors: '',
       tester: [{ name: "Hayasama (Default)", level: 500, mastery: 3000, profileicon: 539 }]
     };
-    _this.api = config.MY_API_KEY;
+
+    _this.api = process.env.MY_API_KEY;
     _this.fetchChamp = _this.fetchChamp.bind(_this);
     _this.fetchMastery = _this.fetchMastery.bind(_this);
     _this.handleChange = _this.handleChange.bind(_this);
@@ -66711,6 +66712,7 @@ var Summoners = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Summoners;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
 /* 489 */

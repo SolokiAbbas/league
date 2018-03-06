@@ -1,6 +1,8 @@
 import React from 'react';
 import Summoner from './summoner';
 
+
+
 class Summoners extends React.Component{
   constructor(props){
     super(props);
@@ -12,7 +14,8 @@ class Summoners extends React.Component{
       errors: '',
       tester: [{name: "Hayasama (Default)", level: 500, mastery: 3000, profileicon:539}]
     };
-    this.api = config.MY_API_KEY;
+
+    this.api = process.env.MY_API_KEY;
     this.fetchChamp = this.fetchChamp.bind(this);
     this.fetchMastery = this.fetchMastery.bind(this);
     this.handleChange = this.handleChange.bind(this);
