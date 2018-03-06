@@ -66660,7 +66660,6 @@ var Summoners = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      console.log(this.api);
       return _react2.default.createElement(
         'div',
         { className: 'jumbotron mx-auto jumbo-about' },
