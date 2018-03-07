@@ -10,9 +10,6 @@ module.exports = {
     sourceMapFilename: "./bundle.js.map",
     filename: 'bundle.js'
   },
-  env: {
-    MY_API_KEY: process.env.MY_API_KEY
-  },
   module: {
     loaders: [
       {
