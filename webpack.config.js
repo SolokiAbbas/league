@@ -58,6 +58,7 @@ module.exports = {
       { from: './src/assets', to: 'assets' }
     ]),
     new Dotenv(),
+
   ],
 
   resolve: {
