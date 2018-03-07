@@ -1,7 +1,7 @@
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var path = require("path");
 const Dotenv = require('dotenv-webpack');
-const webpack = require('webpack');
+
 
 module.exports = {
   entry: './src/js/index.jsx',
@@ -58,11 +58,7 @@ module.exports = {
     new CopyWebpackPlugin([
       { from: './src/assets', to: 'assets' }
     ]),
-    new Dotenv(),
-    new webpack.DefinePlugin({
-    'process.env': {
-       MY_API_KEY: process.env.MY_API_KEY
-    }})
+    new Dotenv()
   ],
 
   resolve: {
