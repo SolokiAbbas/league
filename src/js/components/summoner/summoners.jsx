@@ -29,7 +29,7 @@ class Summoners extends React.Component{
     // get champ
     event.preventDefault();
     const url = `https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/${this.state.search}?api_key=${this.api}`;
-    fetch(url).then((res) => {
+    fetch("https://cors-anywhere.herokuapp.com/"+url).then((res) => {
       if(res.status >= 200 && res.status <= 300){
         this.clearErrors();
         return res.json();
@@ -47,7 +47,7 @@ class Summoners extends React.Component{
   fetchMastery(){
     //get mastery
     const urlMast = `https://na1.api.riotgames.com/lol/champion-mastery/v3/scores/by-summoner/${this.state.summonerInfo.id}?api_key=${this.api}`;
-    fetch(urlMast).then((res) => res.json()).then(data =>this.setState({mastery: data})).then(()=>this.setState({found: true})).then(()=>this.clearErrors());
+    fetch("https://cors-anywhere.herokuapp.com/"+urlMast).then((res) => res.json()).then(data =>this.setState({mastery: data})).then(()=>this.setState({found: true})).then(()=>this.clearErrors());
   }
 
   clearErrors(){

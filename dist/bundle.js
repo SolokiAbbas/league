@@ -49000,7 +49000,7 @@ var Summoners = function (_React$Component) {
       // get champ
       event.preventDefault();
       var url = 'https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/' + this.state.search + '?api_key=' + this.api;
-      fetch(url).then(function (res) {
+      fetch("https://cors-anywhere.herokuapp.com/" + url).then(function (res) {
         if (res.status >= 200 && res.status <= 300) {
           _this2.clearErrors();
           return res.json();
@@ -49024,7 +49024,7 @@ var Summoners = function (_React$Component) {
 
       //get mastery
       var urlMast = 'https://na1.api.riotgames.com/lol/champion-mastery/v3/scores/by-summoner/' + this.state.summonerInfo.id + '?api_key=' + this.api;
-      fetch(urlMast).then(function (res) {
+      fetch("https://cors-anywhere.herokuapp.com/" + urlMast).then(function (res) {
         return res.json();
       }).then(function (data) {
         return _this3.setState({ mastery: data });
