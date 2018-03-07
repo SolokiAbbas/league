@@ -55,6 +55,9 @@ class Summoners extends React.Component{
 
   render(){
     console.log(this.api);
+    console.log(process);
+    console.log(process.env);
+
     return(
           <div className="jumbotron mx-auto jumbo-about">
             <h5 className="text-center">Riot's API keys last for 24 hours. If search is not working, a new key is needed.</h5>
