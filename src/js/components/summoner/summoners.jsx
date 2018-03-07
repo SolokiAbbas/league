@@ -10,10 +10,11 @@ class Summoners extends React.Component{
       summonerInfo: [],
       mastery: 0,
       errors: '',
-      tester: [{name: "Hayasama (Default)", level: 500, mastery: 3000, profileicon:539}]
+      tester: [{name: "Hayasama (Default)", level: 500, mastery: 3000, profileicon:539, version:"8.4.1"}]
     };
 
     this.api = process.env.MY_API_KEY;
+    this.version = process.env.VERSION;
     this.fetchChamp = this.fetchChamp.bind(this);
     this.fetchMastery = this.fetchMastery.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -54,10 +55,6 @@ class Summoners extends React.Component{
   }
 
   render(){
-    console.log(this.api);
-    console.log(process);
-    console.log(process.env);
-
     return(
           <div className="jumbotron mx-auto jumbo-about">
             <h5 className="text-center">Riot's API keys last for 24 hours. If search is not working, a new key is needed.</h5>
@@ -74,11 +71,13 @@ class Summoners extends React.Component{
               {this.state.found ? <Summoner profileicon={this.state.summonerInfo.profileIconId}
                               name={this.state.summonerInfo.name}
                               level={this.state.summonerInfo.summonerLevel}
-                              mastery={this.state.mastery}/> :
+                              mastery={this.state.mastery}
+                              version={this.version}/> :
               <Summoner profileicon={this.state.tester[0].profileicon}
                 name={this.state.tester[0].name}
                 level={this.state.tester[0].level}
-                mastery={this.state.tester[0].mastery}/>
+                mastery={this.state.tester[0].mastery}
+                version={this.state.tester[0].version} />
             }
             </div>
           </div>

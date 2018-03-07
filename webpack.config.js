@@ -61,7 +61,9 @@ module.exports = {
     new Dotenv(),
     new webpack.DefinePlugin({
       'process.env': {
-        'MY_API_KEY': JSON.stringify(process.env.MY_API_KEY)
+        'MY_API_KEY': JSON.stringify(process.env.MY_API_KEY),
+        'VERSION': JSON.stringify(process.env.VERSION),
+
         }
       })
   ],
