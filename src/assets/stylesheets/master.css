@@ -1,6 +1,6 @@
 .main-background {
-  background-color: black;
-  color: white;
+  background-color: #f6f6f6;
+  color: black;
 }
 
 .homepage {
@@ -10,10 +10,11 @@
 }
 
 .nav-custom {
-  background-color: #e3f2fd;
-  font-family: "Raleway";
+  background-color: white;
+  font-family: "Calibre-Regular","sans-serif";
   display: flex !important;
   justify-content: space-between !important;
+  height: 120px;
 }
 
 .nav-home {
@@ -26,13 +27,16 @@
 }
 
 .nav-home-title {
-  font-size: 35px !important;
+  font-size: 30px !important;
   font-family: "Indie Flower"
 }
 
 .nav-size{
-  font-size: 22px !important;
+  font-size: 20px !important;
   margin-right: 20px !important;
+}
+.nav-size:hover{
+  color: lightblue !important;
 }
 
 .nav-images {
@@ -52,6 +56,9 @@
 .footer-image {
   height: 30px;
   width: 30px;
+}
+.footer-about{
+  font-size: 15px !important;
 }
 
 .footer-nav {
@@ -120,6 +127,14 @@
   font-family: "Raleway";
   margin-top: -40px;
 }
+.welcome-images{
+  width: 100%;
+}
+
+.landscape{
+  max-height: 400px;
+  overflow: hidden;
+}
 
 .bar-titles {
   font-family: "Raleway";
@@ -129,9 +144,11 @@
 }
 
 .forced-value{
-  margin-top: 12px;
+  margin-top: 50px;
   margin-bottom: 12px;
   font-family: "Raleway";
+  width: 50%;
+  font-size: 1.5em;
 }
 
 .radio-all {
